@@ -1,5 +1,5 @@
 #
-# This file is part of the Mat-O-Lab project (https://github.com/xxxx or http://xxx.github.io).
+# This file is part of the Mat-O-Lab project (https://github.com/Mat-O-Lab/).
 # Copyright (c) 2022 Alexander Reinholdt.
 #
 # This program is free software: you can redistribute it and/or modify
