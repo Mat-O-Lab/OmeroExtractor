@@ -22,8 +22,8 @@ from getpass import getpass
 # Get the server and the credentials
 #
 print("Please enter the server and the user's credentials.")
-server = "195.90.200.163" # input("Server: ")
-username = "alexander.reinholdt" # input("Username: ")
+server = input("Server: ")
+username = input("Username: ")
 password = getpass("Password: ")
 
 #
