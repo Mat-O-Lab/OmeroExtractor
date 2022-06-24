@@ -14,98 +14,67 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
-import requests
+import argparse
 import json
+#import omero.clients
+from omero.gateway import BlitzGateway
 from getpass import getpass
 
-#
-# Get the server and the credentials
-#
-print("Please enter the server and the user's credentials.")
-server = input("Server: ")
-username = input("Username: ")
-password = getpass("Password: ")
+if __name__ == "__main__":
+    #
+    # Command line arguments that can be used
+    #
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--server', help="The address of the OMERO server")
+    parser.add_argument('--username', help="The username to log in to the OMERO server")
+    parser.add_argument('--password', help="The password to log in to the OMERO server (INSECURE)")
+    args = parser.parse_args()
 
-#
-# Create a session
-#
-session = requests.Session()
+    #
+    # Connect to the OMERO server
+    #
+    while True:
+        try:
+            if args.server is None:
+                server = input("Server: ")
+            else:
+                server = args.server
 
-#
-# Get the supported APIs as well as the connected base URLs
-#
-r = session.get("http://" + server + "/api/").json()
+            if args.username is None:
+                username = input("Username: ")
+            else:
+                username = args.username
 
-#
-# We want the latest API's base url for working with the images
-#
-# NOTE: '-1' is the latest api tuple in the returned json output. Read
-# out the base url for further processing
-#
-base_url = r["data"][-1]["url:base"]
+            if args.password is None:
+                password = getpass()
+            else:
+                password = args.password
 
-#
-# Now get all URLs the server supports. We will pick the ones we need
-# from the output.
-#
-all_urls = session.get(base_url).json()
+            conn = BlitzGateway(username, password, host=server, port=4064, secure=True)
 
-#
-# Get the token for login
-#
-token_url = all_urls["url:token"]
-token = session.get(token_url).json()["data"]
+            if not conn.connect():
+                raise Exception
 
-#
-# Get the login URL
-#
-login_url = all_urls["url:login"]
+            break
+        except Exception:
+            print("The connection to server", server, "failed. Please try again.")
 
-#
-# List of servers
-#
-servers_url = all_urls["url:servers"]
-servers = session.get(servers_url).json()["data"]
+    #
+    # Get the list of all images the user has access to
+    #
+    all_images = conn.getObjects("Image")
 
-#
-# FIXME: We assume that there is only one server for now.
-#  So,blindly use the first entry.
-#
-server = servers[0]
+    #
+    # Loop through all images, get their original metadata and write
+    # it to a file
+    #
+    for image in all_images:
+        metadata = image.loadOriginalMetadata()
+        f = open(image.getName()+".json", "w")
+        f.write(json.dumps(metadata, indent=4))
+        f.close()
 
-#
-# Credentials for the login
-#
-credentials = {"username": username,
-               "password": password,
-               "csrfmiddlewaretoken": token,
-               "server": server["id"]}
-
-#
-# Log in to the server and check if we succeeded
-#
-return_value = session.post(login_url, data=credentials)
-response = return_value.json()
-
-assert return_value.status_code == 200
-assert response["success"]
-
-#
-# Get the URL the images are stored under
-#
-images_url = all_urls["url:images"]
-images = session.get(images_url).json()
-
-#
-# Loop through the available images and save the
-# JSON data to one file each
-#
-for i in images["data"]:
-    image_url = i["url:image"]
-    json_data = session.get(image_url).json()
-    json_data.update({"ImageUrl": image_url})
-    f = open(json_data["data"]["Name"]+".json", "w")
-    f.write(json.dumps(json_data, indent=4, sort_keys=True))
-    f.close()
-
-print("All metadata saved. Goodbye.")
+    #
+    # Disconnect from the OMERO server
+    #
+    conn.close()
