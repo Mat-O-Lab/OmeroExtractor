@@ -1,0 +1,17 @@
+version: "3"
+services:
+  knowledgeui:
+    build: .
+    container_name: knowledgeui
+    volumes:
+      - .:/src
+    ports:
+      - 5000:5000
+    restart: always
+    networks:
+      - knowledgeui_net
+
+networks:
+  knowledgeui_net:
+    name: knowledgeui
+    driver: bridge
