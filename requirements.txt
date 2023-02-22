@@ -1,0 +1,9 @@
+rdflib
+wtforms
+pandas
+html5lib
+starlette
+starlette-wtf
+jinja2
+fastapi
+uvicorn

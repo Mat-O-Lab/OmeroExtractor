@@ -1,0 +1,23 @@
+version: "3"
+services:
+  omeroextrator:
+    image: "ghcr.io/mat-o-lab/omeroextrator:latest"
+    container_name: "omeroextrator"
+    environment:
+      APP_MODE: "production"
+      ADMIN_MAIL: ${ADMIN_MAIL}
+    ports:
+      - ${APP_PORT}:5000
+    restart: always
+    networks:
+      - omeroextrator_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/info"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+
+networks:
+  omeroextrator_net:
+    name: omeroextrator_net
+    driver: bridge
