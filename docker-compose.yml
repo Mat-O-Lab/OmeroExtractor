@@ -1,7 +1,7 @@
 version: "3"
 services:
   omeroextrator:
-    image: "ghcr.io/mat-o-lab/omeroextrator:latest"
+    image: "ghcr.io/mat-o-lab/omeroextractor:latest"
     container_name: "omeroextrator"
     environment:
       APP_MODE: "production"
