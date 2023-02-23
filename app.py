@@ -4,7 +4,7 @@ import os
 
 import uvicorn
 import requests
-from requests.compat import urljoin
+from requests.compat import urljoin, urlparse
 from starlette_wtf import StarletteForm
 from starlette.responses import HTMLResponse
 from starlette.middleware import Middleware
@@ -102,11 +102,12 @@ class OmeroWebSession(requests.Session):
     def __init__(self, host=None):
         super().__init__()
         self.host=host
+        self.base_url=''
         start_url='{}/api/'.format(self.host)
         print(start_url)
         try:
             get_api_url=self.get(start_url)
-            self.base_url = host+get_api_url.json()["data"][-1]["url:base"]
+            self.base_url = get_api_url.json()["data"][-1]["url:base"]
             self.urls=self.get(self.base_url).json()
             self.urls['ur:original_meta']='{}/webclient/download_orig_metadata/'.format(host)
         except Exception as e:
@@ -149,7 +150,12 @@ class OmeroWebSession(requests.Session):
             raise HTTPException(status_code=500, detail='Could not get original meta data from omero web client: {}'.format(return_value))
 
     def request(self, method, url, *args, **kwargs):
-        joined_url = urljoin(self.host, url)
+        #test if relativc url
+        if not urlparse(url).netloc:
+            logging.error('got relativ url joining: {} with {}'.format(self.host,url))
+            joined_url=urljoin(self.host,url)
+        else:
+            joined_url=url
         return super().request(method, joined_url, *args, **kwargs)
 
 def open_api_session(host,username: str=os.getenv('OMERO_WEB_USER', default='root'), password: str=os.getenv('OMERO_WEB_PASS', default=os.getenv('OMERO_ROOT_PASS', default=''))):
