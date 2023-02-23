@@ -3,6 +3,7 @@
 import os
 
 import uvicorn
+import requests
 from starlette_wtf import StarletteForm
 from starlette.responses import HTMLResponse
 from starlette.middleware import Middleware
@@ -96,13 +97,64 @@ async def index(request: Request):
         }
     )
 
+class OmeroWebSession(requests.Session):
+    def __init__(self, start_url=None):
+        super().__init__()
+        try:
+            get_api_url=self.get(start_url)
+            self.base_url = get_api_url.json()["data"][-1]["url:base"]
+            self.urls=self.get(self.base_url).json()
+        except Exception as e:
+            logging.error('could not init Omero Web Api Session: {}'.format(str(e)))
+    def login(self,username,password):
+        token_url = self.urls["url:token"]
+        logging.info("getting session crsf token at {}".format(token_url))
+        token = self.get(token_url).json()["data"]
+        login_url = self.urls["url:login"]
+        credentials = {
+                "username": username,
+                "password": password,
+                "csrfmiddlewaretoken": token,
+                "server": 1
+                }
+        #login and test connection
+        logging.info("trying to login at {} with given credentials".format(login_url))
+        return_value = self.post(url=login_url,data=credentials)
+        if return_value.status_code == 200:
+            logging.info('login successful: {}'.format(return_value.json()))
+            return True
+        else:
+            logging.error('login failed: {}'.format(return_value))
+            return False
+    def get_image_meta(self, id: int):
+        self.urls["url:images"]
+        return_value = self.get(self.urls["url:images"]+'{}'.format(str(id)))
+        if return_value.status_code == 200:
+            return return_value.json()
+        else:
+            logging.error('could not get meta data from omero web json api: {}'.format(return_value))
+            raise HTTPException(status_code=500, detail='could not get meta data from omero web json api: {}'.format(return_value))
+            
+    # def request(self, method, url, *args, **kwargs):
+    #     joined_url = urljoin(self.base_url, url)
+    #     return super().request(method, joined_url, *args, **kwargs)
+
+def open_api_session(host,username: str=os.getenv('OMERO_WEB_USER', default='root'), password: str=os.getenv('OMERO_WEB_PASS', default=os.getenv('OMERO_ROOT_PASS', default=''))):
+    web_api='{}/api/'.format(host)
+    session = OmeroWebSession(web_api)
+    if session.login(username, password):
+        return session
+    else:
+        return None
+
 @app.post("/api")
 async def api(apirequest: ApiRequest) -> dict:
-    try:
-        result = {"test": apirequest.image_id}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    return result
+    host=os.getenv('OMERO_WEB_HOST',default='http://omeroweb:4080')
+    session = open_api_session(host)
+    if not session:
+        return {}
+    image_meta = session.get_image_meta(apirequest.image_id)
+    return image_meta
 
 
 @app.get("/info", response_model=Settings)

@@ -7,6 +7,8 @@ Tool to extract Meta Data from [OMERO.Server](https://www.openmicroscopy.org/ome
 ```bash
 APP_PORT=<80>
 ADMIN_MAIL=<email_of_admin>
+OMERO_WEB_PUBLIC_USER=<publicuser>
+OMERO_WEB_PUBLIC_PASSWORD=<matolab>
 ```
 
 ## docker

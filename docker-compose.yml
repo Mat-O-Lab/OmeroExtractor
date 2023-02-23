@@ -6,11 +6,14 @@ services:
     environment:
       APP_MODE: "production"
       ADMIN_MAIL: ${ADMIN_MAIL}
+      OMERO_WEB_HOST: "http://omeroweb:4080"
+      OMERO_WEB_USER: ${OMERO_WEB_PUBLIC_USER}
+      OMERO_WEB_PASS: ${OMERO_WEB_PUBLIC_PASSWORD}
     ports:
       - ${APP_PORT}:5000
     restart: always
     networks:
-      - omeroextrator_net
+      - omero
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/info"]
       interval: 10s
@@ -18,6 +21,8 @@ services:
       retries: 20
 
 networks:
-  omeroextrator_net:
-    name: omeroextrator_net
-    driver: bridge
+  omero:
+    name: omero_net
+    external: true
+    # driver: bridge
+

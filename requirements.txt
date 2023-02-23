@@ -7,3 +7,4 @@ starlette-wtf
 jinja2
 fastapi
 uvicorn
+requests
