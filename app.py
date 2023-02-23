@@ -4,6 +4,7 @@ import os
 
 import uvicorn
 import requests
+from requests.compat import urljoin
 from starlette_wtf import StarletteForm
 from starlette.responses import HTMLResponse
 from starlette.middleware import Middleware
@@ -98,12 +99,16 @@ async def index(request: Request):
     )
 
 class OmeroWebSession(requests.Session):
-    def __init__(self, start_url=None):
+    def __init__(self, host=None):
         super().__init__()
+        self.host=host
+        start_url='{}/api/'.format(self.host)
+        print(start_url)
         try:
             get_api_url=self.get(start_url)
-            self.base_url = get_api_url.json()["data"][-1]["url:base"]
+            self.base_url = host+get_api_url.json()["data"][-1]["url:base"]
             self.urls=self.get(self.base_url).json()
+            self.urls['ur:original_meta']='{}/webclient/download_orig_metadata/'.format(host)
         except Exception as e:
             logging.error('could not init Omero Web Api Session: {}'.format(str(e)))
     def login(self,username,password):
@@ -132,16 +137,23 @@ class OmeroWebSession(requests.Session):
         if return_value.status_code == 200:
             return return_value.json()
         else:
-            logging.error('could not get meta data from omero web json api: {}'.format(return_value))
-            raise HTTPException(status_code=500, detail='could not get meta data from omero web json api: {}'.format(return_value))
-            
-    # def request(self, method, url, *args, **kwargs):
-    #     joined_url = urljoin(self.base_url, url)
-    #     return super().request(method, joined_url, *args, **kwargs)
+            logging.error('Could not get meta data from omero web json api: {}'.format(return_value))
+            raise HTTPException(status_code=500, detail='Could not get meta data from omero web json api: {}'.format(return_value))
+    def get_original_image_meta(self, id: int):
+        self.urls['ur:original_meta']
+        return_value = self.get(self.urls['ur:original_meta']+'{}'.format(str(id)))
+        if return_value.status_code == 200:
+            return return_value.text
+        else:
+            logging.error('Could not get original meta data from omero web client: {}'.format(return_value))
+            raise HTTPException(status_code=500, detail='Could not get original meta data from omero web client: {}'.format(return_value))
+
+    def request(self, method, url, *args, **kwargs):
+        joined_url = urljoin(self.host, url)
+        return super().request(method, joined_url, *args, **kwargs)
 
 def open_api_session(host,username: str=os.getenv('OMERO_WEB_USER', default='root'), password: str=os.getenv('OMERO_WEB_PASS', default=os.getenv('OMERO_ROOT_PASS', default=''))):
-    web_api='{}/api/'.format(host)
-    session = OmeroWebSession(web_api)
+    session = OmeroWebSession(host)
     if session.login(username, password):
         return session
     else:
@@ -154,6 +166,9 @@ async def api(apirequest: ApiRequest) -> dict:
     if not session:
         return {}
     image_meta = session.get_image_meta(apirequest.image_id)
+    original_meta = session.get_original_image_meta(apirequest.image_id)
+    #add original_meta to json
+    image_meta['original_meta']=original_meta
     return image_meta
 
 

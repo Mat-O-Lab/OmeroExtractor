@@ -23,6 +23,3 @@ services:
 networks:
   omero:
     name: omero_net
-    external: true
-    # driver: bridge
-
