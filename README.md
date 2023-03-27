@@ -33,3 +33,10 @@ docker-compose up
 
 A simple UI can be found at at the index page '/'
 The API documentation at 'api/docs'
+
+## generates ome ontology
+Uses [xsd2owl](https://rhizomik.net/redefer/xsd2owl) to generate ome.xml (Owl)
+
+[generate](https://redefer.rhizomik.net/xsd2owl?xsd=https://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd)
+
+removed many axioms generated

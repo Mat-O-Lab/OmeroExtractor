@@ -23,7 +23,7 @@
       <p class="col-md-12 ps-0 fs-4">
         {{ APP_DESCRIPTION | safe }}
       </p>
-      <form id=input-form class='pb-3' method="post" action="{{ url_for('api') }}">
+      <form id=input-form class='pb-3' method="post" action="{{ url_for('imagemeta') }}">
         <div class="mb-3">
           {{ start_form.csrf_token }}
           {{ start_form.image_id.label }}

@@ -15,7 +15,7 @@ services:
     networks:
       - omero
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/info"]
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/info"]
       interval: 10s
       timeout: 10s
       retries: 20

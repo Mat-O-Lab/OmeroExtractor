@@ -11,6 +11,7 @@ from starlette.middleware import Middleware
 from starlette.middleware.sessions import SessionMiddleware
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional, Any
+import json
 
 from pydantic import BaseSettings, BaseModel, Field
 
@@ -67,6 +68,8 @@ logging.basicConfig(level=logging.DEBUG)
 templates.env.globals['APP_NAME'] = "OmeroExtractor"
 templates.env.globals['APP_DESCRIPTION'] = 'Tool to extract Meta Data from <a href="https://www.openmicroscopy.org/omero/">OMERO.server</a> by merging <a href="https://github.com/ome/omero-web">OMERO.web</a> JSON Api output with original meta data available and setting context.'
 
+import ome_parser
+
 class ApiRequest(BaseModel):
     image_id: int = Field(1, title='Image ID', description='Id of a Omero Image')
     class Config:
@@ -85,7 +88,7 @@ class StartForm(StarletteForm):
         render_kw={"placeholder": 1},
     )
     
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def index(request: Request):
     """GET /: form handler
     """
@@ -134,9 +137,10 @@ class OmeroWebSession(requests.Session):
             return False
     def get_image_meta(self, id: int):
         self.urls["url:images"]
-        return_value = self.get(self.urls["url:images"]+'{}'.format(str(id)))
+        request_url=self.urls["url:images"]+'{}'.format(str(id))
+        return_value = self.get(request_url)
         if return_value.status_code == 200:
-            return return_value.json()
+            return request_url, return_value.json()
         else:
             logging.error('Could not get meta data from omero web json api: {}'.format(return_value))
             raise HTTPException(status_code=500, detail='Could not get meta data from omero web json api: {}'.format(return_value))
@@ -165,17 +169,20 @@ def open_api_session(host,username: str=os.getenv('OMERO_WEB_USER', default='roo
     else:
         return None
 
-@app.post("/api")
-async def api(apirequest: ApiRequest) -> dict:
+@app.post("/api/imagemeta")
+async def imagemeta(apirequest: ApiRequest) -> dict:
     host=os.getenv('OMERO_WEB_HOST',default='http://omeroweb:4080')
     session = open_api_session(host)
     if not session:
         return {}
-    image_meta = session.get_image_meta(apirequest.image_id)
+    url, image_meta = session.get_image_meta(apirequest.image_id)
     original_meta = session.get_original_image_meta(apirequest.image_id)
     #add original_meta to json
-    image_meta['original_meta']=original_meta
-    return image_meta
+    print(original_meta)
+    image_meta[ome_parser.OME_SOURCE_URL+'original_meta']=original_meta
+    converter=ome_parser.OMEtoRDF(image_meta, url)
+    result=converter.to_rdf()
+    return json.loads(result.serialize(format='json-ld',auto_compact=True,indent=4))
 
 
 @app.get("/info", response_model=Settings)
