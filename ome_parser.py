@@ -131,13 +131,14 @@ class OMEtoRDF:
     def __init__(self,json_dict: dict={}, root_url: str='', api_endpoint: str='') -> None:
         #print(json_dict.keys())
         self.data=json_dict#.get('data',None)
-        self.root=URIRef(root_url)
+        self.root=URIRef("")
         print(api_endpoint)
         self.graph=Graph()
+        self.graph.add((self.root,OME.url,Literal(root_url,datatype=XSD.anyURI)))
         self.graph.bind('ome',OME)
         self.graph.bind('qudt',QUDT)
         self.graph.bind('prov',PROV)
-        
+        self.graph.bind('oa',OA)
         #print(list(ome_graph[: RDF.type:]))
 
     def annotate_prov(self, api_url: str, settings: BaseSettings):
@@ -186,12 +187,12 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
         # lookup if the id and type in dict result in a ontology entity
         entity, e_class, parent = create_instance_triple(data, uri=base_url)
         #print(entity,e_class,parent)
-        if entity and e_class:
+        if isinstance(entity,(URIRef,BNode)) and e_class:
             # if the entity is a Identifier, only create it if it relates to entity previously created
             print('create entity: {} {}'.format(entity,e_class))
             print('last entity: {} {}'.format(last_entity,relation))
             graph.add((entity, RDF.type, e_class))
-            if last_entity and relation:
+            if isinstance(last_entity,(URIRef,BNode)) and relation:
                 #print('create relation: {} {} {}'.format(last_entity,relation,entity))
                 graph.add((last_entity, relation, entity))
             else:
@@ -296,7 +297,7 @@ def create_instance_triple(data: dict, uri= None):
         o_class = get_entity_type(data['@type'])
         if o_class:
             #entity=URIRef(instance_id, TEMP)
-            if uri:
+            if isinstance(uri,URIRef):
                 entity=uri
             else:
                 entity=BNode()

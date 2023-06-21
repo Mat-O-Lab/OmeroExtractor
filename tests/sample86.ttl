@@ -1,118 +1,15 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix ome: <https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.com> a ome:Image ;
+<> a ome:Image ;
     rdfs:label "190C-2500h_Sample1_Stelle1 DF 20s.dm3" ;
     ome:datasets "https://omero.matolab.org/api/v0/m/images/86/datasets/" ;
-    ome:relates_to [ a [ a ome:PixelsType ;
-                    rdf:value "int32" ;
-                    ome:relates_to [ a ome:Detail ;
-                            ome:relates_to [ a ome:Permissions ;
-                                    ome:canAnnotate true ;
-                                    ome:canDelete false ;
-                                    ome:canEdit false ;
-                                    ome:canLink true ;
-                                    ome:isGroupAnnotate false ;
-                                    ome:isGroupRead true ;
-                                    ome:isGroupWrite false ;
-                                    ome:isUserRead true ;
-                                    ome:isUserWrite true ;
-                                    ome:isWorldRead true ;
-                                    ome:isWorldWrite false ;
-                                    ome:permissions_str "rwr-r-" ] ] ],
-                ome:Pixels ;
-            ome:relates_to [ a ome:Detail ;
-                    dc:creator [ ] ;
-                    ome:relates_to [ a ome:Group ;
-                            rdfs:label "matolab" ;
-                            ome:relates_to [ a ome:Detail ;
-                                    ome:relates_to [ a ome:Permissions ;
-                                            ome:canAnnotate true ;
-                                            ome:canDelete false ;
-                                            ome:canEdit false ;
-                                            ome:canLink true ;
-                                            ome:isGroupAnnotate false ;
-                                            ome:isGroupRead true ;
-                                            ome:isGroupWrite false ;
-                                            ome:isUserRead true ;
-                                            ome:isUserWrite true ;
-                                            ome:isWorldRead false ;
-                                            ome:isWorldWrite false ;
-                                            ome:permissions_str "rwr---" ] ] ],
-                        [ a ome:Permissions ;
-                            ome:canAnnotate false ;
-                            ome:canDelete false ;
-                            ome:canEdit false ;
-                            ome:canLink false ;
-                            ome:isGroupAnnotate false ;
-                            ome:isGroupRead true ;
-                            ome:isGroupWrite false ;
-                            ome:isUserRead true ;
-                            ome:isUserWrite true ;
-                            ome:isWorldRead false ;
-                            ome:isWorldWrite false ;
-                            ome:permissions_str "rwr---" ] ],
-                [ a ome:Channel ;
-                    ome:relates_to [ a ome:PhotometricInterpretation ;
-                            rdf:value "Monochrome" ;
-                            ome:relates_to [ a ome:Detail ;
-                                    ome:relates_to [ a ome:Permissions ;
-                                            ome:canAnnotate true ;
-                                            ome:canDelete false ;
-                                            ome:canEdit false ;
-                                            ome:canLink true ;
-                                            ome:isGroupAnnotate false ;
-                                            ome:isGroupRead true ;
-                                            ome:isGroupWrite false ;
-                                            ome:isUserRead true ;
-                                            ome:isUserWrite true ;
-                                            ome:isWorldRead true ;
-                                            ome:isWorldWrite false ;
-                                            ome:permissions_str "rwr-r-" ] ] ],
-                        [ a ome:Detail ;
-                            dc:creator [ ] ;
-                            ome:relates_to [ a ome:Group ;
-                                    rdfs:label "matolab" ;
-                                    ome:relates_to [ a ome:Detail ;
-                                            ome:relates_to [ a ome:Permissions ;
-                                                    ome:canAnnotate true ;
-                                                    ome:canDelete false ;
-                                                    ome:canEdit false ;
-                                                    ome:canLink true ;
-                                                    ome:isGroupAnnotate false ;
-                                                    ome:isGroupRead true ;
-                                                    ome:isGroupWrite false ;
-                                                    ome:isUserRead true ;
-                                                    ome:isUserWrite true ;
-                                                    ome:isWorldRead false ;
-                                                    ome:isWorldWrite false ;
-                                                    ome:permissions_str "rwr---" ] ] ],
-                                [ a ome:Permissions ;
-                                    ome:canAnnotate false ;
-                                    ome:canDelete false ;
-                                    ome:canEdit false ;
-                                    ome:canLink false ;
-                                    ome:isGroupAnnotate false ;
-                                    ome:isGroupRead true ;
-                                    ome:isGroupWrite false ;
-                                    ome:isUserRead true ;
-                                    ome:isUserWrite true ;
-                                    ome:isWorldRead false ;
-                                    ome:isWorldWrite false ;
-                                    ome:permissions_str "rwr---" ] ] ;
-                    ome:samplesPerPixel 1 ] ;
-            ome:significantBits 32 ;
-            ome:sizeC 1 ;
-            ome:sizeT 1 ;
-            ome:sizeX 2048 ;
-            ome:sizeY 2048 ;
-            ome:sizeZ 1 ],
-        [ a ome:OriginalMeta ;
+    ome:relates_to [ a ome:OriginalMeta ;
             ome:notes <GlobalMetadataAcquisitionDate>,
                 <GlobalMetadataAcquisitionStartTimeEpoch>,
                 <GlobalMetadataAcquisitionTime>,
@@ -312,9 +209,125 @@
                 <GlobalMetadataWindowposition>,
                 <GlobalMetadataWindowrect>,
                 <GlobalMetadataZoom> ],
+        [ a [ a ome:PixelsType ;
+                    rdf:value "int32" ;
+                    ome:relates_to [ a ome:Detail ;
+                            ome:relates_to [ a ome:Permissions ;
+                                    ome:canAnnotate true ;
+                                    ome:canDelete false ;
+                                    ome:canEdit false ;
+                                    ome:canLink true ;
+                                    ome:isGroupAnnotate false ;
+                                    ome:isGroupRead true ;
+                                    ome:isGroupWrite false ;
+                                    ome:isUserRead true ;
+                                    ome:isUserWrite true ;
+                                    ome:isWorldRead true ;
+                                    ome:isWorldWrite false ;
+                                    ome:permissions_str "rwr-r-" ] ] ],
+                ome:Pixels ;
+            ome:relates_to [ a ome:Detail ;
+                    dc:creator [ ] ;
+                    ome:relates_to [ a ome:Group ;
+                            rdfs:label "matolab" ;
+                            ome:relates_to [ a ome:Detail ;
+                                    ome:relates_to [ a ome:Permissions ;
+                                            ome:canAnnotate true ;
+                                            ome:canDelete false ;
+                                            ome:canEdit false ;
+                                            ome:canLink true ;
+                                            ome:isGroupAnnotate false ;
+                                            ome:isGroupRead true ;
+                                            ome:isGroupWrite false ;
+                                            ome:isUserRead true ;
+                                            ome:isUserWrite true ;
+                                            ome:isWorldRead false ;
+                                            ome:isWorldWrite false ;
+                                            ome:permissions_str "rwr---" ] ] ],
+                        [ a ome:Permissions ;
+                            ome:canAnnotate false ;
+                            ome:canDelete false ;
+                            ome:canEdit false ;
+                            ome:canLink false ;
+                            ome:isGroupAnnotate false ;
+                            ome:isGroupRead true ;
+                            ome:isGroupWrite false ;
+                            ome:isUserRead true ;
+                            ome:isUserWrite true ;
+                            ome:isWorldRead false ;
+                            ome:isWorldWrite false ;
+                            ome:permissions_str "rwr---" ] ],
+                [ a ome:Channel ;
+                    ome:relates_to [ a ome:Detail ;
+                            dc:creator [ ] ;
+                            ome:relates_to [ a ome:Permissions ;
+                                    ome:canAnnotate false ;
+                                    ome:canDelete false ;
+                                    ome:canEdit false ;
+                                    ome:canLink false ;
+                                    ome:isGroupAnnotate false ;
+                                    ome:isGroupRead true ;
+                                    ome:isGroupWrite false ;
+                                    ome:isUserRead true ;
+                                    ome:isUserWrite true ;
+                                    ome:isWorldRead false ;
+                                    ome:isWorldWrite false ;
+                                    ome:permissions_str "rwr---" ],
+                                [ a ome:Group ;
+                                    rdfs:label "matolab" ;
+                                    ome:relates_to [ a ome:Detail ;
+                                            ome:relates_to [ a ome:Permissions ;
+                                                    ome:canAnnotate true ;
+                                                    ome:canDelete false ;
+                                                    ome:canEdit false ;
+                                                    ome:canLink true ;
+                                                    ome:isGroupAnnotate false ;
+                                                    ome:isGroupRead true ;
+                                                    ome:isGroupWrite false ;
+                                                    ome:isUserRead true ;
+                                                    ome:isUserWrite true ;
+                                                    ome:isWorldRead false ;
+                                                    ome:isWorldWrite false ;
+                                                    ome:permissions_str "rwr---" ] ] ] ],
+                        [ a ome:PhotometricInterpretation ;
+                            rdf:value "Monochrome" ;
+                            ome:relates_to [ a ome:Detail ;
+                                    ome:relates_to [ a ome:Permissions ;
+                                            ome:canAnnotate true ;
+                                            ome:canDelete false ;
+                                            ome:canEdit false ;
+                                            ome:canLink true ;
+                                            ome:isGroupAnnotate false ;
+                                            ome:isGroupRead true ;
+                                            ome:isGroupWrite false ;
+                                            ome:isUserRead true ;
+                                            ome:isUserWrite true ;
+                                            ome:isWorldRead true ;
+                                            ome:isWorldWrite false ;
+                                            ome:permissions_str "rwr-r-" ] ] ] ;
+                    ome:samplesPerPixel 1 ] ;
+            ome:significantBits 32 ;
+            ome:sizeC 1 ;
+            ome:sizeT 1 ;
+            ome:sizeX 2048 ;
+            ome:sizeY 2048 ;
+            ome:sizeZ 1 ],
         [ a ome:Detail ;
             dc:creator [ ] ;
-            ome:relates_to [ a ome:Group ;
+            ome:relates_to [ a ome:Permissions ;
+                    ome:canAnnotate false ;
+                    ome:canDelete false ;
+                    ome:canEdit false ;
+                    ome:canLink false ;
+                    ome:isGroupAnnotate false ;
+                    ome:isGroupRead true ;
+                    ome:isGroupWrite false ;
+                    ome:isUserRead true ;
+                    ome:isUserWrite true ;
+                    ome:isWorldRead false ;
+                    ome:isWorldWrite false ;
+                    ome:permissions_str "rwr---" ],
+                [ a ome:Group ;
                     rdfs:label "matolab" ;
                     ome:relates_to [ a ome:Detail ;
                             ome:relates_to [ a ome:Permissions ;
@@ -329,1061 +342,1049 @@
                                     ome:isUserWrite true ;
                                     ome:isWorldRead false ;
                                     ome:isWorldWrite false ;
-                                    ome:permissions_str "rwr---" ] ] ],
-                [ a ome:Permissions ;
-                    ome:canAnnotate false ;
-                    ome:canDelete false ;
-                    ome:canEdit false ;
-                    ome:canLink false ;
-                    ome:isGroupAnnotate false ;
-                    ome:isGroupRead true ;
-                    ome:isGroupWrite false ;
-                    ome:isUserRead true ;
-                    ome:isUserWrite true ;
-                    ome:isWorldRead false ;
-                    ome:isWorldWrite false ;
-                    ome:permissions_str "rwr---" ] ] ;
-    ome:rois "https://omero.matolab.org/api/v0/m/images/86/rois/" .
+                                    ome:permissions_str "rwr---" ] ] ] ] ;
+    ome:rois "https://omero.matolab.org/api/v0/m/images/86/rois/" ;
+    ome:url "http://example.com"^^xsd:anyURI .
 
-<GlobalMetadataAcquisitionDate> a ns1:Annotation ;
+<GlobalMetadataAcquisitionDate> a oa:Annotation ;
     rdfs:label "Global Metadata acquisition date" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value "2015-07-30T00:00:00"^^xsd:dateTime ] .
 
-<GlobalMetadataAcquisitionStartTimeEpoch> a ns1:Annotation ;
+<GlobalMetadataAcquisitionStartTimeEpoch> a oa:Annotation ;
     rdfs:label "Global Metadata acquisition start time (epoch)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.438257e+12 ] .
 
-<GlobalMetadataAcquisitionTime> a ns1:Annotation ;
+<GlobalMetadataAcquisitionTime> a oa:Annotation ;
     rdfs:label "Global Metadata acquisition time" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value "2023-06-21T13:50:08"^^xsd:dateTime ] .
 
-<GlobalMetadataAcquisitionWriteFlags> a ns1:Annotation ;
+<GlobalMetadataAcquisitionWriteFlags> a oa:Annotation ;
     rdfs:label "Global Metadata acquisition write flags" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value -1e+00 ] .
 
-<GlobalMetadataActiveSizePixels> a ns1:Annotation ;
+<GlobalMetadataActiveSizePixels> a oa:Annotation ;
     rdfs:label "Global Metadata active size (pixels)" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "2048.0, 2048.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataActualMagnification> a ns1:Annotation ;
+<GlobalMetadataActualMagnification> a oa:Annotation ;
     rdfs:label "Global Metadata actual magnification" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 9.561307e+04 ] .
 
-<GlobalMetadataAdcMax> a ns1:Annotation ;
+<GlobalMetadataAdcMax> a oa:Annotation ;
     rdfs:label "Global Metadata adc max" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 6.5535e+04 ] .
 
-<GlobalMetadataAdcMin> a ns1:Annotation ;
+<GlobalMetadataAdcMin> a oa:Annotation ;
     rdfs:label "Global Metadata adc min" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataAnnotationtype> a ns1:Annotation ;
+<GlobalMetadataAnnotationtype> a oa:Annotation ;
     rdfs:label "Global Metadata annotationtype" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+01 ] .
 
-<GlobalMetadataAntiblooming> a ns1:Annotation ;
+<GlobalMetadataAntiblooming> a oa:Annotation ;
     rdfs:label "Global Metadata antiblooming" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataApplicationbounds> a ns1:Annotation ;
+<GlobalMetadataApplicationbounds> a oa:Annotation ;
     rdfs:label "Global Metadata applicationbounds" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 915.0, 1280.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataApplied> a ns1:Annotation ;
+<GlobalMetadataApplied> a oa:Annotation ;
     rdfs:label "Global Metadata applied" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataAttributes> a ns1:Annotation ;
+<GlobalMetadataAttributes> a oa:Annotation ;
     rdfs:label "Global Metadata attributes" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 7e+00 ] .
 
-<GlobalMetadataBackgroundcolor> a ns1:Annotation ;
+<GlobalMetadataBackgroundcolor> a oa:Annotation ;
     rdfs:label "Global Metadata backgroundcolor" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "-1.0, 0.0, 0.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataBackgroundmode> a ns1:Annotation ;
+<GlobalMetadataBackgroundmode> a oa:Annotation ;
     rdfs:label "Global Metadata backgroundmode" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5.12e+02 ] .
 
-<GlobalMetadataBiasCounts> a ns1:Annotation ;
+<GlobalMetadataBiasCounts> a oa:Annotation ;
     rdfs:label "Global Metadata bias (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1e+03 ] .
 
-<GlobalMetadataBiasPostBlank> a ns1:Annotation ;
+<GlobalMetadataBiasPostBlank> a oa:Annotation ;
     rdfs:label "Global Metadata bias post blank" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e+01 ] .
 
-<GlobalMetadataBiasPreBlank> a ns1:Annotation ;
+<GlobalMetadataBiasPreBlank> a oa:Annotation ;
     rdfs:label "Global Metadata bias pre blank" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.6e+01 ] .
 
-<GlobalMetadataBiasRead> a ns1:Annotation ;
+<GlobalMetadataBiasRead> a oa:Annotation ;
     rdfs:label "Global Metadata bias read" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.02e+02 ] .
 
-<GlobalMetadataBiasSkip> a ns1:Annotation ;
+<GlobalMetadataBiasSkip> a oa:Annotation ;
     rdfs:label "Global Metadata bias skip" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataBinning> a ns1:Annotation ;
+<GlobalMetadataBinning> a oa:Annotation ;
     rdfs:label "Global Metadata binning" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "1.0, 1.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataBrightcolor> a ns1:Annotation ;
+<GlobalMetadataBrightcolor> a oa:Annotation ;
     rdfs:label "Global Metadata brightcolor" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "-1.0, -1.0, -1.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataBrightness> a ns1:Annotation ;
+<GlobalMetadataBrightness> a oa:Annotation ;
     rdfs:label "Global Metadata brightness" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e-01 ] .
 
-<GlobalMetadataCameraNumber> a ns1:Annotation ;
+<GlobalMetadataCameraNumber> a oa:Annotation ;
     rdfs:label "Global Metadata camera number" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataCaptionon> a ns1:Annotation ;
+<GlobalMetadataCaptionon> a oa:Annotation ;
     rdfs:label "Global Metadata captionon" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataCaptionsize> a ns1:Annotation ;
+<GlobalMetadataCaptionsize> a oa:Annotation ;
     rdfs:label "Global Metadata captionsize" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.072e+03 ] .
 
-<GlobalMetadataCcdReadArea> a ns1:Annotation ;
+<GlobalMetadataCcdReadArea> a oa:Annotation ;
     rdfs:label "Global Metadata ccd read area" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 2048.0, 2048.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataCcdReadPorts> a ns1:Annotation ;
+<GlobalMetadataCcdReadPorts> a oa:Annotation ;
     rdfs:label "Global Metadata ccd read ports" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.5e+01 ] .
 
-<GlobalMetadataChooseNumberOfFrameShuttersAutomatically> a ns1:Annotation ;
+<GlobalMetadataChooseNumberOfFrameShuttersAutomatically> a oa:Annotation ;
     rdfs:label "Global Metadata choose number of frame shutters automatically" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataClassName> a ns1:Annotation ;
+<GlobalMetadataClassName> a oa:Annotation ;
     rdfs:label "Global Metadata class name" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "cm_imgproc_histogram"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataClassname> a ns1:Annotation ;
+<GlobalMetadataClassname> a oa:Annotation ;
     rdfs:label "Global Metadata classname" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "ImageSource:Simple"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataClutname> a ns1:Annotation ;
+<GlobalMetadataClutname> a oa:Annotation ;
     rdfs:label "Global Metadata clutname" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Greyscale"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataComplexmode> a ns1:Annotation ;
+<GlobalMetadataComplexmode> a oa:Annotation ;
     rdfs:label "Global Metadata complexmode" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 4e+00 ] .
 
-<GlobalMetadataComplexrange> a ns1:Annotation ;
+<GlobalMetadataComplexrange> a oa:Annotation ;
     rdfs:label "Global Metadata complexrange" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1e+03 ] .
 
-<GlobalMetadataContinuousReadout> a ns1:Annotation ;
+<GlobalMetadataContinuousReadout> a oa:Annotation ;
     rdfs:label "Global Metadata continuous readout" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataContrast> a ns1:Annotation ;
+<GlobalMetadataContrast> a oa:Annotation ;
     rdfs:label "Global Metadata contrast" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e-01 ] .
 
-<GlobalMetadataContrastmode> a ns1:Annotation ;
+<GlobalMetadataContrastmode> a oa:Annotation ;
     rdfs:label "Global Metadata contrastmode" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataCorrections> a ns1:Annotation ;
+<GlobalMetadataCorrections> a oa:Annotation ;
     rdfs:label "Global Metadata corrections" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 8.17e+02 ] .
 
-<GlobalMetadataCorrectionsMask> a ns1:Annotation ;
+<GlobalMetadataCorrectionsMask> a oa:Annotation ;
     rdfs:label "Global Metadata corrections mask" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 8.17e+02 ] .
 
-<GlobalMetadataCsMm> a ns1:Annotation ;
+<GlobalMetadataCsMm> a oa:Annotation ;
     rdfs:label "Global Metadata cs(mm)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDarkCurrentCountsS> a ns1:Annotation ;
+<GlobalMetadataDarkCurrentCountsS> a oa:Annotation ;
     rdfs:label "Global Metadata dark current (counts/s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDarkLevelCounts> a ns1:Annotation ;
+<GlobalMetadataDarkLevelCounts> a oa:Annotation ;
     rdfs:label "Global Metadata dark level (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1e+03 ] .
 
-<GlobalMetadataDataType> a ns1:Annotation ;
+<GlobalMetadataDataType> a oa:Annotation ;
     rdfs:label "Global Metadata data type" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+01 ] .
 
-<GlobalMetadataDatatype> a ns1:Annotation ;
+<GlobalMetadataDatatype> a oa:Annotation ;
     rdfs:label "Global Metadata datatype" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 7e+00 ] .
 
-<GlobalMetadataDeviceName> a ns1:Annotation ;
+<GlobalMetadataDeviceName> a oa:Annotation ;
     rdfs:label "Global Metadata device name" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Gatan CCD camera"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataDiagonalFlip> a ns1:Annotation ;
+<GlobalMetadataDiagonalFlip> a oa:Annotation ;
     rdfs:label "Global Metadata diagonal flip" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDisplaycalibratedunits> a ns1:Annotation ;
+<GlobalMetadataDisplaycalibratedunits> a oa:Annotation ;
     rdfs:label "Global Metadata displaycalibratedunits" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDoAutoExpose> a ns1:Annotation ;
+<GlobalMetadataDoAutoExpose> a oa:Annotation ;
     rdfs:label "Global Metadata do auto expose" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDoAutoZoom> a ns1:Annotation ;
+<GlobalMetadataDoAutoZoom> a oa:Annotation ;
     rdfs:label "Global Metadata do auto zoom" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDoContinuousReadout> a ns1:Annotation ;
+<GlobalMetadataDoContinuousReadout> a oa:Annotation ;
     rdfs:label "Global Metadata do continuous readout" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDoautosurvey> a ns1:Annotation ;
+<GlobalMetadataDoautosurvey> a oa:Annotation ;
     rdfs:label "Global Metadata doautosurvey" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataDointegralzoom> a ns1:Annotation ;
+<GlobalMetadataDointegralzoom> a oa:Annotation ;
     rdfs:label "Global Metadata dointegralzoom" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataEmissionCurrenta> a ns1:Annotation ;
+<GlobalMetadataEmissionCurrenta> a oa:Annotation ;
     rdfs:label "Global Metadata emission current (µa)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataEstimatedmax> a ns1:Annotation ;
+<GlobalMetadataEstimatedmax> a oa:Annotation ;
     rdfs:label "Global Metadata estimatedmax" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.3e+01 ] .
 
-<GlobalMetadataEstimatedmaxtrimpercentage> a ns1:Annotation ;
+<GlobalMetadataEstimatedmaxtrimpercentage> a oa:Annotation ;
     rdfs:label "Global Metadata estimatedmaxtrimpercentage" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataEstimatedmin> a ns1:Annotation ;
+<GlobalMetadataEstimatedmin> a oa:Annotation ;
     rdfs:label "Global Metadata estimatedmin" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.8e+02 ] .
 
-<GlobalMetadataEstimatedmintrimpercentage> a ns1:Annotation ;
+<GlobalMetadataEstimatedmintrimpercentage> a oa:Annotation ;
     rdfs:label "Global Metadata estimatedmintrimpercentage" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataExposureNumber> a ns1:Annotation ;
+<GlobalMetadataExposureNumber> a oa:Annotation ;
     rdfs:label "Global Metadata exposure number" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 9.8511e+04 ] .
 
-<GlobalMetadataExposureS> a ns1:Annotation ;
+<GlobalMetadataExposureS> a oa:Annotation ;
     rdfs:label "Global Metadata exposure (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+01 ] .
 
-<GlobalMetadataExposureStartNs> a ns1:Annotation ;
+<GlobalMetadataExposureStartNs> a oa:Annotation ;
     rdfs:label "Global Metadata exposure start (ns)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.022985e+09 ] .
 
-<GlobalMetadataExposureTimeNs> a ns1:Annotation ;
+<GlobalMetadataExposureTimeNs> a oa:Annotation ;
     rdfs:label "Global Metadata exposure time (ns)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+10 ] .
 
-<GlobalMetadataExposureTimeS> a ns1:Annotation ;
+<GlobalMetadataExposureTimeS> a oa:Annotation ;
     rdfs:label "Global Metadata exposure time (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+01 ] .
 
-<GlobalMetadataFamilyname> a ns1:Annotation ;
+<GlobalMetadataFamilyname> a oa:Annotation ;
     rdfs:label "Global Metadata familyname" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Arial"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataFillmode> a ns1:Annotation ;
+<GlobalMetadataFillmode> a oa:Annotation ;
     rdfs:label "Global Metadata fillmode" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2.56e+02 ] .
 
-<GlobalMetadataForegroundcolor> a ns1:Annotation ;
+<GlobalMetadataForegroundcolor> a oa:Annotation ;
     rdfs:label "Global Metadata foregroundcolor" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, -1.0, 0.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataFrameCombineStyle> a ns1:Annotation ;
+<GlobalMetadataFrameCombineStyle> a oa:Annotation ;
     rdfs:label "Global Metadata frame combine style" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Copy"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataFrameIdleShutterState> a ns1:Annotation ;
+<GlobalMetadataFrameIdleShutterState> a oa:Annotation ;
     rdfs:label "Global Metadata frame idle shutter state" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataFrameIndex> a ns1:Annotation ;
+<GlobalMetadataFrameIndex> a oa:Annotation ;
     rdfs:label "Global Metadata frame index" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataFrameStartNs> a ns1:Annotation ;
+<GlobalMetadataFrameStartNs> a oa:Annotation ;
     rdfs:label "Global Metadata frame start (ns)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2.519891e+03 ] .
 
-<GlobalMetadataFrameTimeNs> a ns1:Annotation ;
+<GlobalMetadataFrameTimeNs> a oa:Annotation ;
     rdfs:label "Global Metadata frame time (ns)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2.240011e+10 ] .
 
-<GlobalMetadataGamma> a ns1:Annotation ;
+<GlobalMetadataGamma> a oa:Annotation ;
     rdfs:label "Global Metadata gamma" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e-01 ] .
 
-<GlobalMetadataGeneral> a ns1:Annotation ;
+<GlobalMetadataGeneral> a oa:Annotation ;
     rdfs:label "Global Metadata general" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "1.0, 72.0, 612.0, 792.0, 36.0, 36.0, -36.0, -36.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataHasbackground> a ns1:Annotation ;
+<GlobalMetadataHasbackground> a oa:Annotation ;
     rdfs:label "Global Metadata hasbackground" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataHaswindowposition> a ns1:Annotation ;
+<GlobalMetadataHaswindowposition> a oa:Annotation ;
     rdfs:label "Global Metadata haswindowposition" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataHighlimit> a ns1:Annotation ;
+<GlobalMetadataHighlimit> a oa:Annotation ;
     rdfs:label "Global Metadata highlimit" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.8e+02 ] .
 
-<GlobalMetadataHilimitcontrastdeltatriggerpercentage> a ns1:Annotation ;
+<GlobalMetadataHilimitcontrastdeltatriggerpercentage> a oa:Annotation ;
     rdfs:label "Global Metadata hilimitcontrastdeltatriggerpercentage" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataHorizontalFlip> a ns1:Annotation ;
+<GlobalMetadataHorizontalFlip> a oa:Annotation ;
     rdfs:label "Global Metadata horizontal flip" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIlluminationMode> a ns1:Annotation ;
+<GlobalMetadataIlluminationMode> a oa:Annotation ;
     rdfs:label "Global Metadata illumination mode" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "TEM"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataImagedisplaybounds> a ns1:Annotation ;
+<GlobalMetadataImagedisplaybounds> a oa:Annotation ;
     rdfs:label "Global Metadata imagedisplaybounds" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 682.6666870117188, 682.6666870117188"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataImagedisplaytype> a ns1:Annotation ;
+<GlobalMetadataImagedisplaytype> a oa:Annotation ;
     rdfs:label "Global Metadata imagedisplaytype" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataImageindex> a ns1:Annotation ;
+<GlobalMetadataImageindex> a oa:Annotation ;
     rdfs:label "Global Metadata imageindex" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataImageref> a ns1:Annotation ;
+<GlobalMetadataImageref> a oa:Annotation ;
     rdfs:label "Global Metadata imageref" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataImagesource> a ns1:Annotation ;
+<GlobalMetadataImagesource> a oa:Annotation ;
     rdfs:label "Global Metadata imagesource" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataImagingMode> a ns1:Annotation ;
+<GlobalMetadataImagingMode> a oa:Annotation ;
     rdfs:label "Global Metadata imaging mode" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "MAG1"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataIndicatedMagnification> a ns1:Annotation ;
+<GlobalMetadataIndicatedMagnification> a oa:Annotation ;
     rdfs:label "Global Metadata indicated magnification" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 6e+04 ] .
 
-<GlobalMetadataInimagemode> a ns1:Annotation ;
+<GlobalMetadataInimagemode> a oa:Annotation ;
     rdfs:label "Global Metadata inimagemode" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIsinverted> a ns1:Annotation ;
+<GlobalMetadataIsinverted> a oa:Annotation ;
     rdfs:label "Global Metadata isinverted" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIsmoveable> a ns1:Annotation ;
+<GlobalMetadataIsmoveable> a oa:Annotation ;
     rdfs:label "Global Metadata ismoveable" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIsresizable> a ns1:Annotation ;
+<GlobalMetadataIsresizable> a oa:Annotation ;
     rdfs:label "Global Metadata isresizable" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIsselectable> a ns1:Annotation ;
+<GlobalMetadataIsselectable> a oa:Annotation ;
     rdfs:label "Global Metadata isselectable" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIstranslatable> a ns1:Annotation ;
+<GlobalMetadataIstranslatable> a oa:Annotation ;
     rdfs:label "Global Metadata istranslatable" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIsvisible> a ns1:Annotation ;
+<GlobalMetadataIsvisible> a oa:Annotation ;
     rdfs:label "Global Metadata isvisible" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataIszoomedtowindow> a ns1:Annotation ;
+<GlobalMetadataIszoomedtowindow> a oa:Annotation ;
     rdfs:label "Global Metadata iszoomedtowindow" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataKind> a ns1:Annotation ;
+<GlobalMetadataKind> a oa:Annotation ;
     rdfs:label "Global Metadata kind" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "readout"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataLabel> a ns1:Annotation ;
+<GlobalMetadataLabel> a oa:Annotation ;
     rdfs:label "Global Metadata label" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "XY"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataLayedout> a ns1:Annotation ;
+<GlobalMetadataLayedout> a oa:Annotation ;
     rdfs:label "Global Metadata layedout" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataLowlimit> a ns1:Annotation ;
+<GlobalMetadataLowlimit> a oa:Annotation ;
     rdfs:label "Global Metadata lowlimit" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.3e+01 ] .
 
-<GlobalMetadataLowlimitcontrastdeltatriggerpercentage> a ns1:Annotation ;
+<GlobalMetadataLowlimitcontrastdeltatriggerpercentage> a oa:Annotation ;
     rdfs:label "Global Metadata lowlimitcontrastdeltatriggerpercentage" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataMagnificationInterpolated> a ns1:Annotation ;
+<GlobalMetadataMagnificationInterpolated> a oa:Annotation ;
     rdfs:label "Global Metadata magnification interpolated" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataMaximumExposureS> a ns1:Annotation ;
+<GlobalMetadataMaximumExposureS> a oa:Annotation ;
     rdfs:label "Global Metadata maximum exposure (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e+00 ] .
 
-<GlobalMetadataMaximumValueCounts> a ns1:Annotation ;
+<GlobalMetadataMaximumValueCounts> a oa:Annotation ;
     rdfs:label "Global Metadata maximum value (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 6.5535e+04 ] .
 
-<GlobalMetadataMeanCounts> a ns1:Annotation ;
+<GlobalMetadataMeanCounts> a oa:Annotation ;
     rdfs:label "Global Metadata mean (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.001335e+03 ] .
 
-<GlobalMetadataMicroscope> a ns1:Annotation ;
+<GlobalMetadataMicroscope> a oa:Annotation ;
     rdfs:label "Global Metadata microscope" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "JEM-2200FS"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataMinimumExposureS> a ns1:Annotation ;
+<GlobalMetadataMinimumExposureS> a oa:Annotation ;
     rdfs:label "Global Metadata minimum exposure (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e-02 ] .
 
-<GlobalMetadataMinimumValueCounts> a ns1:Annotation ;
+<GlobalMetadataMinimumValueCounts> a oa:Annotation ;
     rdfs:label "Global Metadata minimum value (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataMinimumcontrast> a ns1:Annotation ;
+<GlobalMetadataMinimumcontrast> a oa:Annotation ;
     rdfs:label "Global Metadata minimumcontrast" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataModeName> a ns1:Annotation ;
+<GlobalMetadataModeName> a oa:Annotation ;
     rdfs:label "Global Metadata mode name" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Imaging"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataName> a ns1:Annotation ;
+<GlobalMetadataName> a oa:Annotation ;
     rdfs:label "Global Metadata name" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Stelle2 DF 20s"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataNextdocumentobjectid> a ns1:Annotation ;
+<GlobalMetadataNextdocumentobjectid> a oa:Annotation ;
     rdfs:label "Global Metadata nextdocumentobjectid" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1e+01 ] .
 
-<GlobalMetadataNumAccumulateUnits> a ns1:Annotation ;
+<GlobalMetadataNumAccumulateUnits> a oa:Annotation ;
     rdfs:label "Global Metadata num accumulate units" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e+08 ] .
 
-<GlobalMetadataNumBlocks> a ns1:Annotation ;
+<GlobalMetadataNumBlocks> a oa:Annotation ;
     rdfs:label "Global Metadata num blocks" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataNumFrames> a ns1:Annotation ;
+<GlobalMetadataNumFrames> a oa:Annotation ;
     rdfs:label "Global Metadata num frames" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataNumRows> a ns1:Annotation ;
+<GlobalMetadataNumRows> a oa:Annotation ;
     rdfs:label "Global Metadata num rows" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataNumberOfFrameShutters> a ns1:Annotation ;
+<GlobalMetadataNumberOfFrameShutters> a oa:Annotation ;
     rdfs:label "Global Metadata number of frame shutters" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataOffset> a ns1:Annotation ;
+<GlobalMetadataOffset> a oa:Annotation ;
     rdfs:label "Global Metadata offset" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataOperationMode> a ns1:Annotation ;
+<GlobalMetadataOperationMode> a oa:Annotation ;
     rdfs:label "Global Metadata operation mode" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "IMAGING"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataOperator> a ns1:Annotation ;
+<GlobalMetadataOperator> a oa:Annotation ;
     rdfs:label "Global Metadata operator" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Agudo"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataOrigin> a ns1:Annotation ;
+<GlobalMetadataOrigin> a oa:Annotation ;
     rdfs:label "Global Metadata origin" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataOutputSource> a ns1:Annotation ;
+<GlobalMetadataOutputSource> a oa:Annotation ;
     rdfs:label "Global Metadata output source" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.5e+01 ] .
 
-<GlobalMetadataParBin> a ns1:Annotation ;
+<GlobalMetadataParBin> a oa:Annotation ;
     rdfs:label "Global Metadata par bin" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataParPostBlank> a ns1:Annotation ;
+<GlobalMetadataParPostBlank> a oa:Annotation ;
     rdfs:label "Global Metadata par post blank" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataParPreBlank> a ns1:Annotation ;
+<GlobalMetadataParPreBlank> a oa:Annotation ;
     rdfs:label "Global Metadata par pre blank" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.6e+01 ] .
 
-<GlobalMetadataParRead> a ns1:Annotation ;
+<GlobalMetadataParRead> a oa:Annotation ;
     rdfs:label "Global Metadata par read" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.04e+03 ] .
 
-<GlobalMetadataParameterSetName> a ns1:Annotation ;
+<GlobalMetadataParameterSetName> a oa:Annotation ;
     rdfs:label "Global Metadata parameter set name" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Record"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataParameterSetTagPath> a ns1:Annotation ;
+<GlobalMetadataParameterSetTagPath> a oa:Annotation ;
     rdfs:label "Global Metadata parameter set tag path" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Imaging:Acquire:Record"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataPixelSizeUm> a ns1:Annotation ;
+<GlobalMetadataPixelSizeUm> a oa:Annotation ;
     rdfs:label "Global Metadata pixel size (um)" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "14.0, 14.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataPixeldepth> a ns1:Annotation ;
+<GlobalMetadataPixeldepth> a oa:Annotation ;
     rdfs:label "Global Metadata pixeldepth" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 4e+00 ] .
 
-<GlobalMetadataPrimaryShutterStates> a ns1:Annotation ;
+<GlobalMetadataPrimaryShutterStates> a oa:Annotation ;
     rdfs:label "Global Metadata primary shutter states" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataPrimaryShutterStatesMask> a ns1:Annotation ;
+<GlobalMetadataPrimaryShutterStatesMask> a oa:Annotation ;
     rdfs:label "Global Metadata primary shutter states mask" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataProbeCurrentNa> a ns1:Annotation ;
+<GlobalMetadataProbeCurrentNa> a oa:Annotation ;
     rdfs:label "Global Metadata probe current (na)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataProbeSizeNm> a ns1:Annotation ;
+<GlobalMetadataProbeSizeNm> a oa:Annotation ;
     rdfs:label "Global Metadata probe size (nm)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataProcessing> a ns1:Annotation ;
+<GlobalMetadataProcessing> a oa:Annotation ;
     rdfs:label "Global Metadata processing" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Gain Normalized"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataProcessingPosition> a ns1:Annotation ;
+<GlobalMetadataProcessingPosition> a oa:Annotation ;
     rdfs:label "Global Metadata processing position" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "precorrection"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataQualityLevel> a ns1:Annotation ;
+<GlobalMetadataQualityLevel> a oa:Annotation ;
     rdfs:label "Global Metadata quality level" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataRangeadjust> a ns1:Annotation ;
+<GlobalMetadataRangeadjust> a oa:Annotation ;
     rdfs:label "Global Metadata rangeadjust" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataReadFlags> a ns1:Annotation ;
+<GlobalMetadataReadFlags> a oa:Annotation ;
     rdfs:label "Global Metadata read flags" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataReadFrameStyle> a ns1:Annotation ;
+<GlobalMetadataReadFrameStyle> a oa:Annotation ;
     rdfs:label "Global Metadata read frame style" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataReadFrameWindow> a ns1:Annotation ;
+<GlobalMetadataReadFrameWindow> a oa:Annotation ;
     rdfs:label "Global Metadata read frame window" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataReadMode> a ns1:Annotation ;
+<GlobalMetadataReadMode> a oa:Annotation ;
     rdfs:label "Global Metadata read mode" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataReadSectionIndex> a ns1:Annotation ;
+<GlobalMetadataReadSectionIndex> a oa:Annotation ;
     rdfs:label "Global Metadata read section index" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataReadoutTimeNs> a ns1:Annotation ;
+<GlobalMetadataReadoutTimeNs> a oa:Annotation ;
     rdfs:label "Global Metadata readout time (ns)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.37713e+09 ] .
 
-<GlobalMetadataReadsPerAcquire> a ns1:Annotation ;
+<GlobalMetadataReadsPerAcquire> a oa:Annotation ;
     rdfs:label "Global Metadata reads per acquire" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataRectangle> a ns1:Annotation ;
+<GlobalMetadataRectangle> a oa:Annotation ;
     rdfs:label "Global Metadata rectangle" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 682.6666870117188, 682.6666870117188"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataRequiredDataCharacteristics> a ns1:Annotation ;
+<GlobalMetadataRequiredDataCharacteristics> a oa:Annotation ;
     rdfs:label "Global Metadata required data characteristics" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3e+00 ] .
 
-<GlobalMetadataRequiredversion> a ns1:Annotation ;
+<GlobalMetadataRequiredversion> a oa:Annotation ;
     rdfs:label "Global Metadata requiredversion" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5.065933e+07 ] .
 
-<GlobalMetadataRestoreimagedisplaybounds> a ns1:Annotation ;
+<GlobalMetadataRestoreimagedisplaybounds> a oa:Annotation ;
     rdfs:label "Global Metadata restoreimagedisplaybounds" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 2048.0, 2048.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataRestoreimagedisplayid> a ns1:Annotation ;
+<GlobalMetadataRestoreimagedisplayid> a oa:Annotation ;
     rdfs:label "Global Metadata restoreimagedisplayid" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 8e+00 ] .
 
-<GlobalMetadataSaturationLevelCounts> a ns1:Annotation ;
+<GlobalMetadataSaturationLevelCounts> a oa:Annotation ;
     rdfs:label "Global Metadata saturation level (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e+04 ] .
 
-<GlobalMetadataScale> a ns1:Annotation ;
+<GlobalMetadataScale> a oa:Annotation ;
     rdfs:label "Global Metadata scale" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "1.0, 1.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataScreenRelativePosition> a ns1:Annotation ;
+<GlobalMetadataScreenRelativePosition> a oa:Annotation ;
     rdfs:label "Global Metadata screen relative position" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "1.0, 0.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataSecondaryShutterPostExposureCompensationS> a ns1:Annotation ;
+<GlobalMetadataSecondaryShutterPostExposureCompensationS> a oa:Annotation ;
     rdfs:label "Global Metadata secondary shutter post exposure compensation (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSecondaryShutterPreExposureCompensationS> a ns1:Annotation ;
+<GlobalMetadataSecondaryShutterPreExposureCompensationS> a oa:Annotation ;
     rdfs:label "Global Metadata secondary shutter pre exposure compensation (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSecondaryShutterStates> a ns1:Annotation ;
+<GlobalMetadataSecondaryShutterStates> a oa:Annotation ;
     rdfs:label "Global Metadata secondary shutter states" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSecondaryShutterStatesMask> a ns1:Annotation ;
+<GlobalMetadataSecondaryShutterStatesMask> a oa:Annotation ;
     rdfs:label "Global Metadata secondary shutter states mask" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSegmentFlags> a ns1:Annotation ;
+<GlobalMetadataSegmentFlags> a oa:Annotation ;
     rdfs:label "Global Metadata segment flags" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+00 ] .
 
-<GlobalMetadataSequenceIdleShutterState> a ns1:Annotation ;
+<GlobalMetadataSequenceIdleShutterState> a oa:Annotation ;
     rdfs:label "Global Metadata sequence idle shutter state" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSerBin> a ns1:Annotation ;
+<GlobalMetadataSerBin> a oa:Annotation ;
     rdfs:label "Global Metadata ser bin" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSerClr> a ns1:Annotation ;
+<GlobalMetadataSerClr> a oa:Annotation ;
     rdfs:label "Global Metadata ser clr" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.12e+03 ] .
 
-<GlobalMetadataSerPostBlank> a ns1:Annotation ;
+<GlobalMetadataSerPostBlank> a oa:Annotation ;
     rdfs:label "Global Metadata ser post blank" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSerPreBlank> a ns1:Annotation ;
+<GlobalMetadataSerPreBlank> a oa:Annotation ;
     rdfs:label "Global Metadata ser pre blank" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.3e+01 ] .
 
-<GlobalMetadataSerRead> a ns1:Annotation ;
+<GlobalMetadataSerRead> a oa:Annotation ;
     rdfs:label "Global Metadata ser read" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.057e+03 ] .
 
-<GlobalMetadataSerSkip> a ns1:Annotation ;
+<GlobalMetadataSerSkip> a oa:Annotation ;
     rdfs:label "Global Metadata ser skip" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataShutterExposure> a ns1:Annotation ;
+<GlobalMetadataShutterExposure> a oa:Annotation ;
     rdfs:label "Global Metadata shutter exposure" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataShutterIndex> a ns1:Annotation ;
+<GlobalMetadataShutterIndex> a oa:Annotation ;
     rdfs:label "Global Metadata shutter index" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataShutterPostExposureCompensationS> a ns1:Annotation ;
+<GlobalMetadataShutterPostExposureCompensationS> a oa:Annotation ;
     rdfs:label "Global Metadata shutter post exposure compensation (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataShutterPreExposureCompensationS> a ns1:Annotation ;
+<GlobalMetadataShutterPreExposureCompensationS> a oa:Annotation ;
     rdfs:label "Global Metadata shutter pre exposure compensation (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataShutterState> a ns1:Annotation ;
+<GlobalMetadataShutterState> a oa:Annotation ;
     rdfs:label "Global Metadata shutter state" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSize> a ns1:Annotation ;
+<GlobalMetadataSize> a oa:Annotation ;
     rdfs:label "Global Metadata size" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.6e+01 ] .
 
-<GlobalMetadataSource> a ns1:Annotation ;
+<GlobalMetadataSource> a oa:Annotation ;
     rdfs:label "Global Metadata source" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Gatan CCD camera"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataSourcesizePixels> a ns1:Annotation ;
+<GlobalMetadataSourcesizePixels> a oa:Annotation ;
     rdfs:label "Global Metadata sourcesize_pixels" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "683.0, 683.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataSparsesurveyGridsize> a ns1:Annotation ;
+<GlobalMetadataSparsesurveyGridsize> a oa:Annotation ;
     rdfs:label "Global Metadata sparsesurvey_gridsize" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.6e+01 ] .
 
-<GlobalMetadataSparsesurveyNumberpixels> a ns1:Annotation ;
+<GlobalMetadataSparsesurveyNumberpixels> a oa:Annotation ;
     rdfs:label "Global Metadata sparsesurvey_numberpixels" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.2e+01 ] .
 
-<GlobalMetadataSparsesurveyUsenumberpixels> a ns1:Annotation ;
+<GlobalMetadataSparsesurveyUsenumberpixels> a oa:Annotation ;
     rdfs:label "Global Metadata sparsesurvey_usenumberpixels" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSpecimen> a ns1:Annotation ;
+<GlobalMetadataSpecimen> a oa:Annotation ;
     rdfs:label "Global Metadata specimen" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "OPB4 E3"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataStandardDeviationCounts> a ns1:Annotation ;
+<GlobalMetadataStandardDeviationCounts> a oa:Annotation ;
     rdfs:label "Global Metadata standard deviation (counts)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 7.843915e+00 ] .
 
-<GlobalMetadataStemCameraLength> a ns1:Annotation ;
+<GlobalMetadataStemCameraLength> a oa:Annotation ;
     rdfs:label "Global Metadata stem camera length" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataSubAreaAdjust> a ns1:Annotation ;
+<GlobalMetadataSubAreaAdjust> a oa:Annotation ;
     rdfs:label "Global Metadata sub area adjust" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 0.0, 0.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataSurveytechique> a ns1:Annotation ;
+<GlobalMetadataSurveytechique> a oa:Annotation ;
     rdfs:label "Global Metadata surveytechique" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+00 ] .
 
-<GlobalMetadataSystemInfo> a ns1:Annotation ;
+<GlobalMetadataSystemInfo> a oa:Annotation ;
     rdfs:label "Global Metadata system info" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1.308273e+17 ] .
 
-<GlobalMetadataTagPath> a ns1:Annotation ;
+<GlobalMetadataTagPath> a oa:Annotation ;
     rdfs:label "Global Metadata tag path" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Microscope Info:XY"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataTargetIntensity> a ns1:Annotation ;
+<GlobalMetadataTargetIntensity> a oa:Annotation ;
     rdfs:label "Global Metadata target intensity (%)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 5e+01 ] .
 
-<GlobalMetadataTargetdisplayid> a ns1:Annotation ;
+<GlobalMetadataTargetdisplayid> a oa:Annotation ;
     rdfs:label "Global Metadata targetdisplayid" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value -1e+00 ] .
 
-<GlobalMetadataTestExposureS> a ns1:Annotation ;
+<GlobalMetadataTestExposureS> a oa:Annotation ;
     rdfs:label "Global Metadata test exposure (s)" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 1e-01 ] .
 
-<GlobalMetadataTextoffseth> a ns1:Annotation ;
+<GlobalMetadataTextoffseth> a oa:Annotation ;
     rdfs:label "Global Metadata textoffseth" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataTextoffsetv> a ns1:Annotation ;
+<GlobalMetadataTextoffsetv> a oa:Annotation ;
     rdfs:label "Global Metadata textoffsetv" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataTextwidth> a ns1:Annotation ;
+<GlobalMetadataTextwidth> a oa:Annotation ;
     rdfs:label "Global Metadata textwidth" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3e+02 ] .
 
-<GlobalMetadataUniqueid> a ns1:Annotation ;
+<GlobalMetadataUniqueid> a oa:Annotation ;
     rdfs:label "Global Metadata uniqueid" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 8e+00 ] .
 
-<GlobalMetadataUnits> a ns1:Annotation ;
+<GlobalMetadataUnits> a oa:Annotation ;
     rdfs:label "Global Metadata units" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "nm"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataValue> a ns1:Annotation ;
+<GlobalMetadataValue> a oa:Annotation ;
     rdfs:label "Global Metadata value" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "JEM-2200FS"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataVersion> a ns1:Annotation ;
+<GlobalMetadataVersion> a oa:Annotation ;
     rdfs:label "Global Metadata version" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 3.381658e+07 ] .
 
-<GlobalMetadataVerticalFlip> a ns1:Annotation ;
+<GlobalMetadataVerticalFlip> a oa:Annotation ;
     rdfs:label "Global Metadata vertical flip" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
-<GlobalMetadataViewName> a ns1:Annotation ;
+<GlobalMetadataViewName> a oa:Annotation ;
     rdfs:label "Global Metadata view name" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "Frame"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataViewdisplayid> a ns1:Annotation ;
+<GlobalMetadataViewdisplayid> a oa:Annotation ;
     rdfs:label "Global Metadata viewdisplayid" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 8e+00 ] .
 
-<GlobalMetadataViewerClass> a ns1:Annotation ;
+<GlobalMetadataViewerClass> a oa:Annotation ;
     rdfs:label "Global Metadata viewer class" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "acquire"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataVoltage> a ns1:Annotation ;
+<GlobalMetadataVoltage> a oa:Annotation ;
     rdfs:label "Global Metadata voltage" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 2e+05 ] .
 
-<GlobalMetadataWindowRelativePosition> a ns1:Annotation ;
+<GlobalMetadataWindowRelativePosition> a oa:Annotation ;
     rdfs:label "Global Metadata window relative position" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "1.0, 0.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataWindowposition> a ns1:Annotation ;
+<GlobalMetadataWindowposition> a oa:Annotation ;
     rdfs:label "Global Metadata windowposition" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "104.0, 260.0, 787.0, 943.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataWindowrect> a ns1:Annotation ;
+<GlobalMetadataWindowrect> a oa:Annotation ;
     rdfs:label "Global Metadata windowrect" ;
-    ns1:hasBody [ a qudt:TextualBody ;
+    oa:hasBody [ a qudt:TextualBody ;
             qudt:value "0.0, 0.0, 683.0, 683.0"^^xsd:string ;
-            ns1:purpose ns1:tagging ] .
+            oa:purpose oa:tagging ] .
 
-<GlobalMetadataZoom> a ns1:Annotation ;
+<GlobalMetadataZoom> a oa:Annotation ;
     rdfs:label "Global Metadata zoom" ;
-    ns1:hasBody [ a qudt:QuantityValue ;
+    oa:hasBody [ a qudt:QuantityValue ;
             qudt:value true ] .
 
 [] a ome:Detail ;

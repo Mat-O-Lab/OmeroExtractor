@@ -158,32 +158,61 @@ foaf:family_name :ome_type "LastName".
 foaf:mbox :ome_type "Email".
 foaf:accountName :ome_type "UserName".
 
-:datasets :ome_type "url:datasets".
-:rois :ome_type "url:rois".
+:datasets a owl:AnnotationProperty ;
+  :ome_type "url:datasets".
 
-:permissions_str :ome_type "perm" ;
+:rois a owl:AnnotationProperty ;
+  :ome_type "url:rois".
+
+:url a owl:AnnotationProperty ;
+  rdfs:label "url"@en ;
+  skos:definition "Link to the original metadata api endpoint.".
+
+:permissions_str a owl:AnnotationProperty ;
+  :ome_type "perm" ;
   rdfs:range xsd:string .
 
-:canAnnotate :ome_type "canAnnotate" ;
+:canAnnotate a owl:AnnotationProperty ;
+  :ome_type "canAnnotate" ;
   rdfs:range xsd:boolean .
-:canDelete :ome_type "canDelete" ;
+
+:canDelete a owl:AnnotationProperty ;
+  :ome_type "canDelete" ;
   rdfs:range xsd:boolean .
-:canEdit :ome_type "canEdit" ;
+
+:canEdit a owl:AnnotationProperty ;
+  :ome_type "canEdit" ;
   rdfs:range xsd:boolean .
-:canLink :ome_type "canLink" ;
+
+:canLink a owl:AnnotationProperty ;
+  :ome_type "canLink" ;
   rdfs:range xsd:boolean .
-:isWorldWrite :ome_type "isWorldWrite" ;
+
+:isWorldWrite a owl:AnnotationProperty ;
+  :ome_type "isWorldWrite" ;
   rdfs:range xsd:boolean .
-:isWorldRead :ome_type "isWorldRead" ;
+
+:isWorldRead a owl:AnnotationProperty ;
+  :ome_type "isWorldRead" ;
   rdfs:range xsd:boolean .
-:isGroupWrite :ome_type "isGroupWrite" ;
+
+:isGroupWrite a owl:AnnotationProperty ;
+  :ome_type "isGroupWrite" ;
   rdfs:range xsd:boolean .
-:isGroupRead :ome_type "isGroupRead" ;
+
+:isGroupRead a owl:AnnotationProperty ;
+  :ome_type "isGroupRead" ;
   rdfs:range xsd:boolean .
-:isGroupAnnotate :ome_type "isGroupAnnotate" ;
+
+:isGroupAnnotate a owl:AnnotationProperty ;
+  :ome_type "isGroupAnnotate" ;
   rdfs:range xsd:boolean .
-:isUserWrite :ome_type "isUserWrite" ;
+
+:isUserWrite a owl:AnnotationProperty ;
+  :ome_type "isUserWrite" ;
   rdfs:range xsd:boolean .
-:isUserRead :ome_type "isUserRead" ;
+
+:isUserRead a owl:AnnotationProperty ;
+  :ome_type "isUserRead" ;
   rdfs:range xsd:boolean .
 
