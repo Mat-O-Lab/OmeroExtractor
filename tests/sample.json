@@ -1,0 +1,291 @@
+{
+    "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Image",
+    "@id": 92,
+    "omero:details": {
+        "@type": "TBD#Details",
+        "owner": {
+            "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+            "@id": 52,
+            "omero:details": {
+                "@type": "TBD#Details",
+                "permissions": {
+                    "@type": "TBD#Permissions",
+                    "perm": "rw----",
+                    "canAnnotate": true,
+                    "canDelete": false,
+                    "canEdit": false,
+                    "canLink": true,
+                    "isWorldWrite": false,
+                    "isWorldRead": false,
+                    "isGroupWrite": false,
+                    "isGroupRead": false,
+                    "isGroupAnnotate": false,
+                    "isUserWrite": true,
+                    "isUserRead": true
+                }
+            },
+            "FirstName": "Zia",
+            "MiddleName": "",
+            "LastName": "Ghezal Ahmad",
+            "Email": "",
+            "UserName": "ghezal-ahmad.zia@bam.de"
+        },
+        "group": {
+            "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+            "@id": 53,
+            "omero:details": {
+                "@type": "TBD#Details",
+                "permissions": {
+                    "@type": "TBD#Permissions",
+                    "perm": "rwr---",
+                    "canAnnotate": true,
+                    "canDelete": false,
+                    "canEdit": false,
+                    "canLink": true,
+                    "isWorldWrite": false,
+                    "isWorldRead": false,
+                    "isGroupWrite": false,
+                    "isGroupRead": true,
+                    "isGroupAnnotate": false,
+                    "isUserWrite": true,
+                    "isUserRead": true
+                }
+            },
+            "Name": "matolab"
+        },
+        "permissions": {
+            "@type": "TBD#Permissions",
+            "perm": "rwr---",
+            "canAnnotate": false,
+            "canDelete": false,
+            "canEdit": false,
+            "canLink": false,
+            "isWorldWrite": false,
+            "isWorldRead": false,
+            "isGroupWrite": false,
+            "isGroupRead": true,
+            "isGroupAnnotate": false,
+            "isUserWrite": true,
+            "isUserRead": true
+        }
+    },
+    "Name": "190C-2500h_Sample2_Stelle2 DF 30s Spot 3 alpha 1 deltaE 15eV.dm3",
+    "omero:series": 0,
+    "Pixels": {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Pixels",
+        "@id": 92,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 52,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rw----",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FirstName": "Zia",
+                "MiddleName": "",
+                "LastName": "Ghezal Ahmad",
+                "Email": "",
+                "UserName": "ghezal-ahmad.zia@bam.de"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 53,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "matolab"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "PhysicalSizeX": {
+            "@type": "TBD#LengthI",
+            "Unit": "NANOMETER",
+            "Symbol": "nm",
+            "Value": 0.2928469777107239
+        },
+        "PhysicalSizeY": {
+            "@type": "TBD#LengthI",
+            "Unit": "NANOMETER",
+            "Symbol": "nm",
+            "Value": 0.2928469777107239
+        },
+        "omero:sha1": "66d27ec04419253f5efa743e0b16b063c2e1c489",
+        "SignificantBits": 32,
+        "SizeX": 1024,
+        "SizeY": 1024,
+        "SizeZ": 1,
+        "SizeC": 1,
+        "SizeT": 1,
+        "Type": {
+            "@type": "TBD#PixelsType",
+            "@id": 4,
+            "omero:details": {
+                "@type": "TBD#Details",
+                "permissions": {
+                    "@type": "TBD#Permissions",
+                    "perm": "rwr-r-",
+                    "canAnnotate": true,
+                    "canDelete": false,
+                    "canEdit": false,
+                    "canLink": true,
+                    "isWorldWrite": false,
+                    "isWorldRead": true,
+                    "isGroupWrite": false,
+                    "isGroupRead": true,
+                    "isGroupAnnotate": false,
+                    "isUserWrite": true,
+                    "isUserRead": true
+                }
+            },
+            "value": "int32"
+        },
+        "Channels": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Channel",
+                "@id": 92,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 52,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rw----",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "FirstName": "Zia",
+                        "MiddleName": "",
+                        "LastName": "Ghezal Ahmad",
+                        "Email": "",
+                        "UserName": "ghezal-ahmad.zia@bam.de"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 53,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "matolab"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Color": -2139062017,
+                "omero:LogicalChannelId": 92,
+                "SamplesPerPixel": 1,
+                "omero:photometricInterpretation": {
+                    "@type": "TBD#PhotometricInterpretation",
+                    "@id": 5,
+                    "omero:details": {
+                        "@type": "TBD#Details",
+                        "permissions": {
+                            "@type": "TBD#Permissions",
+                            "perm": "rwr-r-",
+                            "canAnnotate": true,
+                            "canDelete": false,
+                            "canEdit": false,
+                            "canLink": true,
+                            "isWorldWrite": false,
+                            "isWorldRead": true,
+                            "isGroupWrite": false,
+                            "isGroupRead": true,
+                            "isGroupAnnotate": false,
+                            "isUserWrite": true,
+                            "isUserRead": true
+                        }
+                    },
+                    "value": "Monochrome"
+                }
+            }
+        ]
+    },
+    "url:datasets": "https://omero.matolab.org/api/v0/m/images/92/datasets/",
+    "url:rois": "https://omero.matolab.org/api/v0/m/images/92/rois/",
+    "original_meta": "[Global Metadata]\nAcquisition Date=09.10.2015\nAcquisition Start Time (epoch)=1.44439358414E12\nAcquisition Time=14:26:24\nAcquisition Write Flags=-1.0\nActive Size (pixels)=2048.0, 2048.0\nActual Magnification=95613.07485187222\nADC Max=65535.0\nADC Min=0.0\nAnnotationType=20.0\nAntiblooming=0.0\nApplicationBounds=0.0, 0.0, 915.0, 1280.0\nApplied=1.0\nAttributes=7.0\nBackgroundColor=-1.0, 0.0, 0.0\nBackgroundMode=512.0\nBias (counts)=1000.0\nbias post blank=38.0\nbias pre blank=28.0\nbias read=82.0\nbias skip=0.0\nBinning=4.0, 4.0\nBrightColor=-1.0, -1.0, -1.0\nBrightness=0.5\nCamera Number=0.0\nCaptionOn=0.0\nCaptionSize=3072.0\nCCD Read Area=0.0, 0.0, 2048.0, 2048.0\nCCD Read Ports=15.0\nChoose Number Of Frame Shutters Automatically=1.0\nClass Name=cm_focusloupe\nClassName=ImageSource:Simple\nCLUTName=Greyscale\nComplexMode=4.0\nComplexRange=1000.0\nContinuous Readout=1.0\nContrast=0.5\nContrastMode=1.0\nCorrections=821.0\nCorrections Mask=821.0\nCs(mm)=1.0\nDark Current (counts/s)=0.0\nDark Level (counts)=1000.0\nData Type=20.0\nDataType=7.0\nDevice Name=Gatan CCD camera\nDiagonal Flip=0.0\nDisplayCalibratedUnits=1.0\nDo Auto Expose=0.0\nDo Auto Zoom=0.0\nDo Continuous Readout=1.0\nDoAutoSurvey=0.0\nDoIntegralZoom=0.0\nEmission Current (\u00b5A)=0.0\nEstimatedMax=-7.0\nEstimatedMaxTrimPercentage=0.0\nEstimatedMin=305.0\nEstimatedMinTrimPercentage=0.0\nExposure (s)=0.03125\nExposure Number=100541.0\nExposure Start (ns)=3.295497475990296E10\nExposure Time (ns)=1.0000308E8\nExposure Time (s)=0.1\nFamilyName=Arial\nFillMode=256.0\nForegroundColor=0.0, -1.0, 0.0\nFrame Combine Style=Copy\nframe idle shutter state=1.0\nFrame Index=140.0\nFrame Start (ns)=3.2953897439967384E10\nFrame Time (ns)=5.9916116E8\nGamma=0.5\nGeneral=1.0, 72.0, 612.0, 792.0, 36.0, 36.0, -36.0, -36.0\nHasBackground=0.0\nHasWindowPosition=1.0\nHighLimit=284.0\nHiLimitContrastDeltaTriggerPercentage=0.0\nHorizontal Flip=0.0\nIllumination Mode=TEM\nImageDisplayBounds=0.0, 0.0, 512.0, 512.0\nImageDisplayType=1.0\nImageIndex=0.0\nImageRef=1.0\nImageSource=0.0\nImaging Mode=MAG1\nIndicated Magnification=60000.0\nInImageMode=1.0\nIsInverted=0.0\nIsMoveable=1.0\nIsResizable=1.0\nIsSelectable=1.0\nIsTranslatable=1.0\nIsVisible=1.0\nIsZoomedToWindow=0.0\nkind=readout\nLabel=XY\nLayedOut=0.0\nLoupe Area (CCD)=288.0, 796.0, 808.0, 1312.0\nLower Threshold (%)=20.0\nLowLimit=-8.0\nLowLimitContrastDeltaTriggerPercentage=0.0\nMagnification Interpolated=0.0\nMaximum Exposure (s)=1.0\nMaximum Value (counts)=65535.0\nMean (counts)=1000.7556524276733\nMicroscope=JEM-2200FS\nMinimum Exposure (s)=0.05\nMinimum Value (counts)=0.0\nMinimumContrast=0.0\nMode Name=Imaging\nName=Stelle2 DF 30s Spot 3 alpha 1 deltaE 15eV\nNextDocumentObjectID=10.0\nnum accumulate units=2500000.0\nnum blocks=1.0\nnum frames=8000000.0\nnum rows=0.0\nNumber Of Frame Shutters=1.0\nOffset=0.0, 0.0\nOperation Mode=IMAGING\nOperator=Agudo\nOrigin=0.0\noutput source=15.0\npar bin=2.0\npar post blank=0.0\npar pre blank=8.0\npar read=520.0\nParameter Set Name=Search\nParameter Set Tag Path=Imaging:View:Search\nPixel Size (um)=28.0, 28.0\nPixelDepth=4.0\nPrimary Shutter States=0.0\nPrimary Shutter States Mask=0.0\nProbe Current (nA)=0.0\nProbe Size (nm)=0.0\nProcessing=Gain Normalized\nProcessing Position=precorrection\nQuality Level=0.0\nRangeAdjust=1.0\nread flags=1.0\nRead Frame Style=0.0\nRead Frame Window=1.0\nRead Mode=0.0\nread mode=0.0\nread section index=0.0\nReadout Time (ns)=4.9808076E8\nReads Per Acquire=1.0\nRectangle=0.0, 0.0, 512.0, 512.0\nRequired Data Characteristics=3.0\nRequiredVersion=5.0659328E7\nRestoreImageDisplayBounds=0.0, 0.0, 1024.0, 1024.0\nRestoreImageDisplayID=8.0\nSaturation Level (counts)=50000.0\nScale=1.0, 1.0\nScreen Relative Position=0.0, 0.0\nSecondary Shutter Post Exposure Compensation (s)=0.0\nSecondary Shutter Pre Exposure Compensation (s)=0.0\nSecondary Shutter States=0.0\nSecondary Shutter States Mask=0.0\nsegment flags=2.0\nsequence idle shutter state=1.0\nser bin=2.0\nser clr=1120.0\nser post blank=0.0\nser pre blank=18.0\nser read=530.0\nser skip=0.0\nShutter Exposure=0.0\nShutter Index=0.0\nShutter Post Exposure Compensation (s)=0.0\nShutter Pre Exposure Compensation (s)=0.0\nshutter state=1.0\nSize=36.0\nSource=Gatan CCD camera\nSourceSize_Pixels=512.0, 512.0\nSparseSurvey_GridSize=16.0\nSparseSurvey_NumberPixels=32.0\nSparseSurvey_UseNumberPixels=1.0\nSpecimen=OPB4 E3\nStandard Deviation (counts)=5.477428677911726\nSTEM Camera Length=10.0\nSub Area Adjust=0.0, 0.0, 0.0, 0.0\nSurveyTechique=2.0\nSystem Info=1.3088867184125E17\nTag path=Microscope Info:XY\nTarget Intensity (%)=50.0\nTargetDisplayID=-1.0\nTextOffsetH=1.0\nTextOffsetV=1.0\nTextWidth=200.0\nUniqueID=8.0\nUnits=nm\nUpdate Interval (s)=0.1\nUpper Threshold (%)=90.0\nValue=JEM-2200FS\nVersion=3.3816576E7\nVertical Flip=0.0\nView Name=View\nViewDisplayID=8.0\nViewer Class=view\nVoltage=200000.0\nWindow Relative Position=0.0, 0.0\nWindowPosition=28.0, 177.0, 540.0, 689.0\nWindowRect=0.0, 0.0, 512.0, 512.0\nZoom=1.0\n[Series Metadata"
+}

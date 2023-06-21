@@ -176,14 +176,23 @@ async def imagemeta(apirequest: ApiRequest) -> dict:
     if not session:
         return {}
     url, image_meta = session.get_image_meta(apirequest.image_id)
+    image_meta=image_meta['data']
     original_meta = session.get_original_image_meta(apirequest.image_id)
     #add original_meta to json
-    print(original_meta)
-    image_meta[ome_parser.OME_SOURCE_URL+'original_meta']=original_meta
+    #print(original_meta)
+    image_meta['original_meta']=original_meta
+    # Serializing json
+    json_object = json.dumps(image_meta, indent=4)
+    
+    # Writing to sample.json
+    with open("tests/sample.json", "w") as outfile:
+        outfile.write(json_object)
+    
     converter=ome_parser.OMEtoRDF(image_meta, url)
     result=converter.to_rdf()
+    #result.serialize(format='turtle', destination='sample2.ttl',auto_compact=True,indent=4)
     return json.loads(result.serialize(format='json-ld',auto_compact=True,indent=4))
-
+    
 
 @app.get("/info", response_model=Settings)
 async def info() -> dict:

@@ -5,77 +5,23 @@ from rdflib.namespace import OWL, RDF
 
 from urllib.request import urlopen
 from urllib.parse import urlparse, unquote
+import configparser
 
 OME_SOURCE = './ome.ttl'
-OME_SOURCE_URL="https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml#"
-OME = Namespace(OME_SOURCE_URL)
-OME_XSD_URL='http://www.openmicroscopy.org/Schemas/OME/2016-06#'
+OME_SOURCE_URL="https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml"
+OME = Namespace(OME_SOURCE_URL+"#")
 
+ome_original_meta=URIRef('original_meta')
 
 ome_graph = Graph()
 ome_graph.parse(OME_SOURCE, format='turtle')
 
-
-def map_object(object: dict,graph: Graph, root: URIRef):
-    entry=BNode()
-    type=''        
-    for k, v in object.items():
-        short_iri=k.rsplit('#',1)[-1].rsplit(':',1)[-1]
-        lookup=URIRef(OME_SOURCE_URL+short_iri)
-
-        hit=next(ome_graph[lookup:],'')
-        print('root: {} key: {} value: {} lookup: {}'.format(root,k,v,lookup))
-        print(hit)
-        if isinstance(v, dict):
-            #print('is dict -> recursiv')
-            if hit:
-                target=BNode()
-                print('creating: {} {} {}'.format(entry,hit[0],target))
-                graph.add((entry,lookup,target))
-                map_object(v,graph,target)
-            else:
-                map_object(v,graph,root)
-        else:
-            if short_iri=='@id':
-                entry_with_id=URIRef(str(v))
-                for po in graph[entry::]:
-                    print('creating: {} {} {}'.format(entry_with_id,po[0],po[1]))
-                    graph.add((entry_with_id,po[0],po[1]))
-                    graph.remove((entry,None, None))
-                entry=entry_with_id
-            elif short_iri=='@type':
-                type=URIRef(v)
-            elif hit:
-                value=Literal(v)
-                print('creating: {} {} {}'.format(entry,hit[1],value))
-                graph.add((entry,lookup,value))
-            elif k=='Value':
-                value=Literal(v)
-                print('creating: {} {} {}'.format(entry,RDF.value,value))
-                graph.add((entry,RDF.value,value))
-            else:
-                #add also not found entities - additional ontology work is needed
-                value=Literal(v)
-                print('entity {} not found, adding as property'.format(lookup))
-                print('creating: {} {} {}'.format(entry,lookup,value))
-                graph.add((entry,lookup,value))
-
-        if type:
-            graph.add((entry,RDF.type,type))
-            #remove Bnode and reconnect new one
-            for sp in graph[::root]:
-                graph.add((sp[0],sp[1],entry))
-                graph.remove((None,None, root))
-        # if k=="omero:details":
-        #     break
-                
-            # if (entry, RDF.type, OWL.Class) in ome_graph:
-            #     print("Ome Ontology Class entity for {} found.".format(short_iri))
-            # elif (entry, RDF.type, OWL.ObjectProperty) in ome_graph:
-            #     print("Ome Ontology object property entity for {} found.".format(short_iri))
-            # else:
-            #     print("Ome Ontology entity for {} not found.".format(short_iri))#
-    return graph
+def get_entity_type(string: str):
+    hits = list(ome_graph[:OME.ome_type:Literal(string)])
+    if hits:
+        return hits[0]
+    else:
+        return None
 
 class OMEtoRDF:
     """Class for Converting OME meta data json to RDF with help of OME Ontology.
@@ -83,16 +29,124 @@ class OMEtoRDF:
     def __init__(self,json_dict: dict={}, root_url: str='') -> None:
         #print(json_dict.keys())
         self.data=json_dict#.get('data',None)
-        self.original_meta=json_dict.get('original_meta',None)
         self.root=URIRef(root_url)
         #print(self.root_url)
         self.graph=Graph()
-        self.graph.bind('ome',OME_SOURCE_URL)
         #print(list(ome_graph[: RDF.type:]))
         
     def to_rdf(self):
-        print('start mapping\n\n\n\n\n\n')
-        target=BNode()
-        self.graph.add((self.root,OME.Image,target))
-        self.graph=map_object(self.data,self.graph,target)
+        print('start mapping2\n\n\n\n\n\n')
+        self.graph = Graph()
+        #result.bind('data', _get_ns(base_url))
+        iterate_json(self.data, self.graph, base_url=self.root)
+        self.graph.bind('ome',OME)
+        self.graph = fix_iris(self.graph, base_url=self.root)
         return self.graph
+
+
+def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
+    if isinstance(data, dict):
+        # lookup if the id and type in dict result in a ontology entity
+        entity, e_class, parent = create_instance_triple(data, base_url=base_url)
+        #print(entity,e_class,parent)
+        if entity and e_class:
+            # if the entity is a Identifier, only create it if it relates to entity previously created
+            #print('create entity: {} {}'.format(entity,e_class))
+            #print('last entity: {} {}'.format(last_entity,relation))
+            graph.add((entity, RDF.type, e_class))
+            if last_entity and relation:
+                #print('create relation: {} {} {}'.format(last_entity,relation,entity))
+                graph.add((last_entity, relation, entity))
+            else:
+                print('missing relation: {} {} {} {}'.format(last_entity,e_class,relation,entity))
+            for key, value in data.items():
+                if key in ["@type", "@id"]:
+                    #alrady handled
+                    continue
+                relation = get_entity_type(key)
+                #print("key: {}".format(key),"relation: {}".format(relation))
+                # if the key is properties all json keys in that dict are relations to openbis properties followed by there values
+                if isinstance(value, dict):
+                    #print('a dict at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
+                    # recursively inter over all json objects
+                    iterate_json(value, graph, last_entity=entity, relation=relation, base_url=base_url)
+                    # add the ObjectProperty to the created instance
+                        
+                elif isinstance(value, list):
+                    #print('a list at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
+                    # recursively inter over all json objects
+                    iterate_json(value, graph, last_entity=entity, relation=relation, base_url=base_url)
+                    # see if an entity is created and relate it if necessary
+                else:
+                    # if its no dict or list test if its kind of object/data/annotation property and set it
+                    if (value or isinstance(value,bool)) and relation:
+                        graph.add((entity, relation, Literal(value)))
+                    elif not relation:
+                        print('missing relation to Literal: {} {} {}'.format(entity,relation,value))
+            
+    elif isinstance(data, list):
+        for item in data:
+            iterate_json(item, graph, last_entity=last_entity, relation=relation, base_url=base_url)
+
+
+def replace_iris(old: URIRef, new: URIRef, graph: Graph):
+    # replaces all iri of all triple in a graph with the value of relation
+    old_triples = list(graph[old: None: None])
+    for triple in old_triples:
+        graph.remove((old, triple[0], triple[1]))
+        graph.add((new, triple[0], triple[1]))
+    old_triples = list(graph[None: None: old])
+    for triple in old_triples:
+        graph.remove((triple[0], triple[1], old))
+        graph.add((triple[0], triple[1], new))
+    old_triples = list(graph[None: old: None])
+    for triple in old_triples:
+        graph.remove((triple[0], old, triple[1]))
+        graph.add((triple[0], new, triple[1]))
+
+
+def fix_iris(graph, base_url=None):
+    #replace int iris with permids if possible
+    # for permid in graph[: RDF.type: OBIS.PermanentIdentifier]:
+    #     permid_value = graph.value(permid, RDF.value)
+    #     identifies = graph.value(permid, OBIS.is_identifier_of)
+    #     identifies_type = graph.value(identifies, RDF.type)
+    #     type_str = identifies_type.split('/')[-1].lower()
+    #     #print(identifies,identifies_type)
+    #     if identifies_type in [OWL.Class]:
+    #         type_str='class'
+    #     elif identifies_type in [OWL.ObjectProperty]:
+    #         type_str='object_property'
+    #     graph.bind(type_str,_get_ns(base_url)[f'{type_str}/'])
+    #     new = URIRef(f'{type_str}/{permid_value}',_get_ns(base_url))
+    #     replace_iris(identifies, new, graph)
+    #     #print(identifies,new)
+
+    # replace iri of created object properties with value of code if possible
+    # for property in graph[: RDF.type: OWL.ObjectProperty]:
+    #     code_value = graph.value(property, OBIS.code)
+    #     if code_value:
+    #         new = _get_ns(base_url)[code_value]
+    #         replace_iris(property, new, graph)
+
+    # for identifier in graph[: RDF.type: OBIS.Identifier]:
+    #     replace_iris(identifier, BNode(), graph)
+    # for identifier in graph[: RDF.type: OBIS.PermanentIdentifier]:
+    #     replace_iris(identifier, BNode(), graph)
+    return graph
+
+def create_instance_triple(data: dict, base_url=None):
+    entity=None
+    o_class=None
+    parent=None
+    #print( data.keys())
+    if all(prop in data.keys() for prop in ['@type']):
+        o_class = get_entity_type(data['@type'])
+        if o_class:
+            #entity=URIRef(instance_id, TEMP)
+            entity=BNode()
+        # if data['@type']=='as.dto.sample.SampleType':
+        #     parent=OBIS.Object
+        # elif data['@type']=='as.dto.experiment.ExperimentType':
+        #     parent=OBIS.Collection
+    return entity, o_class, parent
