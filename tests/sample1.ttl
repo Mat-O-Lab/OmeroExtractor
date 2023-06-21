@@ -9,10 +9,58 @@
 
 <> a ome:Image ;
     rdfs:label "01_CuZn23Si25_5_LiMi-Leica_5x_HF.tif" ;
-    prov:generatedAtTime "2023-06-21T16:48:29.634664"^^xsd:dateTime ;
+    prov:generatedAtTime "2023-06-21T17:04:15.637474"^^xsd:dateTime ;
     prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/imagemeta> ;
     ome:datasets "https://omero.matolab.org/api/v0/m/images/1/datasets/" ;
-    ome:relates_to [ a [ a ome:PixelsType ;
+    ome:download "https://omero.matolab.org/webgateway/archived_files/download/1"^^xsd:anyURI ;
+    ome:relates_to [ a ome:Detail ;
+            dc:creator [ ] ;
+            ome:relates_to [ a ome:Group ;
+                    rdfs:label "kupferdigital" ;
+                    ome:relates_to [ a ome:Detail ;
+                            ome:relates_to [ a ome:Permissions ;
+                                    ome:canAnnotate true ;
+                                    ome:canDelete false ;
+                                    ome:canEdit false ;
+                                    ome:canLink true ;
+                                    ome:isGroupAnnotate false ;
+                                    ome:isGroupRead true ;
+                                    ome:isGroupWrite false ;
+                                    ome:isUserRead true ;
+                                    ome:isUserWrite true ;
+                                    ome:isWorldRead false ;
+                                    ome:isWorldWrite false ;
+                                    ome:permissions_str "rwr---" ] ] ],
+                [ a ome:Permissions ;
+                    ome:canAnnotate false ;
+                    ome:canDelete false ;
+                    ome:canEdit false ;
+                    ome:canLink false ;
+                    ome:isGroupAnnotate false ;
+                    ome:isGroupRead true ;
+                    ome:isGroupWrite false ;
+                    ome:isUserRead true ;
+                    ome:isUserWrite true ;
+                    ome:isWorldRead false ;
+                    ome:isWorldWrite false ;
+                    ome:permissions_str "rwr---" ] ],
+        [ a ome:OriginalMeta ;
+            ome:notes <GlobalMetadataBitspersample>,
+                <GlobalMetadataCompression>,
+                <GlobalMetadataImagelength>,
+                <GlobalMetadataImagewidth>,
+                <GlobalMetadataMetadataphotometricinterpretation>,
+                <GlobalMetadataMetamorph>,
+                <GlobalMetadataNumberofchannels>,
+                <GlobalMetadataOrientation>,
+                <GlobalMetadataPhotometricinterpretation>,
+                <GlobalMetadataPlanarconfiguration>,
+                <GlobalMetadataResolutionunit>,
+                <GlobalMetadataSamplesperpixel>,
+                <GlobalMetadataSoftware>,
+                <GlobalMetadataXresolution>,
+                <GlobalMetadataYresolution> ],
+        [ a [ a ome:PixelsType ;
                     rdf:value "uint8" ;
                     ome:relates_to [ a ome:Detail ;
                             ome:relates_to [ a ome:Permissions ;
@@ -30,6 +78,55 @@
                                     ome:permissions_str "rwr-r-" ] ] ],
                 ome:Pixels ;
             ome:relates_to [ a ome:Channel ;
+                    ome:relates_to [ a ome:PhotometricInterpretation ;
+                            rdf:value "Monochrome" ;
+                            ome:relates_to [ a ome:Detail ;
+                                    ome:relates_to [ a ome:Permissions ;
+                                            ome:canAnnotate true ;
+                                            ome:canDelete false ;
+                                            ome:canEdit false ;
+                                            ome:canLink true ;
+                                            ome:isGroupAnnotate false ;
+                                            ome:isGroupRead true ;
+                                            ome:isGroupWrite false ;
+                                            ome:isUserRead true ;
+                                            ome:isUserWrite true ;
+                                            ome:isWorldRead true ;
+                                            ome:isWorldWrite false ;
+                                            ome:permissions_str "rwr-r-" ] ] ],
+                        [ a ome:Detail ;
+                            dc:creator [ ] ;
+                            ome:relates_to [ a ome:Group ;
+                                    rdfs:label "kupferdigital" ;
+                                    ome:relates_to [ a ome:Detail ;
+                                            ome:relates_to [ a ome:Permissions ;
+                                                    ome:canAnnotate true ;
+                                                    ome:canDelete false ;
+                                                    ome:canEdit false ;
+                                                    ome:canLink true ;
+                                                    ome:isGroupAnnotate false ;
+                                                    ome:isGroupRead true ;
+                                                    ome:isGroupWrite false ;
+                                                    ome:isUserRead true ;
+                                                    ome:isUserWrite true ;
+                                                    ome:isWorldRead false ;
+                                                    ome:isWorldWrite false ;
+                                                    ome:permissions_str "rwr---" ] ] ],
+                                [ a ome:Permissions ;
+                                    ome:canAnnotate false ;
+                                    ome:canDelete false ;
+                                    ome:canEdit false ;
+                                    ome:canLink false ;
+                                    ome:isGroupAnnotate false ;
+                                    ome:isGroupRead true ;
+                                    ome:isGroupWrite false ;
+                                    ome:isUserRead true ;
+                                    ome:isUserWrite true ;
+                                    ome:isWorldRead false ;
+                                    ome:isWorldWrite false ;
+                                    ome:permissions_str "rwr---" ] ] ;
+                    ome:samplesPerPixel 1 ],
+                [ a ome:Channel ;
                     ome:relates_to [ a ome:PhotometricInterpretation ;
                             rdf:value "Monochrome" ;
                             ome:relates_to [ a ome:Detail ;
@@ -78,41 +175,23 @@
                                                     ome:isWorldWrite false ;
                                                     ome:permissions_str "rwr---" ] ] ] ] ;
                     ome:samplesPerPixel 1 ],
-                [ a ome:Detail ;
-                    dc:creator [ ] ;
-                    ome:relates_to [ a ome:Group ;
-                            rdfs:label "kupferdigital" ;
-                            ome:relates_to [ a ome:Detail ;
-                                    ome:relates_to [ a ome:Permissions ;
-                                            ome:canAnnotate true ;
-                                            ome:canDelete false ;
-                                            ome:canEdit false ;
-                                            ome:canLink true ;
-                                            ome:isGroupAnnotate false ;
-                                            ome:isGroupRead true ;
-                                            ome:isGroupWrite false ;
-                                            ome:isUserRead true ;
-                                            ome:isUserWrite true ;
-                                            ome:isWorldRead false ;
-                                            ome:isWorldWrite false ;
-                                            ome:permissions_str "rwr---" ] ] ],
-                        [ a ome:Permissions ;
-                            ome:canAnnotate false ;
-                            ome:canDelete false ;
-                            ome:canEdit false ;
-                            ome:canLink false ;
-                            ome:isGroupAnnotate false ;
-                            ome:isGroupRead true ;
-                            ome:isGroupWrite false ;
-                            ome:isUserRead true ;
-                            ome:isUserWrite true ;
-                            ome:isWorldRead false ;
-                            ome:isWorldWrite false ;
-                            ome:permissions_str "rwr---" ] ],
                 [ a ome:Channel ;
                     ome:relates_to [ a ome:Detail ;
                             dc:creator [ ] ;
-                            ome:relates_to [ a ome:Group ;
+                            ome:relates_to [ a ome:Permissions ;
+                                    ome:canAnnotate false ;
+                                    ome:canDelete false ;
+                                    ome:canEdit false ;
+                                    ome:canLink false ;
+                                    ome:isGroupAnnotate false ;
+                                    ome:isGroupRead true ;
+                                    ome:isGroupWrite false ;
+                                    ome:isUserRead true ;
+                                    ome:isUserWrite true ;
+                                    ome:isWorldRead false ;
+                                    ome:isWorldWrite false ;
+                                    ome:permissions_str "rwr---" ],
+                                [ a ome:Group ;
                                     rdfs:label "kupferdigital" ;
                                     ome:relates_to [ a ome:Detail ;
                                             ome:relates_to [ a ome:Permissions ;
@@ -127,20 +206,7 @@
                                                     ome:isUserWrite true ;
                                                     ome:isWorldRead false ;
                                                     ome:isWorldWrite false ;
-                                                    ome:permissions_str "rwr---" ] ] ],
-                                [ a ome:Permissions ;
-                                    ome:canAnnotate false ;
-                                    ome:canDelete false ;
-                                    ome:canEdit false ;
-                                    ome:canLink false ;
-                                    ome:isGroupAnnotate false ;
-                                    ome:isGroupRead true ;
-                                    ome:isGroupWrite false ;
-                                    ome:isUserRead true ;
-                                    ome:isUserWrite true ;
-                                    ome:isWorldRead false ;
-                                    ome:isWorldWrite false ;
-                                    ome:permissions_str "rwr---" ] ],
+                                                    ome:permissions_str "rwr---" ] ] ] ],
                         [ a ome:PhotometricInterpretation ;
                             rdf:value "Monochrome" ;
                             ome:relates_to [ a ome:Detail ;
@@ -158,9 +224,23 @@
                                             ome:isWorldWrite false ;
                                             ome:permissions_str "rwr-r-" ] ] ] ;
                     ome:samplesPerPixel 1 ],
-                [ a ome:Channel ;
-                    ome:relates_to [ a ome:PhotometricInterpretation ;
-                            rdf:value "Monochrome" ;
+                [ a ome:Detail ;
+                    dc:creator [ ] ;
+                    ome:relates_to [ a ome:Permissions ;
+                            ome:canAnnotate false ;
+                            ome:canDelete false ;
+                            ome:canEdit false ;
+                            ome:canLink false ;
+                            ome:isGroupAnnotate false ;
+                            ome:isGroupRead true ;
+                            ome:isGroupWrite false ;
+                            ome:isUserRead true ;
+                            ome:isUserWrite true ;
+                            ome:isWorldRead false ;
+                            ome:isWorldWrite false ;
+                            ome:permissions_str "rwr---" ],
+                        [ a ome:Group ;
+                            rdfs:label "kupferdigital" ;
                             ome:relates_to [ a ome:Detail ;
                                     ome:relates_to [ a ome:Permissions ;
                                             ome:canAnnotate true ;
@@ -172,96 +252,17 @@
                                             ome:isGroupWrite false ;
                                             ome:isUserRead true ;
                                             ome:isUserWrite true ;
-                                            ome:isWorldRead true ;
+                                            ome:isWorldRead false ;
                                             ome:isWorldWrite false ;
-                                            ome:permissions_str "rwr-r-" ] ] ],
-                        [ a ome:Detail ;
-                            dc:creator [ ] ;
-                            ome:relates_to [ a ome:Group ;
-                                    rdfs:label "kupferdigital" ;
-                                    ome:relates_to [ a ome:Detail ;
-                                            ome:relates_to [ a ome:Permissions ;
-                                                    ome:canAnnotate true ;
-                                                    ome:canDelete false ;
-                                                    ome:canEdit false ;
-                                                    ome:canLink true ;
-                                                    ome:isGroupAnnotate false ;
-                                                    ome:isGroupRead true ;
-                                                    ome:isGroupWrite false ;
-                                                    ome:isUserRead true ;
-                                                    ome:isUserWrite true ;
-                                                    ome:isWorldRead false ;
-                                                    ome:isWorldWrite false ;
-                                                    ome:permissions_str "rwr---" ] ] ],
-                                [ a ome:Permissions ;
-                                    ome:canAnnotate false ;
-                                    ome:canDelete false ;
-                                    ome:canEdit false ;
-                                    ome:canLink false ;
-                                    ome:isGroupAnnotate false ;
-                                    ome:isGroupRead true ;
-                                    ome:isGroupWrite false ;
-                                    ome:isUserRead true ;
-                                    ome:isUserWrite true ;
-                                    ome:isWorldRead false ;
-                                    ome:isWorldWrite false ;
-                                    ome:permissions_str "rwr---" ] ] ;
-                    ome:samplesPerPixel 1 ] ;
+                                            ome:permissions_str "rwr---" ] ] ] ] ;
             ome:significantBits 8 ;
             ome:sizeC 3 ;
             ome:sizeT 1 ;
             ome:sizeX 2464 ;
             ome:sizeY 2056 ;
-            ome:sizeZ 1 ],
-        [ a ome:Detail ;
-            dc:creator [ ] ;
-            ome:relates_to [ a ome:Permissions ;
-                    ome:canAnnotate false ;
-                    ome:canDelete false ;
-                    ome:canEdit false ;
-                    ome:canLink false ;
-                    ome:isGroupAnnotate false ;
-                    ome:isGroupRead true ;
-                    ome:isGroupWrite false ;
-                    ome:isUserRead true ;
-                    ome:isUserWrite true ;
-                    ome:isWorldRead false ;
-                    ome:isWorldWrite false ;
-                    ome:permissions_str "rwr---" ],
-                [ a ome:Group ;
-                    rdfs:label "kupferdigital" ;
-                    ome:relates_to [ a ome:Detail ;
-                            ome:relates_to [ a ome:Permissions ;
-                                    ome:canAnnotate true ;
-                                    ome:canDelete false ;
-                                    ome:canEdit false ;
-                                    ome:canLink true ;
-                                    ome:isGroupAnnotate false ;
-                                    ome:isGroupRead true ;
-                                    ome:isGroupWrite false ;
-                                    ome:isUserRead true ;
-                                    ome:isUserWrite true ;
-                                    ome:isWorldRead false ;
-                                    ome:isWorldWrite false ;
-                                    ome:permissions_str "rwr---" ] ] ] ],
-        [ a ome:OriginalMeta ;
-            ome:notes <GlobalMetadataBitspersample>,
-                <GlobalMetadataCompression>,
-                <GlobalMetadataImagelength>,
-                <GlobalMetadataImagewidth>,
-                <GlobalMetadataMetadataphotometricinterpretation>,
-                <GlobalMetadataMetamorph>,
-                <GlobalMetadataNumberofchannels>,
-                <GlobalMetadataOrientation>,
-                <GlobalMetadataPhotometricinterpretation>,
-                <GlobalMetadataPlanarconfiguration>,
-                <GlobalMetadataResolutionunit>,
-                <GlobalMetadataSamplesperpixel>,
-                <GlobalMetadataSoftware>,
-                <GlobalMetadataXresolution>,
-                <GlobalMetadataYresolution> ] ;
+            ome:sizeZ 1 ] ;
     ome:rois "https://omero.matolab.org/api/v0/m/images/1/rois/" ;
-    ome:url "http://example.com"^^xsd:anyURI .
+    ome:url "https://omero.matolab.org/api/v0/m/images/1"^^xsd:anyURI .
 
 <GlobalMetadataBitspersample> a oa:Annotation ;
     rdfs:label "Global Metadata bitspersample" ;

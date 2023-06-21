@@ -10,7 +10,7 @@ __location__ = os.path.realpath(
 print(__location__)
 
 dummy_api_url="https://metadata.omero.matolab.org/api/imagemeta"
-
+dumy_image_url="https://omero.matolab.org/api/v0/m/images/1"
 from settings import Settings
 
 settings=Settings()
@@ -21,7 +21,7 @@ class TestMain(unittest.TestCase):
         output_file=input_file.split('.')[0]+".ttl"
         with open(os.path.join(__location__, 'tests', input_file)) as f:
             data = json.load(f)
-        converter=OMEtoRDF(data,'http://example.com')
+        converter=OMEtoRDF(data,dumy_image_url)
         converter.annotate_prov(dummy_api_url,settings)
         result=converter.to_rdf()
         result.serialize(format='turtle', destination='tests/'+output_file,auto_compact=True,indent=4)
@@ -31,7 +31,7 @@ class TestMain(unittest.TestCase):
         output_file=input_file.split('.')[0]+".ttl"
         with open(os.path.join(__location__, 'tests', input_file)) as f:
             data = json.load(f)
-        converter=OMEtoRDF(data,'http://example.com')
+        converter=OMEtoRDF(data,dumy_image_url)
         result=converter.to_rdf()
         result.serialize(format='turtle', destination='tests/'+output_file,auto_compact=True,indent=4)
         self.assertTrue(os.path.exists('tests/'+output_file))
@@ -40,7 +40,7 @@ class TestMain(unittest.TestCase):
         output_file=input_file.split('.')[0]+".ttl"
         with open(os.path.join(__location__, 'tests', input_file)) as f:
             data = json.load(f)
-        converter=OMEtoRDF(data,'http://example.com')
+        converter=OMEtoRDF(data,dumy_image_url)
         result=converter.to_rdf()
         result.serialize(format='turtle', destination='tests/'+output_file,auto_compact=True,indent=4)
         self.assertTrue(os.path.exists('tests/'+output_file))

@@ -135,6 +135,9 @@ class OMEtoRDF:
         print(api_endpoint)
         self.graph=Graph()
         self.graph.add((self.root,OME.url,Literal(root_url,datatype=XSD.anyURI)))
+        image_id=root_url.rsplit('/',1)[-1]
+        host=root_url.rsplit('/api',1)[0]
+        self.graph.add((self.root,OME.download,Literal(host+"/webgateway/archived_files/download/"+image_id,datatype=XSD.anyURI)))
         self.graph.bind('ome',OME)
         self.graph.bind('qudt',QUDT)
         self.graph.bind('prov',PROV)

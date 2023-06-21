@@ -168,6 +168,10 @@ foaf:accountName :ome_type "UserName".
   rdfs:label "url"@en ;
   skos:definition "Link to the original metadata api endpoint.".
 
+:download a owl:AnnotationProperty ;
+  rdfs:label "download"@en ;
+  skos:definition "Link to download the original image.".
+
 :permissions_str a owl:AnnotationProperty ;
   :ome_type "perm" ;
   rdfs:range xsd:string .
