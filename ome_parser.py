@@ -4,10 +4,13 @@ from typing import Tuple
 from errno import ESTALE
 from rdflib import BNode, URIRef, Literal, Graph, Namespace
 from rdflib.util import guess_format
-from rdflib.namespace import OWL, RDF, XSD, RDFS
+from rdflib.namespace import OWL, RDF, XSD, RDFS, PROV
 
-from urllib.request import urlopen
-from urllib.parse import urlparse, unquote
+from re import sub
+import ast
+from dateutil.parser import parse as date_parse
+from datetime import datetime
+from pydantic import BaseSettings
 
 OME_SOURCE = './ome.ttl'
 OME_SOURCE_URL="https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml"
@@ -20,9 +23,7 @@ key_original_meta='original_meta'
 ome_graph = Graph()
 ome_graph.parse(OME_SOURCE, format='turtle')
 
-from re import sub
-import ast
-from dateutil.parser import parse as date_parse
+
 
 def is_date(string, fuzzy=False)->bool:
     try:
@@ -99,41 +100,24 @@ def describe_value(graph, node, value_string: str):
     
     if val_type[0] == 'INT':
         graph.add((body,RDF.type,QUDT.QuantityValue))
-        graph.add((body,QUDT.value,Literal(int(value_string),datatype=XSD.int)))
-        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': int(value_string), '@type': str(val_type[1])}}
+        graph.add((body,QUDT.value,Literal(int(value_string),datatype=val_type[1])))
     elif val_type[0] == 'BOOL':
         graph.add((body,RDF.type,QUDT.QuantityValue))
-        graph.add((body,QUDT.value,Literal(bool(value_string),datatype=XSD.boolean)))
-        
-        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': bool(value_string), '@type': str(val_type[1])}}
+        graph.add((body,QUDT.value,Literal(bool(value_string),datatype=val_type[1])))
     elif val_type[0] == 'FLOAT':
         if isinstance(value_string,str):
             #replace , with . as decimal separator
             value_string = value_string.strip().replace(',', '.')
         graph.add((body,RDF.type,QUDT.QuantityValue))
-        graph.add((body,QUDT.value,Literal(float(value_string),datatype=XSD.string)))
-        
-        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': float(value_string), '@type': str(val_type[1])}}
+        graph.add((body,QUDT.value,Literal(float(value_string),datatype=val_type[1])))
     elif val_type[0] == 'DATE':
         print(value_string)
         graph.add((body,RDF.type,QUDT.QuantityValue))
-        graph.add((body,QUDT.value,Literal(str(date_parse(value_string).isoformat()),datatype=XSD.dateTime)))
-        
-        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': str(date_parse(value_string).isoformat()), '@type': str(val_type[1])}}
+        graph.add((body,QUDT.value,Literal(str(date_parse(value_string).isoformat()),datatype=val_type[1])))
     else:
         graph.add((body,RDF.type,QUDT.TextualBody))
         graph.add((body,OA.purpose,OA.tagging))
-        graph.add((body,QUDT.value,Literal(value_string.strip(),datatype=XSD.string)))
-        
-        # return {
-        #     "@type": "oa:TextualBody",
-        #     "oa:purpose": "oa:tagging",
-        #     "oa:format": "text/plain",
-        #     "oa:value": value_string.strip()
-        # }
-            #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': value_string, '@type': 'xsd:string'}}
-
-
+        graph.add((body,QUDT.value,Literal(value_string.strip(),datatype=val_type[1])))
 def get_entity_type(string: str):
     hits = list(ome_graph[:OME.ome_type:Literal(string)])
     if hits:
@@ -144,30 +128,63 @@ def get_entity_type(string: str):
 class OMEtoRDF:
     """Class for Converting OME meta data json to RDF with help of OME Ontology.
     """
-    def __init__(self,json_dict: dict={}, root_url: str='') -> None:
+    def __init__(self,json_dict: dict={}, root_url: str='', api_endpoint: str='') -> None:
         #print(json_dict.keys())
         self.data=json_dict#.get('data',None)
         self.root=URIRef(root_url)
-        #print(self.root_url)
+        print(api_endpoint)
         self.graph=Graph()
-        #print(list(ome_graph[: RDF.type:]))
-        
-    def to_rdf(self):
-        print('start mapping2\n\n\n\n\n\n')
-        self.graph = Graph()
-        #result.bind('data', _get_ns(base_url))
-        iterate_json(self.data, self.graph, base_url=self.root)
         self.graph.bind('ome',OME)
         self.graph.bind('qudt',QUDT)
-        self.graph.bind('oa',OA)
+        self.graph.bind('prov',PROV)
+        
+        #print(list(ome_graph[: RDF.type:]))
+
+    def annotate_prov(self, api_url: str, settings: BaseSettings):
+        print('adding prov-o meta')
+        activity=URIRef(api_url)
+        release=URIRef(settings.source+"/releases/tag/"+settings.version)
+        self.graph.add((self.root,PROV.wasGeneratedBy,activity))
+        self.graph.add((activity,RDF.type,PROV.Activity))
+        self.graph.add((activity,PROV.wasAssociatedWith,release))
+        self.graph.add((release,RDF.type,PROV.SoftwareAgent))
+        self.graph.add((release,RDFS.label,Literal(settings.app_name+settings.version)))
+        self.graph.add((release,PROV.hadPrimarySource,Literal(settings.source)))
+        
+        self.graph.add((self.root,PROV.generatedAtTime,Literal(str(datetime.now().isoformat()), datatype=XSD.dateTime)))
+        
+        # return {
+        #     "prov:wasGeneratedBy": {
+        #         "@id": api_url,
+        #         "@type": "prov:Activity",
+        #         "prov:wasAssociatedWith":  {
+        #             "@id": "https://github.com/Mat-O-Lab/CSVToCSVW/releases/tag/"+settings.version,
+        #             "rdfs:label": settings.app_name+settings.version,
+        #             "prov:hadPrimarySource": settings.source,
+        #             "@type": "prov:SoftwareAgent"
+        #         }
+        #     },
+        #     "prov:generatedAtTime": {
+        #             "@value": str(datetime.now().isoformat()),
+        #             "@type": "xsd:dateTime"
+        #         }
+        #     }
+
+        
+    def to_rdf(self,anonymize=True):
+        print('start mapping2\n\n\n\n\n\n')
+        #result.bind('data', _get_ns(base_url))        
+        iterate_json(self.data, self.graph,base_url=self.root)
         self.graph = fix_iris(self.graph, base_url=self.root)
+        if anonymize:
+            [self.graph.remove((subject, None, None)) for subject in self.graph.subjects(RDF.type, OME.User)]
         return self.graph
 
 
 def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
     if isinstance(data, dict):
         # lookup if the id and type in dict result in a ontology entity
-        entity, e_class, parent = create_instance_triple(data, base_url=base_url)
+        entity, e_class, parent = create_instance_triple(data, uri=base_url)
         #print(entity,e_class,parent)
         if entity and e_class:
             # if the entity is a Identifier, only create it if it relates to entity previously created
@@ -189,7 +206,7 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                     
                 if isinstance(value, dict):
                     if key=="original_meta":
-                        meta_node, e_class, parent = create_instance_triple(value, base_url=base_url)
+                        meta_node, e_class, parent = create_instance_triple(value)
                         graph.add((meta_node, RDF.type, e_class))
                         for s, d in value.items():
                             if isinstance(d,dict):
@@ -204,13 +221,13 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                     else:               
                         #print('a dict at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
                         # recursively inter over all json objects
-                        iterate_json(value, graph, last_entity=entity, relation=relation, base_url=base_url)
+                        iterate_json(value, graph, last_entity=entity, relation=relation)
                         # add the ObjectProperty to the created instance
                         
                 elif isinstance(value, list):
                     #print('a list at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
                     # recursively inter over all json objects
-                    iterate_json(value, graph, last_entity=entity, relation=relation, base_url=base_url)
+                    iterate_json(value, graph, last_entity=entity, relation=relation)
                     # see if an entity is created and relate it if necessary
                 else:
                     # if its no dict or list test if its kind of object/data/annotation property and set it
@@ -221,7 +238,7 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
             
     elif isinstance(data, list):
         for item in data:
-            iterate_json(item, graph, last_entity=last_entity, relation=relation, base_url=base_url)
+            iterate_json(item, graph, last_entity=last_entity, relation=relation)
 
 
 def replace_iris(old: URIRef, new: URIRef, graph: Graph):
@@ -270,7 +287,7 @@ def fix_iris(graph, base_url=None):
     #     replace_iris(identifier, BNode(), graph)
     return graph
 
-def create_instance_triple(data: dict, base_url=None):
+def create_instance_triple(data: dict, uri= None):
     entity=None
     o_class=None
     parent=None
@@ -279,7 +296,10 @@ def create_instance_triple(data: dict, base_url=None):
         o_class = get_entity_type(data['@type'])
         if o_class:
             #entity=URIRef(instance_id, TEMP)
-            entity=BNode()
+            if uri:
+                entity=uri
+            else:
+                entity=BNode()
         # if data['@type']=='as.dto.sample.SampleType':
         #     parent=OBIS.Object
         # elif data['@type']=='as.dto.experiment.ExperimentType':

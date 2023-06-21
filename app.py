@@ -25,27 +25,18 @@ from wtforms import SelectField, BooleanField, IntegerField
 import logging
 import configparser
 
-class Settings(BaseSettings):
-    app_name: str = "OmeroExtractor"
-    admin_email: str = os.environ.get("ADMIN_MAIL") or "omeroextractor@matolab.org"
-    items_per_user: int = 50
-    version: str = "v0.0.2"
-    config_name: str = os.environ.get("APP_MODE") or "development"
-    openapi_url: str ="/api/openapi.json"
-    docs_url: str = "/api/docs"
+from settings import Settings
+
 settings = Settings()
 
 
 middleware = [Middleware(SessionMiddleware, secret_key='super-secret')]
 app = FastAPI(
-    title="OmeroExtractor",
-    description="Tool to extract Meta Data from Omero Server and provide as json-ld.",
+    title=settings.app_name,
+    description=settings.description,
     version=settings.version,
-    contact={"name": "Thomas Hanke, Mat-O-Lab", "url": "https://github.com/Mat-O-Lab", "email": settings.admin_email},
-    license_info={
-        "name": "Apache 2.0",
-        "url": "https://www.apache.org/licenses/LICENSE-2.0.html",
-    },
+    contact=settings.contact,
+    license_info=settings.license,
     openapi_url=settings.openapi_url,
     docs_url=settings.docs_url,
     redoc_url=None,
@@ -73,10 +64,12 @@ import ome_parser
 
 class ApiRequest(BaseModel):
     image_id: int = Field(1, title='Image ID', description='Id of a Omero Image')
+    anonymize: Optional[bool] = Field(True, title='anonymize data', describtion='Set true to remove User Data, default=True')
     class Config:
         schema_extra = {
             "example": {
-                "image_id": 1
+                "image_id": 1,
+                "anonymize": True
             }
         }
 
@@ -177,7 +170,7 @@ def open_api_session(host,username: str=os.getenv('OMERO_WEB_USER', default='roo
         return None
 
 @app.post("/api/imagemeta")
-async def imagemeta(apirequest: ApiRequest) -> dict:
+async def imagemeta(request: Request, apirequest: ApiRequest) -> dict:
     host=os.getenv('OMERO_WEB_HOST',default='http://omeroweb:4080')
     session = open_api_session(host)
     if not session:
@@ -195,9 +188,9 @@ async def imagemeta(apirequest: ApiRequest) -> dict:
     # #Writing to sample.json
     # with open("tests/sample{}.json".format(apirequest.image_id), "w") as outfile:
     #     outfile.write(json_object)
-    
-    converter=ome_parser.OMEtoRDF(image_meta, url)
-    result=converter.to_rdf()
+    converter=ome_parser.OMEtoRDF(image_meta, root_url=url)
+    converter.annotate_prov(str(request.url),settings)
+    result=converter.to_rdf(anonymize=apirequest.anonymize)
     #result.serialize(format='turtle', destination='sample2.ttl',auto_compact=True,indent=4)
     return json.loads(result.serialize(format='json-ld',auto_compact=True,indent=4))
     
