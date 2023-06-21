@@ -1,6 +1,5 @@
 rdflib
 wtforms
-pandas
 html5lib
 starlette
 starlette-wtf
