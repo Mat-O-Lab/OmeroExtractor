@@ -44,6 +44,11 @@
     :ome_type "TBD#PhotometricInterpretation";
     skos:definition "An Omero Photometric Interpretation Object.".
 
+:OriginalMeta a owl:Class ;
+    rdfs:label "Original Meta Data" ;
+    :ome_type "OriginalMeta";
+    skos:definition "The original meta data, as passed by the bio formats libary".
+
 :User a owl:Class ;
     owl:equivalentClass foaf:Person, prov:Agent;
     rdfs:label "User" ;
@@ -86,7 +91,11 @@
                     :ome_type "group";
                     :ome_type "Pixels";
                     :ome_type "omero:photometricInterpretation";
+                    :ome_type "original_meta";
                     rdfs:label "relates to"@en .
+
+:notes rdf:type owl:ObjectProperty ;
+                    rdfs:label "notes"@en .
 
 :physicalSizeX rdf:type owl:ObjectProperty ;
                     :ome_type "PhysicalSizeX";

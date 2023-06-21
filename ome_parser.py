@@ -1,20 +1,138 @@
+# -*- coding: utf-8 -*-
+from typing import Tuple
+
 from errno import ESTALE
 from rdflib import BNode, URIRef, Literal, Graph, Namespace
 from rdflib.util import guess_format
-from rdflib.namespace import OWL, RDF 
+from rdflib.namespace import OWL, RDF, XSD, RDFS
 
 from urllib.request import urlopen
 from urllib.parse import urlparse, unquote
-import configparser
 
 OME_SOURCE = './ome.ttl'
 OME_SOURCE_URL="https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml"
 OME = Namespace(OME_SOURCE_URL+"#")
+OA = Namespace("http://www.w3.org/ns/oa#")
+QUDT = Namespace("http://qudt.org/schema/qudt/")
 
-ome_original_meta=URIRef('original_meta')
+key_original_meta='original_meta'
 
 ome_graph = Graph()
 ome_graph.parse(OME_SOURCE, format='turtle')
+
+from re import sub
+import ast
+from dateutil.parser import parse as date_parse
+
+def is_date(string, fuzzy=False)->bool:
+    try:
+        date_parse(string, fuzzy=fuzzy)
+        return True
+
+    except ValueError:
+        return False
+    
+def snake_case(s):
+  return '_'.join(
+    sub('([A-Z][a-z]+)', r' \1',
+    sub('([A-Z]+)', r' \1',
+    s.replace('-', ' '))).split()).lower()
+
+UMLAUTE = {
+            '\u00e4': 'ae',  # U+00E4	   \xc3\xa4
+            '\u00f6': 'oe',  # U+00F6	   \xc3\xb6
+            '\u00fc': 'ue',  # U+00FC	   \xc3\xbc
+            '\u00c4': 'Ae',  # U+00C4	   \xc3\x84
+            '\u00d6': 'Oe',  # U+00D6	   \xc3\x96
+            '\u00dc': 'Ue',  # U+00DC	   \xc3\x9c
+            '\u00df': 'ss',  # U+00DF	   \xc3\x9f
+        }
+
+def make_id(string)-> str:
+    for k in UMLAUTE.keys():
+        string = string.replace(k, UMLAUTE[k])
+    else:
+        return sub('[^A-ZÜÖÄa-z0-9]+', '', string.title().replace(" ", ""))
+
+def create_note(graph: Graph, label: str, value):
+    entity=URIRef(make_id(label))
+    graph.add((entity,RDF.type,OA.Annotation))
+    graph.add((entity,RDFS.label,Literal(label)))
+    return entity
+
+def get_value_type(string: str)-> Tuple:
+    string = str(string)
+    # remove spaces and replace , with . and
+    string = string.strip().replace(',', '.')
+    if len(string) == 0:
+        return 'BLANK', None
+    try:
+        t = ast.literal_eval(string)
+    except ValueError:
+        return 'TEXT', XSD.string
+    except SyntaxError:
+        if is_date(string):
+            return 'DATE', XSD.dateTime
+        else:
+            return 'TEXT', XSD.string
+    else:
+        if type(t) in [int, float, bool]:
+            if type(t) is int:
+                return 'INT', XSD.integer
+            if t in set((True, False)):
+                return 'BOOL', XSD.boolean
+            if type(t) is float:
+                return 'FLOAT', XSD.double
+        else:
+            #return 'TEXT'
+            return 'TEXT', XSD.string
+        
+def describe_value(graph, node, value_string: str):
+    #remove leading and trailing white spaces
+    # if pd.isna(value_string):
+    #     return {}
+    
+    val_type=get_value_type(value_string)
+    if val_type:
+        body=BNode()
+        graph.add((node,OA.hasBody,body))
+    
+    if val_type[0] == 'INT':
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(int(value_string),datatype=XSD.int)))
+        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': int(value_string), '@type': str(val_type[1])}}
+    elif val_type[0] == 'BOOL':
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(bool(value_string),datatype=XSD.boolean)))
+        
+        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': bool(value_string), '@type': str(val_type[1])}}
+    elif val_type[0] == 'FLOAT':
+        if isinstance(value_string,str):
+            #replace , with . as decimal separator
+            value_string = value_string.strip().replace(',', '.')
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(float(value_string),datatype=XSD.string)))
+        
+        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': float(value_string), '@type': str(val_type[1])}}
+    elif val_type[0] == 'DATE':
+        print(value_string)
+        graph.add((body,RDF.type,QUDT.QuantityValue))
+        graph.add((body,QUDT.value,Literal(str(date_parse(value_string).isoformat()),datatype=XSD.dateTime)))
+        
+        #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': str(date_parse(value_string).isoformat()), '@type': str(val_type[1])}}
+    else:
+        graph.add((body,RDF.type,QUDT.TextualBody))
+        graph.add((body,OA.purpose,OA.tagging))
+        graph.add((body,QUDT.value,Literal(value_string.strip(),datatype=XSD.string)))
+        
+        # return {
+        #     "@type": "oa:TextualBody",
+        #     "oa:purpose": "oa:tagging",
+        #     "oa:format": "text/plain",
+        #     "oa:value": value_string.strip()
+        # }
+            #return {"@type": "qudt:QuantityValue",'qudt:value': {'@value': value_string, '@type': 'xsd:string'}}
+
 
 def get_entity_type(string: str):
     hits = list(ome_graph[:OME.ome_type:Literal(string)])
@@ -40,6 +158,8 @@ class OMEtoRDF:
         #result.bind('data', _get_ns(base_url))
         iterate_json(self.data, self.graph, base_url=self.root)
         self.graph.bind('ome',OME)
+        self.graph.bind('qudt',QUDT)
+        self.graph.bind('oa',OA)
         self.graph = fix_iris(self.graph, base_url=self.root)
         return self.graph
 
@@ -51,8 +171,8 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
         #print(entity,e_class,parent)
         if entity and e_class:
             # if the entity is a Identifier, only create it if it relates to entity previously created
-            #print('create entity: {} {}'.format(entity,e_class))
-            #print('last entity: {} {}'.format(last_entity,relation))
+            print('create entity: {} {}'.format(entity,e_class))
+            print('last entity: {} {}'.format(last_entity,relation))
             graph.add((entity, RDF.type, e_class))
             if last_entity and relation:
                 #print('create relation: {} {} {}'.format(last_entity,relation,entity))
@@ -66,11 +186,26 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                 relation = get_entity_type(key)
                 #print("key: {}".format(key),"relation: {}".format(relation))
                 # if the key is properties all json keys in that dict are relations to openbis properties followed by there values
+                    
                 if isinstance(value, dict):
-                    #print('a dict at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
-                    # recursively inter over all json objects
-                    iterate_json(value, graph, last_entity=entity, relation=relation, base_url=base_url)
-                    # add the ObjectProperty to the created instance
+                    if key=="original_meta":
+                        meta_node, e_class, parent = create_instance_triple(value, base_url=base_url)
+                        graph.add((meta_node, RDF.type, e_class))
+                        for s, d in value.items():
+                            if isinstance(d,dict):
+                                for k,v in d.items():
+                                    prop_name=snake_case('{} {}'.format(s,k))
+                                    #print(prop_name,v)
+                                    #graph.add((meta_node, OME.notes, Literal(v)))
+                                    note=create_note(graph,'{} {}'.format(s,k),v)
+                                    describe_value(graph, note, v)
+                                    graph.add((meta_node, OME.notes, note))
+                        graph.add((entity, relation, meta_node))
+                    else:               
+                        #print('a dict at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
+                        # recursively inter over all json objects
+                        iterate_json(value, graph, last_entity=entity, relation=relation, base_url=base_url)
+                        # add the ObjectProperty to the created instance
                         
                 elif isinstance(value, list):
                     #print('a list at {} calling iterate_json with: {} {}'.format(key,entity,relation) )

@@ -23,6 +23,7 @@ from fastapi.responses import HTMLResponse
 from wtforms import SelectField, BooleanField, IntegerField
 
 import logging
+import configparser
 
 class Settings(BaseSettings):
     app_name: str = "OmeroExtractor"
@@ -112,7 +113,7 @@ class OmeroWebSession(requests.Session):
             get_api_url=self.get(start_url)
             self.base_url = get_api_url.json()["data"][-1]["url:base"]
             self.urls=self.get(self.base_url).json()
-            self.urls['ur:original_meta']='{}/webclient/download_orig_metadata/'.format(host)
+            self.urls['url:original_meta']='{}/webclient/download_orig_metadata/'.format(host)
         except Exception as e:
             logging.error('could not init Omero Web Api Session: {}'.format(str(e)))
     def login(self,username,password):
@@ -145,10 +146,16 @@ class OmeroWebSession(requests.Session):
             logging.error('Could not get meta data from omero web json api: {}'.format(return_value))
             raise HTTPException(status_code=500, detail='Could not get meta data from omero web json api: {}'.format(return_value))
     def get_original_image_meta(self, id: int):
-        self.urls['ur:original_meta']
-        return_value = self.get(self.urls['ur:original_meta']+'{}'.format(str(id)))
+        self.urls['url:original_meta']
+        return_value = self.get(self.urls['url:original_meta']+'{}'.format(str(id)))
         if return_value.status_code == 200:
-            return return_value.text
+            cfg_parser=configparser.ConfigParser(strict=False)
+            try:
+                cfg_parser.read_string(return_value.text)
+            except:
+                pass
+            result={**cfg_parser._sections,**{'@type': 'OriginalMeta'}}
+            return result
         else:
             logging.error('Could not get original meta data from omero web client: {}'.format(return_value))
             raise HTTPException(status_code=500, detail='Could not get original meta data from omero web client: {}'.format(return_value))
@@ -181,12 +188,13 @@ async def imagemeta(apirequest: ApiRequest) -> dict:
     #add original_meta to json
     #print(original_meta)
     image_meta['original_meta']=original_meta
+                
     # Serializing json
     json_object = json.dumps(image_meta, indent=4)
     
-    # Writing to sample.json
-    with open("tests/sample.json", "w") as outfile:
-        outfile.write(json_object)
+    # #Writing to sample.json
+    # with open("tests/sample{}.json".format(apirequest.image_id), "w") as outfile:
+    #     outfile.write(json_object)
     
     converter=ome_parser.OMEtoRDF(image_meta, url)
     result=converter.to_rdf()
