@@ -94,30 +94,31 @@ def describe_value(graph, node, value_string: str):
     #     return {}
     
     val_type=get_value_type(value_string)
-    if val_type:
+    if val_type[0] == 'INT':
         body=BNode()
         graph.add((node,OA.hasBody,body))
-    
-    if val_type[0] == 'INT':
         graph.add((body,RDF.type,QUDT.QuantityValue))
         graph.add((body,QUDT.value,Literal(int(value_string),datatype=val_type[1])))
     elif val_type[0] == 'BOOL':
+        body=BNode()
+        graph.add((node,OA.hasBody,body))
         graph.add((body,RDF.type,QUDT.QuantityValue))
         graph.add((body,QUDT.value,Literal(bool(value_string),datatype=val_type[1])))
     elif val_type[0] == 'FLOAT':
         if isinstance(value_string,str):
             #replace , with . as decimal separator
             value_string = value_string.strip().replace(',', '.')
+        body=BNode()
+        graph.add((node,OA.hasBody,body))
         graph.add((body,RDF.type,QUDT.QuantityValue))
         graph.add((body,QUDT.value,Literal(float(value_string),datatype=val_type[1])))
     elif val_type[0] == 'DATE':
-        print(value_string)
+        body=BNode()
+        graph.add((node,OA.hasBody,body))
         graph.add((body,RDF.type,QUDT.QuantityValue))
         graph.add((body,QUDT.value,Literal(str(date_parse(value_string).isoformat()),datatype=val_type[1])))
     else:
-        graph.add((body,RDF.type,OA.TextualBody))
-        graph.add((body,OA.purpose,OA.tagging))
-        graph.add((body,OA.hasLiteralBody,Literal(value_string.strip(),datatype=val_type[1])))
+        graph.add((node,OA.hasLiteralBody,Literal(value_string.strip(),datatype=val_type[1])))
 def get_entity_type(string: str):
     hits = list(ome_graph[:OME.ome_type:Literal(string)])
     if hits:
