@@ -115,9 +115,9 @@ def describe_value(graph, node, value_string: str):
         graph.add((body,RDF.type,QUDT.QuantityValue))
         graph.add((body,QUDT.value,Literal(str(date_parse(value_string).isoformat()),datatype=val_type[1])))
     else:
-        graph.add((body,RDF.type,QUDT.TextualBody))
+        graph.add((body,RDF.type,OA.TextualBody))
         graph.add((body,OA.purpose,OA.tagging))
-        graph.add((body,QUDT.value,Literal(value_string.strip(),datatype=val_type[1])))
+        graph.add((body,OA.hasLiteralBody,Literal(value_string.strip(),datatype=val_type[1])))
 def get_entity_type(string: str):
     hits = list(ome_graph[:OME.ome_type:Literal(string)])
     if hits:
