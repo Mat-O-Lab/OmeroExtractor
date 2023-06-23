@@ -1,0 +1,75 @@
+@prefix ome: <https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.ttl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<> prov:generatedAtTime "2023-06-23T14:54:42.309201"^^xsd:dateTime ;
+    prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/rois> ;
+    ome:relates_to [ a ome:Roi ;
+            ome:relates_to [ a ome:Rectangle ;
+                    rdfs:label "Crack Tip" ;
+                    ome:fillColor "#ffff00" ;
+                    ome:height 1.222667e+02 ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:width 1.073334e+02 ;
+                    ome:x 3.525667e+02 ;
+                    ome:y 2.702e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Label ;
+                    rdfs:label "Thomas was here" ;
+                    ome:fillColor "#ff00ff" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:x 2.125667e+02 ;
+                    ome:y 5.912667e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Line ;
+                    ome:fillColor "#ffff00" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:x1 1.528333e+02 ;
+                    ome:x2 6.792333e+02 ;
+                    ome:y1 1.647334e+02 ;
+                    ome:y2 1.768667e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Polyline ;
+                    ome:fillColor "#ffff00" ;
+                    ome:points "153.7666737874349,237.53336181640634 247.10001424153654,196.46668090820322 264.8333333333334,237.53336181640634 246.16669514973967,271.13336181640636 216.30001424153653,264.6000000000001 153.7666737874349,238.46669514973962 110.83333333333333,231.0000142415365" ;
+                    ome:strokeColor "#ff00ff" ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Polygon ;
+                    ome:fillColor "#ffff00" ;
+                    ome:points "318.68690337387346,453.3316391249641 322.2655049021713,448.47496701526063 327.3777794270703,451.03111597879575 329.9339283906055,460.74444459675533 331.2119911712874,473.5251543111742 330.445148822444,479.91550331784083 320.9874304204037,478.89305075307817 316.6419865432624,473.269544095255 317.92006102503,462.0225190785229" ;
+                    ome:strokeColor "#ff00ff" ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Point ;
+                    rdfs:label "Whats at this point" ;
+                    ome:fillColor "#ffff00" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:x 6.139e+02 ;
+                    ome:y 3.103334e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Line ;
+                    ome:fillColor "#ffff00" ;
+                    ome:markerEnd "Arrow" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:x1 1.020833e+03 ;
+                    ome:x2 3.964334e+02 ;
+                    ome:y1 3.187334e+02 ;
+                    ome:y2 3.346e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Ellipse ;
+                    rdfs:label "Inclusion?" ;
+                    ome:fillColor "#ffff00" ;
+                    ome:height 2.986664e+01 ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:width 3.173328e+01 ;
+                    ome:x 6.409667e+02 ;
+                    ome:y 5.754e+02 ] ] ;
+    ome:url "https://omero.matolab.org/api/v0/m/images/2/rois/"^^xsd:anyURI .
+
+<https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> a prov:SoftwareAgent ;
+    rdfs:label "OmeroExtractorv0.0.3" ;
+    prov:hadPrimarySource "https://github.com/Mat-O-Lab/OmeroExtractor" .
+
+<https://metadata.omero.matolab.org/api/rois> a prov:Activity ;
+    prov:wasAssociatedWith <https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> .
+

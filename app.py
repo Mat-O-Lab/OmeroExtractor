@@ -24,11 +24,23 @@ from wtforms import SelectField, BooleanField, IntegerField
 
 import logging
 import configparser
-
+from enum import Enum
 from settings import Settings
 
 settings = Settings()
 
+class ReturnType(str, Enum):
+    jsonld="json-ld"
+    n3="n3"
+    nquads="nquads"
+    nt="nt"
+    hext="hext"
+    prettyxml="pretty-xml"
+    trig="trig"
+    trix="trix"
+    turtle="turtle"
+    longturtle="longturtle"
+    xml="xml"
 
 middleware = [Middleware(SessionMiddleware, secret_key='super-secret')]
 app = FastAPI(
@@ -55,25 +67,14 @@ app.add_middleware(uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware, trus
 app.mount("/static/", StaticFiles(directory='static', html=True), name="static")
 templates= Jinja2Templates(directory="templates")
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.WARNING)
 
 templates.env.globals['APP_NAME'] = "OmeroExtractor"
 templates.env.globals['APP_DESCRIPTION'] = 'Tool to extract Meta Data from <a href="https://www.openmicroscopy.org/omero/">OMERO.server</a> by merging <a href="https://github.com/ome/omero-web">OMERO.web</a> JSON Api output with original meta data available and setting context.'
 
 import ome_parser
 
-class ApiRequest(BaseModel):
-    image_id: int = Field(1, title='Image ID', description='Id of a Omero Image')
-    anonymize: Optional[bool] = Field(True, title='anonymize data', describtion='Set true to remove User Data, default=True')
-    class Config:
-        schema_extra = {
-            "example": {
-                "image_id": 1,
-                "anonymize": True
-            }
-        }
-
-    
+  
 class StartForm(StarletteForm):
     image_id = IntegerField(
         'Image Id',
@@ -138,6 +139,27 @@ class OmeroWebSession(requests.Session):
         else:
             logging.error('Could not get meta data from omero web json api: {}'.format(return_value))
             raise HTTPException(status_code=500, detail='Could not get meta data from omero web json api: {}'.format(return_value))
+    
+    def get_dataset_meta(self, id: int):
+        self.urls["url:datasets"]
+        request_url=self.urls["url:datasets"]+'{}'.format(str(id))
+        return_value = self.get(request_url)
+        if return_value.status_code == 200:
+            return request_url, return_value.json()
+        else:
+            logging.error('Could not get meta data from omero web json api: {}'.format(return_value))
+            raise HTTPException(status_code=500, detail='Could not get meta data from omero web json api: {}'.format(return_value))
+
+    def get_rois_meta(self, id: int):
+        self.urls["url:images"]
+        request_url=self.urls["url:images"]+'{}'.format(str(id))+"/rois/"
+        return_value = self.get(request_url)
+        if return_value.status_code == 200:
+            return request_url, return_value.json()
+        else:
+            logging.error('Could not get meta data from omero web json api: {}'.format(return_value))
+            raise HTTPException(status_code=500, detail='Could not get meta data from omero web json api: {}'.format(return_value))
+
     def get_original_image_meta(self, id: int):
         self.urls['url:original_meta']
         return_value = self.get(self.urls['url:original_meta']+'{}'.format(str(id)))
@@ -168,34 +190,88 @@ def open_api_session(host,username: str=os.getenv('OMERO_WEB_USER', default='roo
         return session
     else:
         return None
-
-@app.post("/api/imagemeta")
-async def imagemeta(request: Request, apirequest: ApiRequest) -> dict:
+    
+@app.get("/api/image/{id}")
+async def get_image_meta(request: Request, id: int, anonymize: bool = True, format: ReturnType=ReturnType.jsonld):
     host=os.getenv('OMERO_WEB_HOST',default='http://omeroweb:4080')
     session = open_api_session(host)
     if not session:
         return {}
-    url, image_meta = session.get_image_meta(apirequest.image_id)
-    image_meta=image_meta['data']
-    original_meta = session.get_original_image_meta(apirequest.image_id)
+    url, meta = session.get_image_meta(id)
+    meta=meta['data']
+    original_meta = session.get_original_image_meta(id)
     #add original_meta to json
     #print(original_meta)
-    image_meta['original_meta']=original_meta
+    meta['original_meta']=original_meta
                 
     # Serializing json
-    json_object = json.dumps(image_meta, indent=4)
+    json_object = json.dumps(meta, indent=4)
     
-    # #Writing to sample.json
-    # with open("tests/sample{}.json".format(apirequest.image_id), "w") as outfile:
-    #     outfile.write(json_object)
-    converter=ome_parser.OMEtoRDF(image_meta, root_url=url)
-    converter.annotate_prov(str(request.url),settings)
-    result=converter.to_rdf(anonymize=apirequest.anonymize)
-    #result.serialize(format='turtle', destination='sample2.ttl',auto_compact=True,indent=4)
-    return json.loads(result.serialize(format='json-ld',auto_compact=True,indent=4))
-    
+    #Writing to sample.json
+    with open("tests/image{}.json".format(id), "w") as outfile:
+        outfile.write(json_object)
 
-@app.get("/info", response_model=Settings)
+    converter=ome_parser.OMEtoRDF(meta, root_url=url)
+    converter.annotate_prov(str(request.url),settings)
+    result=converter.to_rdf(anonymize=anonymize)
+    data=result.serialize(format=format.value,auto_compact=True,indent=4)
+    if format==ReturnType.jsonld:
+        return json.loads(data)
+    else:
+        return data
+
+@app.get("/api/dataset/{id}")
+async def get_dataset_meta(request: Request, id: int, anonymize: bool = True, format: ReturnType=ReturnType.jsonld):
+    host=os.getenv('OMERO_WEB_HOST',default='http://omeroweb:4080')
+    session = open_api_session(host)
+    if not session:
+        return {}
+    url, meta = session.get_dataset_meta(id)
+    meta=meta['data']
+       # Serializing json
+    json_object = json.dumps(meta, indent=4)
+    
+    #Writing to sample.json
+    with open("tests/dataset{}.json".format(id), "w") as outfile:
+        outfile.write(json_object)
+
+                
+    converter=ome_parser.OMEtoRDF(meta, root_url=url)
+    converter.annotate_prov(str(request.url),settings)
+    result=converter.to_rdf(anonymize=anonymize)
+    data=result.serialize(format=format.value,auto_compact=True,indent=4)
+    if format==ReturnType.jsonld:
+        return json.loads(data)
+    else:
+        return data
+
+
+@app.get("/api/rois/{id}")
+async def get_rois_meta(request: Request, id: int, anonymize: bool = True, format: ReturnType=ReturnType.jsonld):
+    host=os.getenv('OMERO_WEB_HOST',default='http://omeroweb:4080')
+    session = open_api_session(host)
+    if not session:
+        return {}
+    url, meta = session.get_rois_meta(id)
+    meta=meta['data']
+       # Serializing json
+    json_object = json.dumps(meta, indent=4)
+    
+    #Writing to sample.json
+    with open("tests/rois{}.json".format(id), "w") as outfile:
+        outfile.write(json_object)
+
+                
+    converter=ome_parser.OMEtoRDF(meta, root_url=url)
+    converter.annotate_prov(str(request.url),settings)
+    result=converter.to_rdf(anonymize=anonymize)
+    data=result.serialize(format=format.value,auto_compact=True,indent=4)
+    if format==ReturnType.jsonld:
+        return json.loads(data)
+    else:
+        return data
+
+@app.get("/api/info", response_model=Settings)
 async def info() -> dict:
     return settings
 

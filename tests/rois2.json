@@ -1,0 +1,1293 @@
+[
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 1,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Rectangle",
+                "@id": 1,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "Text": "Crack Tip",
+                "TheT": 0,
+                "TheZ": 0,
+                "X": 352.5666666666668,
+                "Y": 270.2000071207683,
+                "Width": 107.3333618164063,
+                "Height": 122.2666595458985
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/1/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 2,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
+                "@id": 2,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "TheT": 0,
+                "TheZ": 0,
+                "Points": "318.68690337387346,453.3316391249641 322.2655049021713,448.47496701526063 327.3777794270703,451.03111597879575 329.9339283906055,460.74444459675533 331.2119911712874,473.5251543111742 330.445148822444,479.91550331784083 320.9874304204037,478.89305075307817 316.6419865432624,473.269544095255 317.92006102503,462.0225190785229"
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/2/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 3,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Line",
+                "@id": 3,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "TheT": 0,
+                "TheZ": 0,
+                "X1": 1020.8333618164065,
+                "Y1": 318.7333618164064,
+                "X2": 396.4333618164063,
+                "Y2": 334.60000000000014,
+                "MarkerEnd": "Arrow"
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/3/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 4,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Point",
+                "@id": 4,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "Text": "Whats at this point",
+                "TheT": 0,
+                "TheZ": 0,
+                "X": 613.9000000000001,
+                "Y": 310.3333618164064
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/4/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 5,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polyline",
+                "@id": 5,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "TheT": 0,
+                "TheZ": 0,
+                "Points": "153.7666737874349,237.53336181640634 247.10001424153654,196.46668090820322 264.8333333333334,237.53336181640634 246.16669514973967,271.13336181640636 216.30001424153653,264.6000000000001 153.7666737874349,238.46669514973962 110.83333333333333,231.0000142415365"
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/5/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 6,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Line",
+                "@id": 6,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "TheT": 0,
+                "TheZ": 0,
+                "X1": 152.83333333333337,
+                "Y1": 164.73336181640633,
+                "X2": 679.2333333333336,
+                "Y2": 176.8666809082032
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/6/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 7,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Ellipse",
+                "@id": 7,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -256,
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "Text": "Inclusion?",
+                "TheT": 0,
+                "TheZ": 0,
+                "X": 640.9667236328127,
+                "Y": 575.4000000000002,
+                "RadiusX": 31.7332763671875,
+                "RadiusY": 29.86663818359375
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/7/"
+    },
+    {
+        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
+        "@id": 8,
+        "omero:details": {
+            "@type": "TBD#Details",
+            "owner": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                "@id": 0,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "------",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": false,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": false,
+                        "isUserRead": false
+                    }
+                },
+                "FirstName": "root",
+                "MiddleName": "",
+                "LastName": "root",
+                "Email": "",
+                "UserName": "root"
+            },
+            "group": {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                "@id": 54,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": true,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": true,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "Name": "kupferdigital"
+            },
+            "permissions": {
+                "@type": "TBD#Permissions",
+                "perm": "rwr---",
+                "canAnnotate": false,
+                "canDelete": false,
+                "canEdit": false,
+                "canLink": false,
+                "isWorldWrite": false,
+                "isWorldRead": false,
+                "isGroupWrite": false,
+                "isGroupRead": true,
+                "isGroupAnnotate": false,
+                "isUserWrite": true,
+                "isUserRead": true
+            }
+        },
+        "shapes": [
+            {
+                "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Label",
+                "@id": 8,
+                "omero:details": {
+                    "@type": "TBD#Details",
+                    "owner": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Experimenter",
+                        "@id": 0,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "------",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": false,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": false,
+                                "isUserRead": false
+                            }
+                        },
+                        "FirstName": "root",
+                        "MiddleName": "",
+                        "LastName": "root",
+                        "Email": "",
+                        "UserName": "root"
+                    },
+                    "group": {
+                        "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ExperimenterGroup",
+                        "@id": 54,
+                        "omero:details": {
+                            "@type": "TBD#Details",
+                            "permissions": {
+                                "@type": "TBD#Permissions",
+                                "perm": "rwr---",
+                                "canAnnotate": true,
+                                "canDelete": false,
+                                "canEdit": false,
+                                "canLink": true,
+                                "isWorldWrite": false,
+                                "isWorldRead": false,
+                                "isGroupWrite": false,
+                                "isGroupRead": true,
+                                "isGroupAnnotate": false,
+                                "isUserWrite": true,
+                                "isUserRead": true
+                            }
+                        },
+                        "Name": "kupferdigital"
+                    },
+                    "permissions": {
+                        "@type": "TBD#Permissions",
+                        "perm": "rwr---",
+                        "canAnnotate": false,
+                        "canDelete": false,
+                        "canEdit": false,
+                        "canLink": false,
+                        "isWorldWrite": false,
+                        "isWorldRead": false,
+                        "isGroupWrite": false,
+                        "isGroupRead": true,
+                        "isGroupAnnotate": false,
+                        "isUserWrite": true,
+                        "isUserRead": true
+                    }
+                },
+                "FillColor": -65281,
+                "FontFamily": "sans-serif",
+                "FontSize": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "POINT",
+                    "Symbol": "pt",
+                    "Value": 1.0
+                },
+                "FontStyle": "normal",
+                "StrokeColor": -65281,
+                "StrokeWidth": {
+                    "@type": "TBD#LengthI",
+                    "Unit": "PIXEL",
+                    "Symbol": "pixel",
+                    "Value": 1.0
+                },
+                "Text": "Thomas was here",
+                "TheT": 0,
+                "TheZ": 0,
+                "X": 212.56669514973962,
+                "Y": 591.2666951497397
+            }
+        ],
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/8/"
+    }
+]

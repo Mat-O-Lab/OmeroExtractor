@@ -1,4 +1,4 @@
-@prefix : <https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml#> .
+@prefix : <https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.ttl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace#> .
@@ -71,6 +71,60 @@
     :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Dataset";
     skos:definition "An Omero Dataset.".
 
+:Roi rdf:type owl:Class ;
+    rdfs:label "Roi" ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI";
+    skos:definition "An Omero Roi.".
+
+:Shape rdf:type owl:Class ;
+    rdfs:label "Shape" ;
+    rdfs:subClassOf :Roi ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Shape";
+    skos:definition "An Omero Shape.".
+
+:Polygon rdf:type owl:Class ;
+    rdfs:label "Polygon" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon";
+    skos:definition "An Omero Polygon Shape.".
+
+:Rectangle rdf:type owl:Class ;
+    rdfs:label "Rectangle" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Rectangle";
+    skos:definition "An Omero Rectangle Shape.".
+
+:Line rdf:type owl:Class ;
+    rdfs:label "Line" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Line";
+    skos:definition "An Omero Line Shape.".
+
+:Polyline rdf:type owl:Class ;
+    rdfs:label "Polyline" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polyline";
+    skos:definition "An Omero Polyline Shape.".
+
+:Ellipse rdf:type owl:Class ;
+    rdfs:label "Ellipse" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Ellipse";
+    skos:definition "An Omero Ellipse Shape.".
+
+:Label rdf:type owl:Class ;
+    rdfs:label "Label Shape" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Label";
+    skos:definition "An Omero Label Shape.".
+
+
+:Point rdf:type owl:Class ;
+    rdfs:label "Point" ;
+    rdfs:subClassOf :Shape ;
+    :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Point";
+    skos:definition "An Omero Point Shape.".
+
 :Group a owl:Class ;
     owl:equivalentClass foaf:Group;
     rdfs:label "Group" ;
@@ -92,6 +146,7 @@
                     :ome_type "Pixels";
                     :ome_type "omero:photometricInterpretation";
                     :ome_type "original_meta";
+                    :ome_type "shapes";
                     rdfs:label "relates to"@en .
 
 :notes rdf:type owl:ObjectProperty ;
@@ -149,7 +204,8 @@
 
 dc:creator :ome_type "owner" .
 
-rdfs:label :ome_type "Name" .
+rdfs:label :ome_type "Name" ;
+    :ome_type "Text" .
 rdf:type :ome_type "Type".
 rdf:value  :ome_type "value".
 
@@ -220,3 +276,69 @@ foaf:accountName :ome_type "UserName".
   :ome_type "isUserRead" ;
   rdfs:range xsd:boolean .
 
+:x a owl:AnnotationProperty ;
+  rdfs:label "x Coordinate"@en ;
+  :ome_type "X" ;
+  skos:definition "X Coordinate in an Omero Image.".
+
+:y a owl:AnnotationProperty ;
+  rdfs:label "y Coordinate"@en ;
+  :ome_type "Y" ;
+  skos:definition "Y Coordinate in an Omero Image.".
+
+:width a owl:AnnotationProperty ;
+  rdfs:label "Width"@en ;
+  :ome_type "Width" ;
+  :ome_type "RadiusX";
+  skos:definition "Width as Lenght an x axis of the bounding box of a Shape".
+
+:height a owl:AnnotationProperty ;
+  rdfs:label "Height"@en ;
+  :ome_type "Height" ;
+  :ome_type "RadiusY";
+  skos:definition "Height as Lenght an x axis of the bounding box of a Shape".
+
+:points a owl:AnnotationProperty ;
+  rdfs:label "List of points as string"@en ;
+  :ome_type "Points" ;
+  skos:definition "List of points as string, in the format x,y separarated by spaces".
+
+:x1 a owl:AnnotationProperty ;
+  rdfs:label "x Coordinate of first Point"@en ;
+  :ome_type "X1" ;
+  skos:definition "X Coordinate of first Point of a Connection.".
+
+:y1 a owl:AnnotationProperty ;
+  rdfs:label "y Coordinate of first Point"@en ;
+  :ome_type "Y1" ;
+  skos:definition "Y Coordinate of first Point of a Connection.".
+
+:x2 a owl:AnnotationProperty ;
+  rdfs:label "x Coordinate of second Point"@en ;
+  :ome_type "X2" ;
+  skos:definition "X Coordinate of second Point of a Connection.".
+
+:y2 a owl:AnnotationProperty ;
+  rdfs:label "y Coordinate of second Point"@en ;
+  :ome_type "Y2" ;
+  skos:definition "Y Coordinate of second Point of a Connection.".
+
+:markerEnd a owl:AnnotationProperty ;
+  rdfs:label "Style of Marker at End"@en ;
+  :ome_type "MarkerEnd" ;
+  skos:definition "Style of Marker at End of a Connection.".
+
+:markerStart a owl:AnnotationProperty ;
+  rdfs:label "Style of Marker at Start"@en ;
+  :ome_type "MarkerStart" ;
+  skos:definition "Style of Marker at Start of a Connection.".
+
+:fillColor a owl:AnnotationProperty ;
+  rdfs:label "Fill Color"@en ;
+  :ome_type "FillColor" ;
+  skos:definition "Fill Color of a Shape in RGB Hex.".
+
+:strokeColor a owl:AnnotationProperty ;
+  rdfs:label "Stroke Color"@en ;
+  :ome_type "StrokeColor" ;
+  skos:definition "Stroke Color of a Shape in RGB Hex.".

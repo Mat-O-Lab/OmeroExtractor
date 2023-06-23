@@ -1,0 +1,1596 @@
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix ome: <https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.ttl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<> a ome:Image ;
+    rdfs:label "05_FEMBau01_u_100x_BE_EDX.tif" ;
+    prov:generatedAtTime "2023-06-23T14:54:42.175011"^^xsd:dateTime ;
+    prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/image> ;
+    ome:datasets "https://omero.matolab.org/api/v0/m/images/2/datasets/" ;
+    ome:download "https://omero.matolab.org/webgateway/archived_files/download/2"^^xsd:anyURI ;
+    ome:relates_to [ a [ a ome:PixelsType ;
+                    rdf:value "uint8" ],
+                ome:Pixels ;
+            ome:relates_to [ a ome:Channel ;
+                    ome:relates_to [ a ome:PhotometricInterpretation ;
+                            rdf:value "Monochrome" ] ;
+                    ome:samplesPerPixel 1 ] ;
+            ome:significantBits 8 ;
+            ome:sizeC 1 ;
+            ome:sizeT 1 ;
+            ome:sizeX 1024 ;
+            ome:sizeY 768 ;
+            ome:sizeZ 1 ],
+        [ a ome:OriginalMeta ;
+            ome:notes <GlobalMetadataAa1>,
+                <GlobalMetadataAa2>,
+                <GlobalMetadataAllFrozen>,
+                <GlobalMetadataAllZones>,
+                <GlobalMetadataApertureAlignX>,
+                <GlobalMetadataApertureAlignY>,
+                <GlobalMetadataApertureNo>,
+                <GlobalMetadataApertureSize>,
+                <GlobalMetadataAreaFraction>,
+                <GlobalMetadataAutoBc>,
+                <GlobalMetadataBackGrid>,
+                <GlobalMetadataBeamBlanked>,
+                <GlobalMetadataBeamOffsetX>,
+                <GlobalMetadataBeamOffsetY>,
+                <GlobalMetadataBeamShiftX>,
+                <GlobalMetadataBeamShiftY>,
+                <GlobalMetadataBeamState>,
+                <GlobalMetadataBeamTime>,
+                <GlobalMetadataBitspersample>,
+                <GlobalMetadataBlackThreshold>,
+                <GlobalMetadataBrightness>,
+                <GlobalMetadataBsdAutoRange>,
+                <GlobalMetadataBsdBandwidth>,
+                <GlobalMetadataBsdFast>,
+                <GlobalMetadataBsdFastScan>,
+                <GlobalMetadataBsdGain>,
+                <GlobalMetadataC3LensI>,
+                <GlobalMetadataCcPressure>,
+                <GlobalMetadataCcStatus>,
+                <GlobalMetadataCcdIllum>,
+                <GlobalMetadataChamber>,
+                <GlobalMetadataCollectorBias>,
+                <GlobalMetadataColourMode>,
+                <GlobalMetadataColumnIsolated>,
+                <GlobalMetadataColumnPumping>,
+                <GlobalMetadataCompression>,
+                <GlobalMetadataCompuHeight>,
+                <GlobalMetadataContrast>,
+                <GlobalMetadataControl>,
+                <GlobalMetadataCrosshairs>,
+                <GlobalMetadataCursorHeight>,
+                <GlobalMetadataCursorWidth>,
+                <GlobalMetadataCycleTime>,
+                <GlobalMetadataDa1>,
+                <GlobalMetadataDa2>,
+                <GlobalMetadataDa3>,
+                <GlobalMetadataDa4>,
+                <GlobalMetadataDate>,
+                <GlobalMetadataDb1>,
+                <GlobalMetadataDb2>,
+                <GlobalMetadataDb3>,
+                <GlobalMetadataDb4>,
+                <GlobalMetadataDefectId>,
+                <GlobalMetadataDisplay>,
+                <GlobalMetadataDisplayLutMode>,
+                <GlobalMetadataDriftMaxPixError>,
+                <GlobalMetadataDriftMaxTries>,
+                <GlobalMetadataDriftMinConf>,
+                <GlobalMetadataDualMonitor>,
+                <GlobalMetadataDwellTime>,
+                <GlobalMetadataDynFocus>,
+                <GlobalMetadataEht>,
+                <GlobalMetadataEhtTarget>,
+                <GlobalMetadataEhtVacReady>,
+                <GlobalMetadataElectronCounting>,
+                <GlobalMetadataEsdExcitation>,
+                <GlobalMetadataExtScanControl>,
+                <GlobalMetadataExtractorI>,
+                <GlobalMetadataExtractorVTarget>,
+                <GlobalMetadataFastMode>,
+                <GlobalMetadataFcfSetting>,
+                <GlobalMetadataFieldOverlap>,
+                <GlobalMetadataFilI>,
+                <GlobalMetadataFilamentAge>,
+                <GlobalMetadataFileName>,
+                <GlobalMetadataFileNo>,
+                <GlobalMetadataFocus>,
+                <GlobalMetadataFocusScanMax>,
+                <GlobalMetadataFocusScanMin>,
+                <GlobalMetadataFramesToAverage>,
+                <GlobalMetadataFramesToInt>,
+                <GlobalMetadataFreeze>,
+                <GlobalMetadataFreezeBlanks>,
+                <GlobalMetadataFreezeOn>,
+                <GlobalMetadataFrontGrid>,
+                <GlobalMetadataGainA>,
+                <GlobalMetadataGainB>,
+                <GlobalMetadataGamma>,
+                <GlobalMetadataGisChannelWithCc>,
+                <GlobalMetadataGunVacuum>,
+                <GlobalMetadataH1>,
+                <GlobalMetadataH10>,
+                <GlobalMetadataH2>,
+                <GlobalMetadataH3>,
+                <GlobalMetadataH4>,
+                <GlobalMetadataH5>,
+                <GlobalMetadataH6>,
+                <GlobalMetadataH7>,
+                <GlobalMetadataH8>,
+                <GlobalMetadataH9>,
+                <GlobalMetadataHeight>,
+                <GlobalMetadataHighCurrent>,
+                <GlobalMetadataHolderDiameter>,
+                <GlobalMetadataHolderHeight>,
+                <GlobalMetadataHolderLength>,
+                <GlobalMetadataHolderWidth>,
+                <GlobalMetadataIProbe>,
+                <GlobalMetadataImage>,
+                <GlobalMetadataImageDetect>,
+                <GlobalMetadataImagePixelSize>,
+                <GlobalMetadataImageSaved>,
+                <GlobalMetadataImagelength>,
+                <GlobalMetadataImages>,
+                <GlobalMetadataImagewidth>,
+                <GlobalMetadataInputLutMode>,
+                <GlobalMetadataInvertA>,
+                <GlobalMetadataInvertB>,
+                <GlobalMetadataJazzBandwidth>,
+                <GlobalMetadataJazzGain>,
+                <GlobalMetadataLargeBeamShift>,
+                <GlobalMetadataLaserIllumination>,
+                <GlobalMetadataLineAvgCount>,
+                <GlobalMetadataLineIntCount>,
+                <GlobalMetadataLineScan>,
+                <GlobalMetadataLowMag>,
+                <GlobalMetadataMag>,
+                <GlobalMetadataMagRange>,
+                <GlobalMetadataMagZ0>,
+                <GlobalMetadataMagZ1>,
+                <GlobalMetadataMainsSync>,
+                <GlobalMetadataMetadataphotometricinterpretation>,
+                <GlobalMetadataMinMag>,
+                <GlobalMetadataMixSignal>,
+                <GlobalMetadataMixing>,
+                <GlobalMetadataN>,
+                <GlobalMetadataNewsubfiletype>,
+                <GlobalMetadataNoiseReduction>,
+                <GlobalMetadataNumberofchannels>,
+                <GlobalMetadataOffsetA>,
+                <GlobalMetadataOffsetB>,
+                <GlobalMetadataOperatingMode>,
+                <GlobalMetadataOptiprobe>,
+                <GlobalMetadataOutputDev>,
+                <GlobalMetadataOutputTo>,
+                <GlobalMetadataPa1>,
+                <GlobalMetadataPa10>,
+                <GlobalMetadataPa2>,
+                <GlobalMetadataPa3>,
+                <GlobalMetadataPa4>,
+                <GlobalMetadataPa5>,
+                <GlobalMetadataPa6>,
+                <GlobalMetadataPa7>,
+                <GlobalMetadataPa8>,
+                <GlobalMetadataPa9>,
+                <GlobalMetadataPb1>,
+                <GlobalMetadataPb2>,
+                <GlobalMetadataPb3>,
+                <GlobalMetadataPb4>,
+                <GlobalMetadataPb5>,
+                <GlobalMetadataPb6>,
+                <GlobalMetadataPb7>,
+                <GlobalMetadataPeltier>,
+                <GlobalMetadataPeltierTarget>,
+                <GlobalMetadataPeltierTemp>,
+                <GlobalMetadataPhotoNo>,
+                <GlobalMetadataPhotometricinterpretation>,
+                <GlobalMetadataPixSizeState>,
+                <GlobalMetadataPixelSize>,
+                <GlobalMetadataPrintNo>,
+                <GlobalMetadataProfile1X1>,
+                <GlobalMetadataProfile1X2>,
+                <GlobalMetadataProfile2X1>,
+                <GlobalMetadataProfile2X2>,
+                <GlobalMetadataProfileWidth>,
+                <GlobalMetadataProfileWidth1>,
+                <GlobalMetadataProfileWidth2>,
+                <GlobalMetadataQ1>,
+                <GlobalMetadataQ2>,
+                <GlobalMetadataQ3>,
+                <GlobalMetadataQ4>,
+                <GlobalMetadataQ5>,
+                <GlobalMetadataRecipe>,
+                <GlobalMetadataRedRasterHeight>,
+                <GlobalMetadataRedRasterPosnX>,
+                <GlobalMetadataRedRasterPosnY>,
+                <GlobalMetadataRedRasterWidth>,
+                <GlobalMetadataReferenceMag>,
+                <GlobalMetadataResolutionunit>,
+                <GlobalMetadataRightFrozen>,
+                <GlobalMetadataSampleAtX>,
+                <GlobalMetadataSampleAtY>,
+                <GlobalMetadataSamplesperpixel>,
+                <GlobalMetadataScanRot>,
+                <GlobalMetadataScanRotation>,
+                <GlobalMetadataScanSpeed>,
+                <GlobalMetadataScdAutoRange>,
+                <GlobalMetadataScdBandwidth>,
+                <GlobalMetadataScdGain>,
+                <GlobalMetadataScint>,
+                <GlobalMetadataScmRange>,
+                <GlobalMetadataScmStatus>,
+                <GlobalMetadataSem>,
+                <GlobalMetadataSemLevel>,
+                <GlobalMetadataSerialNo>,
+                <GlobalMetadataSignal>,
+                <GlobalMetadataSignalA>,
+                <GlobalMetadataSignalB>,
+                <GlobalMetadataSmartimageContrast>,
+                <GlobalMetadataSmartimageNoiseReduction>,
+                <GlobalMetadataSmartimageSharpening>,
+                <GlobalMetadataSmartimageThreshold>,
+                <GlobalMetadataSmartimageTopography>,
+                <GlobalMetadataSpacerThickness>,
+                <GlobalMetadataSpecimenDiameter>,
+                <GlobalMetadataSpecimenHeight>,
+                <GlobalMetadataSpecimenI>,
+                <GlobalMetadataSpot>,
+                <GlobalMetadataStageAtFieldX>,
+                <GlobalMetadataStageAtFieldY>,
+                <GlobalMetadataStageAtM>,
+                <GlobalMetadataStageAtR>,
+                <GlobalMetadataStageAtT>,
+                <GlobalMetadataStageAtX>,
+                <GlobalMetadataStageAtY>,
+                <GlobalMetadataStageAtZ>,
+                <GlobalMetadataStageDeltaM>,
+                <GlobalMetadataStageDeltaR>,
+                <GlobalMetadataStageDeltaT>,
+                <GlobalMetadataStageDeltaX>,
+                <GlobalMetadataStageDeltaY>,
+                <GlobalMetadataStageDeltaZ>,
+                <GlobalMetadataStageFieldSizeX>,
+                <GlobalMetadataStageFieldSizeY>,
+                <GlobalMetadataStageFieldsX>,
+                <GlobalMetadataStageFieldsY>,
+                <GlobalMetadataStageGotoFieldX>,
+                <GlobalMetadataStageGotoFieldY>,
+                <GlobalMetadataStageGotoM>,
+                <GlobalMetadataStageGotoR>,
+                <GlobalMetadataStageGotoT>,
+                <GlobalMetadataStageGotoX>,
+                <GlobalMetadataStageGotoY>,
+                <GlobalMetadataStageGotoZ>,
+                <GlobalMetadataStageHighR>,
+                <GlobalMetadataStageHighX>,
+                <GlobalMetadataStageHighY>,
+                <GlobalMetadataStageHighZ>,
+                <GlobalMetadataStageInitialised>,
+                <GlobalMetadataStageIs>,
+                <GlobalMetadataStageLowR>,
+                <GlobalMetadataStageLowX>,
+                <GlobalMetadataStageLowY>,
+                <GlobalMetadataStageLowZ>,
+                <GlobalMetadataStageTilt>,
+                <GlobalMetadataStageTilted>,
+                <GlobalMetadataStemAuto>,
+                <GlobalMetadataStemFast>,
+                <GlobalMetadataStemGain>,
+                <GlobalMetadataStemQ1>,
+                <GlobalMetadataStemQ2>,
+                <GlobalMetadataStemQ3>,
+                <GlobalMetadataStemSegMode>,
+                <GlobalMetadataStigmationX>,
+                <GlobalMetadataStigmationY>,
+                <GlobalMetadataStoreResolution>,
+                <GlobalMetadataSystemVacuum>,
+                <GlobalMetadataTiltAngle>,
+                <GlobalMetadataTiltAxis>,
+                <GlobalMetadataTiltCorrn>,
+                <GlobalMetadataTime>,
+                <GlobalMetadataTrackZ>,
+                <GlobalMetadataUser>,
+                <GlobalMetadataUserAlign>,
+                <GlobalMetadataUserCalibration>,
+                <GlobalMetadataUserLevel>,
+                <GlobalMetadataUserMaxEht>,
+                <GlobalMetadataUserName>,
+                <GlobalMetadataV1>,
+                <GlobalMetadataV10>,
+                <GlobalMetadataV2>,
+                <GlobalMetadataV3>,
+                <GlobalMetadataV4>,
+                <GlobalMetadataV5>,
+                <GlobalMetadataV6>,
+                <GlobalMetadataV7>,
+                <GlobalMetadataV8>,
+                <GlobalMetadataV9>,
+                <GlobalMetadataVacReady>,
+                <GlobalMetadataVacStatus>,
+                <GlobalMetadataVacuumMode>,
+                <GlobalMetadataVentInhibit>,
+                <GlobalMetadataVentingInhibited>,
+                <GlobalMetadataVersion>,
+                <GlobalMetadataVpAperture>,
+                <GlobalMetadataVpTarget>,
+                <GlobalMetadataWd>,
+                <GlobalMetadataWhiteThreshold>,
+                <GlobalMetadataWidth>,
+                <GlobalMetadataWindowing>,
+                <GlobalMetadataXresolution>,
+                <GlobalMetadataYresolution>,
+                <GlobalMetadataZone> ] ;
+    ome:rois <https://metadata.omero.matolab.org/api/rois/2> ;
+    ome:url "https://omero.matolab.org/api/v0/m/images/2"^^xsd:anyURI .
+
+<GlobalMetadataAa1> a oa:Annotation ;
+    rdfs:label "Global Metadata aa 1" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataAa2> a oa:Annotation ;
+    rdfs:label "Global Metadata aa 2" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataAllFrozen> a oa:Annotation ;
+    rdfs:label "Global Metadata all frozen" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataAllZones> a oa:Annotation ;
+    rdfs:label "Global Metadata all zones" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataApertureAlignX> a oa:Annotation ;
+    rdfs:label "Global Metadata aperture align x" ;
+    oa:hasLiteralBody "9.7 %"^^xsd:string .
+
+<GlobalMetadataApertureAlignY> a oa:Annotation ;
+    rdfs:label "Global Metadata aperture align y" ;
+    oa:hasLiteralBody "7.8 %"^^xsd:string .
+
+<GlobalMetadataApertureNo> a oa:Annotation ;
+    rdfs:label "Global Metadata aperture no." ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 4 ] .
+
+<GlobalMetadataApertureSize> a oa:Annotation ;
+    rdfs:label "Global Metadata aperture size" ;
+    oa:hasLiteralBody "60.00 �m"^^xsd:string .
+
+<GlobalMetadataAreaFraction> a oa:Annotation ;
+    rdfs:label "Global Metadata area fraction" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataAutoBc> a oa:Annotation ;
+    rdfs:label "Global Metadata auto bc" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataBackGrid> a oa:Annotation ;
+    rdfs:label "Global Metadata back grid" ;
+    oa:hasLiteralBody "0 V"^^xsd:string .
+
+<GlobalMetadataBeamBlanked> a oa:Annotation ;
+    rdfs:label "Global Metadata beam blanked" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataBeamOffsetX> a oa:Annotation ;
+    rdfs:label "Global Metadata beam offset x" ;
+    oa:hasLiteralBody "-413.43 nm"^^xsd:string .
+
+<GlobalMetadataBeamOffsetY> a oa:Annotation ;
+    rdfs:label "Global Metadata beam offset y" ;
+    oa:hasLiteralBody "137.4 nm"^^xsd:string .
+
+<GlobalMetadataBeamShiftX> a oa:Annotation ;
+    rdfs:label "Global Metadata beam shift x" ;
+    oa:hasLiteralBody "-3.4 %"^^xsd:string .
+
+<GlobalMetadataBeamShiftY> a oa:Annotation ;
+    rdfs:label "Global Metadata beam shift y" ;
+    oa:hasLiteralBody "1.1 %"^^xsd:string .
+
+<GlobalMetadataBeamState> a oa:Annotation ;
+    rdfs:label "Global Metadata beam state" ;
+    oa:hasLiteralBody "Beam On"^^xsd:string .
+
+<GlobalMetadataBeamTime> a oa:Annotation ;
+    rdfs:label "Global Metadata beam time" ;
+    oa:hasLiteralBody "25489.54 Hours"^^xsd:string .
+
+<GlobalMetadataBitspersample> a oa:Annotation ;
+    rdfs:label "Global Metadata bitspersample" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 8 ] .
+
+<GlobalMetadataBlackThreshold> a oa:Annotation ;
+    rdfs:label "Global Metadata black threshold" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataBrightness> a oa:Annotation ;
+    rdfs:label "Global Metadata brightness" ;
+    oa:hasLiteralBody "36.4 %"^^xsd:string .
+
+<GlobalMetadataBsdAutoRange> a oa:Annotation ;
+    rdfs:label "Global Metadata bsd auto range" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataBsdBandwidth> a oa:Annotation ;
+    rdfs:label "Global Metadata bsd bandwidth" ;
+    oa:hasLiteralBody "DC"^^xsd:string .
+
+<GlobalMetadataBsdFast> a oa:Annotation ;
+    rdfs:label "Global Metadata bsd fast" ;
+    oa:hasLiteralBody "No"^^xsd:string .
+
+<GlobalMetadataBsdFastScan> a oa:Annotation ;
+    rdfs:label "Global Metadata bsd fast scan" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataBsdGain> a oa:Annotation ;
+    rdfs:label "Global Metadata bsd gain" ;
+    oa:hasLiteralBody "Very High"^^xsd:string .
+
+<GlobalMetadataC3LensI> a oa:Annotation ;
+    rdfs:label "Global Metadata c3 lens i" ;
+    oa:hasLiteralBody "966.15 mA"^^xsd:string .
+
+<GlobalMetadataCcPressure> a oa:Annotation ;
+    rdfs:label "Global Metadata cc pressure" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataCcStatus> a oa:Annotation ;
+    rdfs:label "Global Metadata cc status" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataCcdIllum> a oa:Annotation ;
+    rdfs:label "Global Metadata ccd illum." ;
+    oa:hasLiteralBody "60.0 %"^^xsd:string .
+
+<GlobalMetadataChamber> a oa:Annotation ;
+    rdfs:label "Global Metadata chamber" ;
+    oa:hasLiteralBody "6.53e-004 Pa"^^xsd:string .
+
+<GlobalMetadataCollectorBias> a oa:Annotation ;
+    rdfs:label "Global Metadata collector bias" ;
+    oa:hasLiteralBody "300 V"^^xsd:string .
+
+<GlobalMetadataColourMode> a oa:Annotation ;
+    rdfs:label "Global Metadata colour mode" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataColumnIsolated> a oa:Annotation ;
+    rdfs:label "Global Metadata column isolated" ;
+    oa:hasLiteralBody "No"^^xsd:string .
+
+<GlobalMetadataColumnPumping> a oa:Annotation ;
+    rdfs:label "Global Metadata column pumping" ;
+    oa:hasLiteralBody "Ready"^^xsd:string .
+
+<GlobalMetadataCompression> a oa:Annotation ;
+    rdfs:label "Global Metadata compression" ;
+    oa:hasLiteralBody "Uncompressed"^^xsd:string .
+
+<GlobalMetadataCompuHeight> a oa:Annotation ;
+    rdfs:label "Global Metadata compu. height" ;
+    oa:hasLiteralBody "4.981 mm"^^xsd:string .
+
+<GlobalMetadataContrast> a oa:Annotation ;
+    rdfs:label "Global Metadata contrast" ;
+    oa:hasLiteralBody "3.7 %"^^xsd:string .
+
+<GlobalMetadataControl> a oa:Annotation ;
+    rdfs:label "Global Metadata control" ;
+    oa:hasLiteralBody "Signal A"^^xsd:string .
+
+<GlobalMetadataCrosshairs> a oa:Annotation ;
+    rdfs:label "Global Metadata crosshairs" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataCursorHeight> a oa:Annotation ;
+    rdfs:label "Global Metadata cursor height" ;
+    oa:hasLiteralBody "369.1 �m"^^xsd:string .
+
+<GlobalMetadataCursorWidth> a oa:Annotation ;
+    rdfs:label "Global Metadata cursor width" ;
+    oa:hasLiteralBody "366.8 �m"^^xsd:string .
+
+<GlobalMetadataCycleTime> a oa:Annotation ;
+    rdfs:label "Global Metadata cycle time" ;
+    oa:hasLiteralBody "20.2 Secs"^^xsd:string .
+
+<GlobalMetadataDa1> a oa:Annotation ;
+    rdfs:label "Global Metadata da 1" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataDa2> a oa:Annotation ;
+    rdfs:label "Global Metadata da 2" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataDa3> a oa:Annotation ;
+    rdfs:label "Global Metadata da 3" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataDa4> a oa:Annotation ;
+    rdfs:label "Global Metadata da 4" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataDate> a oa:Annotation ;
+    rdfs:label "Global Metadata date" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value "2022-11-18T00:00:00"^^xsd:dateTime ] .
+
+<GlobalMetadataDb1> a oa:Annotation ;
+    rdfs:label "Global Metadata db 1" ;
+    oa:hasLiteralBody "0. nm�"^^xsd:string .
+
+<GlobalMetadataDb2> a oa:Annotation ;
+    rdfs:label "Global Metadata db 2" ;
+    oa:hasLiteralBody "0. nm�"^^xsd:string .
+
+<GlobalMetadataDb3> a oa:Annotation ;
+    rdfs:label "Global Metadata db 3" ;
+    oa:hasLiteralBody "0. nm�"^^xsd:string .
+
+<GlobalMetadataDb4> a oa:Annotation ;
+    rdfs:label "Global Metadata db 4" ;
+    oa:hasLiteralBody "0. nm�"^^xsd:string .
+
+<GlobalMetadataDefectId> a oa:Annotation ;
+    rdfs:label "Global Metadata defect id" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataDisplay> a oa:Annotation ;
+    rdfs:label "Global Metadata display" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataDisplayLutMode> a oa:Annotation ;
+    rdfs:label "Global Metadata display lut mode" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataDriftMaxPixError> a oa:Annotation ;
+    rdfs:label "Global Metadata drift max.pix.error" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataDriftMaxTries> a oa:Annotation ;
+    rdfs:label "Global Metadata drift max tries" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 10 ] .
+
+<GlobalMetadataDriftMinConf> a oa:Annotation ;
+    rdfs:label "Global Metadata drift min conf" ;
+    oa:hasLiteralBody "50.0 %"^^xsd:string .
+
+<GlobalMetadataDualMonitor> a oa:Annotation ;
+    rdfs:label "Global Metadata dual monitor" ;
+    oa:hasLiteralBody "On"^^xsd:string .
+
+<GlobalMetadataDwellTime> a oa:Annotation ;
+    rdfs:label "Global Metadata dwell time" ;
+    oa:hasLiteralBody "100 ns"^^xsd:string .
+
+<GlobalMetadataDynFocus> a oa:Annotation ;
+    rdfs:label "Global Metadata dyn.focus" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataEht> a oa:Annotation ;
+    rdfs:label "Global Metadata eht" ;
+    oa:hasLiteralBody "12.00 kV"^^xsd:string .
+
+<GlobalMetadataEhtTarget> a oa:Annotation ;
+    rdfs:label "Global Metadata eht target" ;
+    oa:hasLiteralBody "12.00 kV"^^xsd:string .
+
+<GlobalMetadataEhtVacReady> a oa:Annotation ;
+    rdfs:label "Global Metadata eht vac ready" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataElectronCounting> a oa:Annotation ;
+    rdfs:label "Global Metadata electron counting" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataEsdExcitation> a oa:Annotation ;
+    rdfs:label "Global Metadata esd excitation" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataExtScanControl> a oa:Annotation ;
+    rdfs:label "Global Metadata ext.scan control" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataExtractorI> a oa:Annotation ;
+    rdfs:label "Global Metadata extractor i" ;
+    oa:hasLiteralBody "288.60 �A"^^xsd:string .
+
+<GlobalMetadataExtractorVTarget> a oa:Annotation ;
+    rdfs:label "Global Metadata extractor v target" ;
+    oa:hasLiteralBody "5.30 kV"^^xsd:string .
+
+<GlobalMetadataFastMode> a oa:Annotation ;
+    rdfs:label "Global Metadata fast mode" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataFcfSetting> a oa:Annotation ;
+    rdfs:label "Global Metadata fcf setting" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataFieldOverlap> a oa:Annotation ;
+    rdfs:label "Global Metadata field overlap" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataFilI> a oa:Annotation ;
+    rdfs:label "Global Metadata fil i" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value "2023-06-23T02:00:00"^^xsd:dateTime ] .
+
+<GlobalMetadataFilamentAge> a oa:Annotation ;
+    rdfs:label "Global Metadata filament age" ;
+    oa:hasLiteralBody "33213.78 Hours"^^xsd:string .
+
+<GlobalMetadataFileName> a oa:Annotation ;
+    rdfs:label "Global Metadata file name" ;
+    oa:hasLiteralBody "05_FEMBau01_u_100x_BE_EDX.tif"^^xsd:string .
+
+<GlobalMetadataFileNo> a oa:Annotation ;
+    rdfs:label "Global Metadata file no" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 67256 ] .
+
+<GlobalMetadataFocus> a oa:Annotation ;
+    rdfs:label "Global Metadata focus" ;
+    oa:hasLiteralBody "8.1 mm"^^xsd:string .
+
+<GlobalMetadataFocusScanMax> a oa:Annotation ;
+    rdfs:label "Global Metadata focus scan max" ;
+    oa:hasLiteralBody "40 mm"^^xsd:string .
+
+<GlobalMetadataFocusScanMin> a oa:Annotation ;
+    rdfs:label "Global Metadata focus scan min" ;
+    oa:hasLiteralBody "1 mm"^^xsd:string .
+
+<GlobalMetadataFramesToAverage> a oa:Annotation ;
+    rdfs:label "Global Metadata frames to average" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 11 ] .
+
+<GlobalMetadataFramesToInt> a oa:Annotation ;
+    rdfs:label "Global Metadata frames to int." ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataFreeze> a oa:Annotation ;
+    rdfs:label "Global Metadata freeze" ;
+    oa:hasLiteralBody "Active"^^xsd:string .
+
+<GlobalMetadataFreezeBlanks> a oa:Annotation ;
+    rdfs:label "Global Metadata freeze blanks" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataFreezeOn> a oa:Annotation ;
+    rdfs:label "Global Metadata freeze on" ;
+    oa:hasLiteralBody "End Frame"^^xsd:string .
+
+<GlobalMetadataFrontGrid> a oa:Annotation ;
+    rdfs:label "Global Metadata front grid" ;
+    oa:hasLiteralBody "0 V"^^xsd:string .
+
+<GlobalMetadataGainA> a oa:Annotation ;
+    rdfs:label "Global Metadata gain a" ;
+    oa:hasLiteralBody "100.0 %"^^xsd:string .
+
+<GlobalMetadataGainB> a oa:Annotation ;
+    rdfs:label "Global Metadata gain b" ;
+    oa:hasLiteralBody "100.0 %"^^xsd:string .
+
+<GlobalMetadataGamma> a oa:Annotation ;
+    rdfs:label "Global Metadata gamma" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataGisChannelWithCc> a oa:Annotation ;
+    rdfs:label "Global Metadata gis channel with cc" ;
+    oa:hasLiteralBody "None"^^xsd:string .
+
+<GlobalMetadataGunVacuum> a oa:Annotation ;
+    rdfs:label "Global Metadata gun vacuum" ;
+    oa:hasLiteralBody "2.11e-010 mbar"^^xsd:string .
+
+<GlobalMetadataH1> a oa:Annotation ;
+    rdfs:label "Global Metadata h 1" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH10> a oa:Annotation ;
+    rdfs:label "Global Metadata h 10" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH2> a oa:Annotation ;
+    rdfs:label "Global Metadata h 2" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH3> a oa:Annotation ;
+    rdfs:label "Global Metadata h 3" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH4> a oa:Annotation ;
+    rdfs:label "Global Metadata h 4" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH5> a oa:Annotation ;
+    rdfs:label "Global Metadata h 5" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH6> a oa:Annotation ;
+    rdfs:label "Global Metadata h 6" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH7> a oa:Annotation ;
+    rdfs:label "Global Metadata h 7" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH8> a oa:Annotation ;
+    rdfs:label "Global Metadata h 8" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataH9> a oa:Annotation ;
+    rdfs:label "Global Metadata h 9" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataHeight> a oa:Annotation ;
+    rdfs:label "Global Metadata height" ;
+    oa:hasLiteralBody "862.7 �m"^^xsd:string .
+
+<GlobalMetadataHighCurrent> a oa:Annotation ;
+    rdfs:label "Global Metadata high current" ;
+    oa:hasLiteralBody "On"^^xsd:string .
+
+<GlobalMetadataHolderDiameter> a oa:Annotation ;
+    rdfs:label "Global Metadata holder diameter" ;
+    oa:hasLiteralBody "50.000 mm"^^xsd:string .
+
+<GlobalMetadataHolderHeight> a oa:Annotation ;
+    rdfs:label "Global Metadata holder height" ;
+    oa:hasLiteralBody "16.200 mm"^^xsd:string .
+
+<GlobalMetadataHolderLength> a oa:Annotation ;
+    rdfs:label "Global Metadata holder length" ;
+    oa:hasLiteralBody "20.000 mm"^^xsd:string .
+
+<GlobalMetadataHolderWidth> a oa:Annotation ;
+    rdfs:label "Global Metadata holder width" ;
+    oa:hasLiteralBody "20.000 mm"^^xsd:string .
+
+<GlobalMetadataIProbe> a oa:Annotation ;
+    rdfs:label "Global Metadata i probe" ;
+    oa:hasLiteralBody "200.0 nA"^^xsd:string .
+
+<GlobalMetadataImage> a oa:Annotation ;
+    rdfs:label "Global Metadata image" ;
+    oa:hasLiteralBody "Frozen"^^xsd:string .
+
+<GlobalMetadataImageDetect> a oa:Annotation ;
+    rdfs:label "Global Metadata image detect" ;
+    oa:hasLiteralBody "Black"^^xsd:string .
+
+<GlobalMetadataImagePixelSize> a oa:Annotation ;
+    rdfs:label "Global Metadata image pixel size" ;
+    oa:hasLiteralBody "1.123 �m"^^xsd:string .
+
+<GlobalMetadataImageSaved> a oa:Annotation ;
+    rdfs:label "Global Metadata image saved" ;
+    oa:hasLiteralBody "No"^^xsd:string .
+
+<GlobalMetadataImagelength> a oa:Annotation ;
+    rdfs:label "Global Metadata imagelength" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 768 ] .
+
+<GlobalMetadataImages> a oa:Annotation ;
+    rdfs:label "Global Metadata images" ;
+    oa:hasLiteralBody "Z:\\0_Daten nach Crash\\seb76128\\KupferDigital\\FEMBau01\\"^^xsd:string .
+
+<GlobalMetadataImagewidth> a oa:Annotation ;
+    rdfs:label "Global Metadata imagewidth" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1024 ] .
+
+<GlobalMetadataInputLutMode> a oa:Annotation ;
+    rdfs:label "Global Metadata input lut mode" ;
+    oa:hasLiteralBody "Transparent"^^xsd:string .
+
+<GlobalMetadataInvertA> a oa:Annotation ;
+    rdfs:label "Global Metadata invert a" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataInvertB> a oa:Annotation ;
+    rdfs:label "Global Metadata invert b" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataJazzBandwidth> a oa:Annotation ;
+    rdfs:label "Global Metadata jazz bandwidth" ;
+    oa:hasLiteralBody "Low"^^xsd:string .
+
+<GlobalMetadataJazzGain> a oa:Annotation ;
+    rdfs:label "Global Metadata jazz gain" ;
+    oa:hasLiteralBody "Low"^^xsd:string .
+
+<GlobalMetadataLargeBeamShift> a oa:Annotation ;
+    rdfs:label "Global Metadata large beam shift" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataLaserIllumination> a oa:Annotation ;
+    rdfs:label "Global Metadata laser illumination" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataLineAvgCount> a oa:Annotation ;
+    rdfs:label "Global Metadata line avg.count" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 10 ] .
+
+<GlobalMetadataLineIntCount> a oa:Annotation ;
+    rdfs:label "Global Metadata line int. count" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataLineScan> a oa:Annotation ;
+    rdfs:label "Global Metadata line scan" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataLowMag> a oa:Annotation ;
+    rdfs:label "Global Metadata low mag" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataMag> a oa:Annotation ;
+    rdfs:label "Global Metadata mag" ;
+    oa:hasLiteralBody "100 X"^^xsd:string .
+
+<GlobalMetadataMagRange> a oa:Annotation ;
+    rdfs:label "Global Metadata mag range" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataMagZ0> a oa:Annotation ;
+    rdfs:label "Global Metadata mag z0" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataMagZ1> a oa:Annotation ;
+    rdfs:label "Global Metadata mag z1" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataMainsSync> a oa:Annotation ;
+    rdfs:label "Global Metadata mains sync" ;
+    oa:hasLiteralBody "Single Edge"^^xsd:string .
+
+<GlobalMetadataMetadataphotometricinterpretation> a oa:Annotation ;
+    rdfs:label "Global Metadata metadataphotometricinterpretation" ;
+    oa:hasLiteralBody "Monochrome"^^xsd:string .
+
+<GlobalMetadataMinMag> a oa:Annotation ;
+    rdfs:label "Global Metadata min mag" ;
+    oa:hasLiteralBody "23 X"^^xsd:string .
+
+<GlobalMetadataMixSignal> a oa:Annotation ;
+    rdfs:label "Global Metadata mix signal" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataMixing> a oa:Annotation ;
+    rdfs:label "Global Metadata mixing" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataN> a oa:Annotation ;
+    rdfs:label "Global Metadata n" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 11 ] .
+
+<GlobalMetadataNewsubfiletype> a oa:Annotation ;
+    rdfs:label "Global Metadata newsubfiletype" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataNoiseReduction> a oa:Annotation ;
+    rdfs:label "Global Metadata noise reduction" ;
+    oa:hasLiteralBody "Pixel Avg."^^xsd:string .
+
+<GlobalMetadataNumberofchannels> a oa:Annotation ;
+    rdfs:label "Global Metadata numberofchannels" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 3 ] .
+
+<GlobalMetadataOffsetA> a oa:Annotation ;
+    rdfs:label "Global Metadata offset a" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataOffsetB> a oa:Annotation ;
+    rdfs:label "Global Metadata offset b" ;
+    oa:hasLiteralBody "0.0 %"^^xsd:string .
+
+<GlobalMetadataOperatingMode> a oa:Annotation ;
+    rdfs:label "Global Metadata operating mode" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataOptiprobe> a oa:Annotation ;
+    rdfs:label "Global Metadata optiprobe" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataOutputDev> a oa:Annotation ;
+    rdfs:label "Global Metadata output dev" ;
+    oa:hasLiteralBody "19/21 inch display"^^xsd:string .
+
+<GlobalMetadataOutputTo> a oa:Annotation ;
+    rdfs:label "Global Metadata output to" ;
+    oa:hasLiteralBody "Display/File"^^xsd:string .
+
+<GlobalMetadataPa1> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 1" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa10> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 10" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa2> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 2" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa3> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 3" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa4> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 4" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa5> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 5" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa6> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 6" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa7> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 7" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa8> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 8" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPa9> a oa:Annotation ;
+    rdfs:label "Global Metadata pa 9" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataPb1> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 1" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPb2> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 2" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPb3> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 3" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPb4> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 4" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPb5> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 5" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPb6> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 6" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPb7> a oa:Annotation ;
+    rdfs:label "Global Metadata pb 7" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataPeltier> a oa:Annotation ;
+    rdfs:label "Global Metadata peltier" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataPeltierTarget> a oa:Annotation ;
+    rdfs:label "Global Metadata peltier target" ;
+    oa:hasLiteralBody "20.0 �C"^^xsd:string .
+
+<GlobalMetadataPeltierTemp> a oa:Annotation ;
+    rdfs:label "Global Metadata peltier temp" ;
+    oa:hasLiteralBody "20.0 �C"^^xsd:string .
+
+<GlobalMetadataPhotoNo> a oa:Annotation ;
+    rdfs:label "Global Metadata photo no." ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 5778 ] .
+
+<GlobalMetadataPhotometricinterpretation> a oa:Annotation ;
+    rdfs:label "Global Metadata photometricinterpretation" ;
+    oa:hasLiteralBody "Palette"^^xsd:string .
+
+<GlobalMetadataPixSizeState> a oa:Annotation ;
+    rdfs:label "Global Metadata pix size state" ;
+    oa:hasLiteralBody "calibrated"^^xsd:string .
+
+<GlobalMetadataPixelSize> a oa:Annotation ;
+    rdfs:label "Global Metadata pixel size" ;
+    oa:hasLiteralBody "1.123 �m"^^xsd:string .
+
+<GlobalMetadataPrintNo> a oa:Annotation ;
+    rdfs:label "Global Metadata print no." ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 3 ] .
+
+<GlobalMetadataProfile1X1> a oa:Annotation ;
+    rdfs:label "Global Metadata profile 1 x1" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataProfile1X2> a oa:Annotation ;
+    rdfs:label "Global Metadata profile 1 x2" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataProfile2X1> a oa:Annotation ;
+    rdfs:label "Global Metadata profile 2 x1" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataProfile2X2> a oa:Annotation ;
+    rdfs:label "Global Metadata profile 2 x2" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<GlobalMetadataProfileWidth> a oa:Annotation ;
+    rdfs:label "Global Metadata profile width" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataProfileWidth1> a oa:Annotation ;
+    rdfs:label "Global Metadata profile width 1" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataProfileWidth2> a oa:Annotation ;
+    rdfs:label "Global Metadata profile width 2" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataQ1> a oa:Annotation ;
+    rdfs:label "Global Metadata q1" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataQ2> a oa:Annotation ;
+    rdfs:label "Global Metadata q2" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataQ3> a oa:Annotation ;
+    rdfs:label "Global Metadata q3" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataQ4> a oa:Annotation ;
+    rdfs:label "Global Metadata q4" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataQ5> a oa:Annotation ;
+    rdfs:label "Global Metadata q5" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataRecipe> a oa:Annotation ;
+    rdfs:label "Global Metadata recipe" ;
+    oa:hasLiteralBody "Idle"^^xsd:string .
+
+<GlobalMetadataRedRasterHeight> a oa:Annotation ;
+    rdfs:label "Global Metadata red.raster height" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 85 ] .
+
+<GlobalMetadataRedRasterPosnX> a oa:Annotation ;
+    rdfs:label "Global Metadata red.raster posn x" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 372 ] .
+
+<GlobalMetadataRedRasterPosnY> a oa:Annotation ;
+    rdfs:label "Global Metadata red.raster posn y" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 83 ] .
+
+<GlobalMetadataRedRasterWidth> a oa:Annotation ;
+    rdfs:label "Global Metadata red.raster width" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 88 ] .
+
+<GlobalMetadataReferenceMag> a oa:Annotation ;
+    rdfs:label "Global Metadata reference mag" ;
+    oa:hasLiteralBody "Polaroid 545"^^xsd:string .
+
+<GlobalMetadataResolutionunit> a oa:Annotation ;
+    rdfs:label "Global Metadata resolutionunit" ;
+    oa:hasLiteralBody "None"^^xsd:string .
+
+<GlobalMetadataRightFrozen> a oa:Annotation ;
+    rdfs:label "Global Metadata right frozen" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataSampleAtX> a oa:Annotation ;
+    rdfs:label "Global Metadata sample at x" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataSampleAtY> a oa:Annotation ;
+    rdfs:label "Global Metadata sample at y" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataSamplesperpixel> a oa:Annotation ;
+    rdfs:label "Global Metadata samplesperpixel" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataScanRot> a oa:Annotation ;
+    rdfs:label "Global Metadata scan rot" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataScanRotation> a oa:Annotation ;
+    rdfs:label "Global Metadata scan rotation" ;
+    oa:hasLiteralBody "164.1 �"^^xsd:string .
+
+<GlobalMetadataScanSpeed> a oa:Annotation ;
+    rdfs:label "Global Metadata scan speed" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 9 ] .
+
+<GlobalMetadataScdAutoRange> a oa:Annotation ;
+    rdfs:label "Global Metadata scd auto range" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataScdBandwidth> a oa:Annotation ;
+    rdfs:label "Global Metadata scd bandwidth" ;
+    oa:hasLiteralBody "DC"^^xsd:string .
+
+<GlobalMetadataScdGain> a oa:Annotation ;
+    rdfs:label "Global Metadata scd gain" ;
+    oa:hasLiteralBody "Low"^^xsd:string .
+
+<GlobalMetadataScint> a oa:Annotation ;
+    rdfs:label "Global Metadata scint." ;
+    oa:hasLiteralBody "On"^^xsd:string .
+
+<GlobalMetadataScmRange> a oa:Annotation ;
+    rdfs:label "Global Metadata scm range" ;
+    oa:hasLiteralBody "3-10 pA"^^xsd:string .
+
+<GlobalMetadataScmStatus> a oa:Annotation ;
+    rdfs:label "Global Metadata scm status" ;
+    oa:hasLiteralBody "Waiting Auto Range"^^xsd:string .
+
+<GlobalMetadataSem> a oa:Annotation ;
+    rdfs:label "Global Metadata sem" ;
+    oa:hasLiteralBody "Supra 55VP"^^xsd:string .
+
+<GlobalMetadataSemLevel> a oa:Annotation ;
+    rdfs:label "Global Metadata sem level @" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataSerialNo> a oa:Annotation ;
+    rdfs:label "Global Metadata serial no." ;
+    oa:hasLiteralBody "SUPRA 55VP-30-65"^^xsd:string .
+
+<GlobalMetadataSignal> a oa:Annotation ;
+    rdfs:label "Global Metadata signal" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataSignalA> a oa:Annotation ;
+    rdfs:label "Global Metadata signal a" ;
+    oa:hasLiteralBody "AsB"^^xsd:string .
+
+<GlobalMetadataSignalB> a oa:Annotation ;
+    rdfs:label "Global Metadata signal b" ;
+    oa:hasLiteralBody "SE2"^^xsd:string .
+
+<GlobalMetadataSmartimageContrast> a oa:Annotation ;
+    rdfs:label "Global Metadata smartimage contrast" ;
+    oa:hasLiteralBody "30.0 %"^^xsd:string .
+
+<GlobalMetadataSmartimageNoiseReduction> a oa:Annotation ;
+    rdfs:label "Global Metadata smartimage noise reduction" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataSmartimageSharpening> a oa:Annotation ;
+    rdfs:label "Global Metadata smartimage sharpening" ;
+    oa:hasLiteralBody "10.0 %"^^xsd:string .
+
+<GlobalMetadataSmartimageThreshold> a oa:Annotation ;
+    rdfs:label "Global Metadata smartimage threshold" ;
+    oa:hasLiteralBody "0.5 %"^^xsd:string .
+
+<GlobalMetadataSmartimageTopography> a oa:Annotation ;
+    rdfs:label "Global Metadata smartimage topography" ;
+    oa:hasLiteralBody "10.0 %"^^xsd:string .
+
+<GlobalMetadataSpacerThickness> a oa:Annotation ;
+    rdfs:label "Global Metadata spacer thickness" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataSpecimenDiameter> a oa:Annotation ;
+    rdfs:label "Global Metadata specimen diameter" ;
+    oa:hasLiteralBody "66 mm"^^xsd:string .
+
+<GlobalMetadataSpecimenHeight> a oa:Annotation ;
+    rdfs:label "Global Metadata specimen height" ;
+    oa:hasLiteralBody "22 mm"^^xsd:string .
+
+<GlobalMetadataSpecimenI> a oa:Annotation ;
+    rdfs:label "Global Metadata specimen i" ;
+    oa:hasLiteralBody "0 fA"^^xsd:string .
+
+<GlobalMetadataSpot> a oa:Annotation ;
+    rdfs:label "Global Metadata spot" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataStageAtFieldX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at field x" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataStageAtFieldY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at field y" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataStageAtM> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at m" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageAtR> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at r" ;
+    oa:hasLiteralBody "282.4 �"^^xsd:string .
+
+<GlobalMetadataStageAtT> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at t" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataStageAtX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at x" ;
+    oa:hasLiteralBody "61.5193 mm"^^xsd:string .
+
+<GlobalMetadataStageAtY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at y" ;
+    oa:hasLiteralBody "67.0833 mm"^^xsd:string .
+
+<GlobalMetadataStageAtZ> a oa:Annotation ;
+    rdfs:label "Global Metadata stage at z" ;
+    oa:hasLiteralBody "19.255 mm"^^xsd:string .
+
+<GlobalMetadataStageDeltaM> a oa:Annotation ;
+    rdfs:label "Global Metadata stage delta m" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageDeltaR> a oa:Annotation ;
+    rdfs:label "Global Metadata stage delta r" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataStageDeltaT> a oa:Annotation ;
+    rdfs:label "Global Metadata stage delta t" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataStageDeltaX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage delta x" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageDeltaY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage delta y" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageDeltaZ> a oa:Annotation ;
+    rdfs:label "Global Metadata stage delta z" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageFieldSizeX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage field size x" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageFieldSizeY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage field size y" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageFieldsX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage fields x" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataStageFieldsY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage fields y" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataStageGotoFieldX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto field x" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataStageGotoFieldY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto field y" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 1 ] .
+
+<GlobalMetadataStageGotoM> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto m" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageGotoR> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto r" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataStageGotoT> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto t" ;
+    oa:hasLiteralBody "0.0 �"^^xsd:string .
+
+<GlobalMetadataStageGotoX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto x" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageGotoY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto y" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageGotoZ> a oa:Annotation ;
+    rdfs:label "Global Metadata stage goto z" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageHighR> a oa:Annotation ;
+    rdfs:label "Global Metadata stage high r" ;
+    oa:hasLiteralBody "380.0 �"^^xsd:string .
+
+<GlobalMetadataStageHighX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage high x" ;
+    oa:hasLiteralBody "130.000 mm"^^xsd:string .
+
+<GlobalMetadataStageHighY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage high y" ;
+    oa:hasLiteralBody "130.000 mm"^^xsd:string .
+
+<GlobalMetadataStageHighZ> a oa:Annotation ;
+    rdfs:label "Global Metadata stage high z" ;
+    oa:hasLiteralBody "50.000 mm"^^xsd:string .
+
+<GlobalMetadataStageInitialised> a oa:Annotation ;
+    rdfs:label "Global Metadata stage initialised" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataStageIs> a oa:Annotation ;
+    rdfs:label "Global Metadata stage is" ;
+    oa:hasLiteralBody "Idle"^^xsd:string .
+
+<GlobalMetadataStageLowR> a oa:Annotation ;
+    rdfs:label "Global Metadata stage low r" ;
+    oa:hasLiteralBody "-380.0 �"^^xsd:string .
+
+<GlobalMetadataStageLowX> a oa:Annotation ;
+    rdfs:label "Global Metadata stage low x" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageLowY> a oa:Annotation ;
+    rdfs:label "Global Metadata stage low y" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageLowZ> a oa:Annotation ;
+    rdfs:label "Global Metadata stage low z" ;
+    oa:hasLiteralBody "0.000 mm"^^xsd:string .
+
+<GlobalMetadataStageTilt> a oa:Annotation ;
+    rdfs:label "Global Metadata stage tilt" ;
+    oa:hasLiteralBody "in X"^^xsd:string .
+
+<GlobalMetadataStageTilted> a oa:Annotation ;
+    rdfs:label "Global Metadata stage tilted" ;
+    oa:hasLiteralBody "No"^^xsd:string .
+
+<GlobalMetadataStemAuto> a oa:Annotation ;
+    rdfs:label "Global Metadata stem auto" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataStemFast> a oa:Annotation ;
+    rdfs:label "Global Metadata stem fast" ;
+    oa:hasLiteralBody "No"^^xsd:string .
+
+<GlobalMetadataStemGain> a oa:Annotation ;
+    rdfs:label "Global Metadata stem gain" ;
+    oa:hasLiteralBody "Low"^^xsd:string .
+
+<GlobalMetadataStemQ1> a oa:Annotation ;
+    rdfs:label "Global Metadata stem q1" ;
+    oa:hasLiteralBody "Normal"^^xsd:string .
+
+<GlobalMetadataStemQ2> a oa:Annotation ;
+    rdfs:label "Global Metadata stem q2" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataStemQ3> a oa:Annotation ;
+    rdfs:label "Global Metadata stem q3" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataStemSegMode> a oa:Annotation ;
+    rdfs:label "Global Metadata stem seg. mode" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataStigmationX> a oa:Annotation ;
+    rdfs:label "Global Metadata stigmation x" ;
+    oa:hasLiteralBody "-0.5 %"^^xsd:string .
+
+<GlobalMetadataStigmationY> a oa:Annotation ;
+    rdfs:label "Global Metadata stigmation y" ;
+    oa:hasLiteralBody "8.2 %"^^xsd:string .
+
+<GlobalMetadataStoreResolution> a oa:Annotation ;
+    rdfs:label "Global Metadata store resolution" ;
+    oa:hasLiteralBody "1024 * 768"^^xsd:string .
+
+<GlobalMetadataSystemVacuum> a oa:Annotation ;
+    rdfs:label "Global Metadata system vacuum" ;
+    oa:hasLiteralBody "6.53e-006 mbar"^^xsd:string .
+
+<GlobalMetadataTiltAngle> a oa:Annotation ;
+    rdfs:label "Global Metadata tilt angle" ;
+    oa:hasLiteralBody "27.0 �"^^xsd:string .
+
+<GlobalMetadataTiltAxis> a oa:Annotation ;
+    rdfs:label "Global Metadata tilt axis" ;
+    oa:hasLiteralBody "90.0 �"^^xsd:string .
+
+<GlobalMetadataTiltCorrn> a oa:Annotation ;
+    rdfs:label "Global Metadata tilt corrn." ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataTime> a oa:Annotation ;
+    rdfs:label "Global Metadata time" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value "2023-06-23T13:57:26"^^xsd:dateTime ] .
+
+<GlobalMetadataTrackZ> a oa:Annotation ;
+    rdfs:label "Global Metadata track z" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataUser> a oa:Annotation ;
+    rdfs:label "Global Metadata user" ;
+    oa:hasLiteralBody "Busy"^^xsd:string .
+
+<GlobalMetadataUserAlign> a oa:Annotation ;
+    rdfs:label "Global Metadata user align" ;
+    oa:hasLiteralBody "On"^^xsd:string .
+
+<GlobalMetadataUserCalibration> a oa:Annotation ;
+    rdfs:label "Global Metadata user calibration" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataUserLevel> a oa:Annotation ;
+    rdfs:label "Global Metadata user level" ;
+    oa:hasLiteralBody "Expert"^^xsd:string .
+
+<GlobalMetadataUserMaxEht> a oa:Annotation ;
+    rdfs:label "Global Metadata user max eht" ;
+    oa:hasLiteralBody "30.00 kV"^^xsd:string .
+
+<GlobalMetadataUserName> a oa:Annotation ;
+    rdfs:label "Global Metadata user name" ;
+    oa:hasLiteralBody "TIS"^^xsd:string .
+
+<GlobalMetadataV1> a oa:Annotation ;
+    rdfs:label "Global Metadata v 1" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV10> a oa:Annotation ;
+    rdfs:label "Global Metadata v 10" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV2> a oa:Annotation ;
+    rdfs:label "Global Metadata v 2" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV3> a oa:Annotation ;
+    rdfs:label "Global Metadata v 3" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV4> a oa:Annotation ;
+    rdfs:label "Global Metadata v 4" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV5> a oa:Annotation ;
+    rdfs:label "Global Metadata v 5" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV6> a oa:Annotation ;
+    rdfs:label "Global Metadata v 6" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV7> a oa:Annotation ;
+    rdfs:label "Global Metadata v 7" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV8> a oa:Annotation ;
+    rdfs:label "Global Metadata v 8" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataV9> a oa:Annotation ;
+    rdfs:label "Global Metadata v 9" ;
+    oa:hasLiteralBody "0.00 nm"^^xsd:string .
+
+<GlobalMetadataVacReady> a oa:Annotation ;
+    rdfs:label "Global Metadata vac ready @" ;
+    oa:hasLiteralBody "2.00e-005 mbar"^^xsd:string .
+
+<GlobalMetadataVacStatus> a oa:Annotation ;
+    rdfs:label "Global Metadata vac status" ;
+    oa:hasLiteralBody "Ready"^^xsd:string .
+
+<GlobalMetadataVacuumMode> a oa:Annotation ;
+    rdfs:label "Global Metadata vacuum mode" ;
+    oa:hasLiteralBody "High Vacuum"^^xsd:string .
+
+<GlobalMetadataVentInhibit> a oa:Annotation ;
+    rdfs:label "Global Metadata vent inhibit" ;
+    oa:hasLiteralBody "Beam Present"^^xsd:string .
+
+<GlobalMetadataVentingInhibited> a oa:Annotation ;
+    rdfs:label "Global Metadata venting inhibited" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataVersion> a oa:Annotation ;
+    rdfs:label "Global Metadata version" ;
+    oa:hasLiteralBody "V05.04.03.00 : 16-Apr-10"^^xsd:string .
+
+<GlobalMetadataVpAperture> a oa:Annotation ;
+    rdfs:label "Global Metadata vp aperture" ;
+    oa:hasLiteralBody "Yes"^^xsd:string .
+
+<GlobalMetadataVpTarget> a oa:Annotation ;
+    rdfs:label "Global Metadata vp target" ;
+    oa:hasLiteralBody "30 Pa"^^xsd:string .
+
+<GlobalMetadataWd> a oa:Annotation ;
+    rdfs:label "Global Metadata wd" ;
+    oa:hasLiteralBody "8.1 mm"^^xsd:string .
+
+<GlobalMetadataWhiteThreshold> a oa:Annotation ;
+    rdfs:label "Global Metadata white threshold" ;
+    oa:hasLiteralBody "100.0 %"^^xsd:string .
+
+<GlobalMetadataWidth> a oa:Annotation ;
+    rdfs:label "Global Metadata width" ;
+    oa:hasLiteralBody "1.150 mm"^^xsd:string .
+
+<GlobalMetadataWindowing> a oa:Annotation ;
+    rdfs:label "Global Metadata windowing" ;
+    oa:hasLiteralBody "Off"^^xsd:string .
+
+<GlobalMetadataXresolution> a oa:Annotation ;
+    rdfs:label "Global Metadata xresolution" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataYresolution> a oa:Annotation ;
+    rdfs:label "Global Metadata yresolution" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value true ] .
+
+<GlobalMetadataZone> a oa:Annotation ;
+    rdfs:label "Global Metadata zone" ;
+    oa:hasBody [ a qudt:QuantityValue ;
+            qudt:value 0 ] .
+
+<https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> a prov:SoftwareAgent ;
+    rdfs:label "OmeroExtractorv0.0.3" ;
+    prov:hadPrimarySource "https://github.com/Mat-O-Lab/OmeroExtractor" .
+
+<https://metadata.omero.matolab.org/api/image> a prov:Activity ;
+    prov:wasAssociatedWith <https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> .
+

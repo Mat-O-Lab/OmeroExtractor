@@ -12,8 +12,10 @@ from dateutil.parser import parse as date_parse
 from datetime import datetime
 from pydantic import BaseSettings
 
+import logging
+
 OME_SOURCE = './ome.ttl'
-OME_SOURCE_URL="https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml"
+OME_SOURCE_URL="https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.ttl"
 OME = Namespace(OME_SOURCE_URL+"#")
 OA = Namespace("http://www.w3.org/ns/oa#")
 QUDT = Namespace("http://qudt.org/schema/qudt/")
@@ -24,6 +26,9 @@ ome_graph = Graph()
 ome_graph.parse(OME_SOURCE, format='turtle')
 
 
+
+def get_hex_color(value:int):
+    return '#{:06x}'.format(16777216+value)
 
 def is_date(string, fuzzy=False)->bool:
     try:
@@ -132,13 +137,15 @@ class OMEtoRDF:
     def __init__(self,json_dict: dict={}, root_url: str='', api_endpoint: str='') -> None:
         #print(json_dict.keys())
         self.data=json_dict#.get('data',None)
+        self.url=root_url
+        logging.debug(self.url)
         self.root=URIRef("")
-        print(api_endpoint)
+        logging.debug(api_endpoint)
         self.graph=Graph()
-        self.graph.add((self.root,OME.url,Literal(root_url,datatype=XSD.anyURI)))
-        image_id=root_url.rsplit('/',1)[-1]
-        host=root_url.rsplit('/api',1)[0]
-        self.graph.add((self.root,OME.download,Literal(host+"/webgateway/archived_files/download/"+image_id,datatype=XSD.anyURI)))
+        self.graph.add((self.root,OME.url,Literal(self.url,datatype=XSD.anyURI)))
+        
+        self.image_id=self.url.rsplit('/',1)[-1]
+        self.host=self.url.rsplit('/api',1)[0]
         self.graph.bind('ome',OME)
         self.graph.bind('qudt',QUDT)
         self.graph.bind('prov',PROV)
@@ -146,7 +153,7 @@ class OMEtoRDF:
         #print(list(ome_graph[: RDF.type:]))
 
     def annotate_prov(self, api_url: str, settings: BaseSettings):
-        print('adding prov-o meta')
+        logging.debug('adding prov-o meta')
         activity=URIRef(api_url)
         release=URIRef(settings.source+"/releases/tag/"+settings.version)
         self.graph.add((self.root,PROV.wasGeneratedBy,activity))
@@ -157,56 +164,67 @@ class OMEtoRDF:
         self.graph.add((release,PROV.hadPrimarySource,Literal(settings.source)))
         
         self.graph.add((self.root,PROV.generatedAtTime,Literal(str(datetime.now().isoformat()), datatype=XSD.dateTime)))
+    
+    def fix_data(self):
+        logging.debug("proxying links")
+        call_url=list(self.graph.subjects(RDF.type,PROV.Activity))[0]
+        for image, rois in self.graph[None: OME.rois: None]:
+            self.graph.remove((image, OME.rois, rois))
+            rois_url=call_url.split('/api',1)[0]+"/api/rois/"+self.image_id
+            new_rois=URIRef(rois_url)
+            self.graph.add((image, OME.rois, new_rois))
+            logging.debug("replaced {} with {}".format(rois,new_rois))
+        logging.debug("fix colors")
+        for predicate in [OME.strokeColor,OME.fillColor]:
+            for object, color in self.graph.subject_objects(predicate):
+                new_color=Literal(get_hex_color(int(color)))
+                self.graph.remove((object, predicate, color))
+                self.graph.add((object, predicate, new_color))
+            
         
-        # return {
-        #     "prov:wasGeneratedBy": {
-        #         "@id": api_url,
-        #         "@type": "prov:Activity",
-        #         "prov:wasAssociatedWith":  {
-        #             "@id": "https://github.com/Mat-O-Lab/CSVToCSVW/releases/tag/"+settings.version,
-        #             "rdfs:label": settings.app_name+settings.version,
-        #             "prov:hadPrimarySource": settings.source,
-        #             "@type": "prov:SoftwareAgent"
-        #         }
-        #     },
-        #     "prov:generatedAtTime": {
-        #             "@value": str(datetime.now().isoformat()),
-        #             "@type": "xsd:dateTime"
-        #         }
-        #     }
 
         
     def to_rdf(self,anonymize=True):
-        print('start mapping2\n\n\n\n\n\n')
+        logging.debug('start mapping')
         #result.bind('data', _get_ns(base_url))        
         iterate_json(self.data, self.graph,base_url=self.root)
-        self.graph = fix_iris(self.graph, base_url=self.root)
+        #add download urls
+        for image in self.graph.subjects(RDF.type, OME.Image):
+            self.graph.add((image,OME.download,Literal(self.host+"/webgateway/archived_files/download/"+self.image_id,datatype=XSD.anyURI)))
+        self.fix_data()
         if anonymize:
             [self.graph.remove((subject, None, None)) for subject in self.graph.subjects(RDF.type, OME.User)]
         return self.graph
 
 
 def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
+    logging.debug('next iteration')
+    if isinstance(base_url,(URIRef,BNode)):
+        logging.debug('base_url is set to: {}'.format(base_url))            
     if isinstance(data, dict):
+        logging.debug("keys:"+str(data.keys()))
         # lookup if the id and type in dict result in a ontology entity
         entity, e_class, parent = create_instance_triple(data, uri=base_url)
         #print(entity,e_class,parent)
         if isinstance(entity,(URIRef,BNode)) and e_class:
+            if e_class==OME.Detail:
+                return
             # if the entity is a Identifier, only create it if it relates to entity previously created
-            print('create entity: {} {}'.format(entity,e_class))
-            print('last entity: {} {}'.format(last_entity,relation))
+            logging.debug('create entity: {} {}'.format(entity,e_class))
+            logging.debug('last entity: {} {}'.format(last_entity,relation))
             graph.add((entity, RDF.type, e_class))
             if isinstance(last_entity,(URIRef,BNode)) and relation:
                 #print('create relation: {} {} {}'.format(last_entity,relation,entity))
                 graph.add((last_entity, relation, entity))
             else:
-                print('missing relation: {} {} {} {}'.format(last_entity,e_class,relation,entity))
+                logging.debug('missing relation: {} {} {} {}'.format(last_entity,e_class,relation,entity))
             for key, value in data.items():
                 if key in ["@type", "@id"]:
                     #alrady handled
                     continue
                 relation = get_entity_type(key)
-                #print("key: {}".format(key),"relation: {}".format(relation))
+                # if relation:
+                #     logging.debug("key: {}".format(key),"relation: {}".format(relation))
                 # if the key is properties all json keys in that dict are relations to openbis properties followed by there values
                     
                 if isinstance(value, dict):
@@ -226,11 +244,13 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                     else:               
                         #print('a dict at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
                         # recursively inter over all json objects
+                        
                         iterate_json(value, graph, last_entity=entity, relation=relation)
+                        
                         # add the ObjectProperty to the created instance
                         
                 elif isinstance(value, list):
-                    #print('a list at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
+                    logging.debug('a list at {} calling iterate_json with: {} {}'.format(key,entity,relation) )
                     # recursively inter over all json objects
                     iterate_json(value, graph, last_entity=entity, relation=relation)
                     # see if an entity is created and relate it if necessary
@@ -239,11 +259,17 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                     if (value or isinstance(value,bool)) and relation:
                         graph.add((entity, relation, Literal(value)))
                     elif not relation:
-                        print('missing relation to Literal: {} {} {}'.format(entity,relation,value))
+                        logging.debug('missing relation to Literal: {} {} {}'.format(entity,relation,value))
             
     elif isinstance(data, list):
         for item in data:
-            iterate_json(item, graph, last_entity=last_entity, relation=relation)
+            logging.debug('start iter over list item' )            
+            if  isinstance(base_url,(URIRef,BNode)):
+                iterate_json(item, graph, last_entity=base_url, relation=OME.relates_to)
+            else:
+                iterate_json(item, graph, last_entity=last_entity, relation=relation)
+
+
 
 
 def replace_iris(old: URIRef, new: URIRef, graph: Graph):
@@ -262,43 +288,16 @@ def replace_iris(old: URIRef, new: URIRef, graph: Graph):
         graph.add((triple[0], new, triple[1]))
 
 
-def fix_iris(graph, base_url=None):
-    #replace int iris with permids if possible
-    # for permid in graph[: RDF.type: OBIS.PermanentIdentifier]:
-    #     permid_value = graph.value(permid, RDF.value)
-    #     identifies = graph.value(permid, OBIS.is_identifier_of)
-    #     identifies_type = graph.value(identifies, RDF.type)
-    #     type_str = identifies_type.split('/')[-1].lower()
-    #     #print(identifies,identifies_type)
-    #     if identifies_type in [OWL.Class]:
-    #         type_str='class'
-    #     elif identifies_type in [OWL.ObjectProperty]:
-    #         type_str='object_property'
-    #     graph.bind(type_str,_get_ns(base_url)[f'{type_str}/'])
-    #     new = URIRef(f'{type_str}/{permid_value}',_get_ns(base_url))
-    #     replace_iris(identifies, new, graph)
-    #     #print(identifies,new)
 
-    # replace iri of created object properties with value of code if possible
-    # for property in graph[: RDF.type: OWL.ObjectProperty]:
-    #     code_value = graph.value(property, OBIS.code)
-    #     if code_value:
-    #         new = _get_ns(base_url)[code_value]
-    #         replace_iris(property, new, graph)
-
-    # for identifier in graph[: RDF.type: OBIS.Identifier]:
-    #     replace_iris(identifier, BNode(), graph)
-    # for identifier in graph[: RDF.type: OBIS.PermanentIdentifier]:
-    #     replace_iris(identifier, BNode(), graph)
-    return graph
 
 def create_instance_triple(data: dict, uri= None):
     entity=None
     o_class=None
     parent=None
-    #print( data.keys())
+    logging.debug( data.keys())
     if all(prop in data.keys() for prop in ['@type']):
         o_class = get_entity_type(data['@type'])
+        logging.debug(data['@type'],o_class)
         if o_class:
             #entity=URIRef(instance_id, TEMP)
             if isinstance(uri,URIRef):
