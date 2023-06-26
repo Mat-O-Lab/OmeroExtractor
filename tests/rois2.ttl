@@ -4,9 +4,20 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<> prov:generatedAtTime "2023-06-26T20:54:06.501406"^^xsd:dateTime ;
+<> prov:generatedAtTime "2023-06-26T21:08:29.851100"^^xsd:dateTime ;
     prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/rois> ;
     ome:relates_to [ a ome:Roi ;
+            ome:relates_to [ a ome:Point ;
+                    rdfs:label "Whats at this point"^^xsd:string ;
+                    ome:fillColor "#00ffff" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:strokeWidth [ a qudt:QuantityValue,
+                                ome:Width ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
+                            qudt:value 1.0 ] ;
+                    ome:x 6.139e+02 ;
+                    ome:y 3.103334e+02 ] ],
+        [ a ome:Roi ;
             ome:relates_to [ a ome:Rectangle ;
                     rdfs:label "Crack Tip"^^xsd:string ;
                     ome:fillColor "#00ffff" ;
@@ -14,11 +25,22 @@
                     ome:strokeColor "#ff00ff" ;
                     ome:strokeWidth [ a qudt:QuantityValue,
                                 ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
                             qudt:value 1.0 ] ;
                     ome:width 1.073334e+02 ;
                     ome:x 3.525667e+02 ;
                     ome:y 2.702e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Label ;
+                    rdfs:label "Thomas was here"^^xsd:string ;
+                    ome:fillColor "#ff00ff" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:strokeWidth [ a qudt:QuantityValue,
+                                ome:Width ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
+                            qudt:value 1.0 ] ;
+                    ome:x 2.125667e+02 ;
+                    ome:y 5.912667e+02 ] ],
         [ a ome:Roi ;
             ome:relates_to [ a ome:Ellipse ;
                     rdfs:label "Inclusion?"^^xsd:string ;
@@ -27,67 +49,11 @@
                     ome:strokeColor "#ff00ff" ;
                     ome:strokeWidth [ a qudt:QuantityValue,
                                 ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
                             qudt:value 1.0 ] ;
                     ome:width 3.173328e+01 ;
                     ome:x 6.409667e+02 ;
                     ome:y 5.754e+02 ] ],
-        [ a ome:Roi ;
-            ome:relates_to [ a ome:Line ;
-                    ome:fillColor "#00ffff" ;
-                    ome:markerEnd "Arrow"^^xsd:string ;
-                    ome:strokeColor "#ff00ff" ;
-                    ome:strokeWidth [ a qudt:QuantityValue,
-                                ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
-                            qudt:value 1.0 ] ;
-                    ome:x1 1.020833e+03 ;
-                    ome:x2 3.964334e+02 ;
-                    ome:y1 3.187334e+02 ;
-                    ome:y2 3.346e+02 ] ],
-        [ a ome:Roi ;
-            ome:relates_to [ a ome:Polygon ;
-                    ome:fillColor "#00ffff" ;
-                    ome:points "318.68690337387346,453.3316391249641 322.2655049021713,448.47496701526063 327.3777794270703,451.03111597879575 329.9339283906055,460.74444459675533 331.2119911712874,473.5251543111742 330.445148822444,479.91550331784083 320.9874304204037,478.89305075307817 316.6419865432624,473.269544095255 317.92006102503,462.0225190785229"^^xsd:string ;
-                    ome:strokeColor "#ff00ff" ;
-                    ome:strokeWidth [ a qudt:QuantityValue,
-                                ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
-                            qudt:value 1.0 ] ] ],
-        [ a ome:Roi ;
-            ome:relates_to [ a ome:Point ;
-                    rdfs:label "Whats at this point"^^xsd:string ;
-                    ome:fillColor "#00ffff" ;
-                    ome:strokeColor "#ff00ff" ;
-                    ome:strokeWidth [ a qudt:QuantityValue,
-                                ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
-                            qudt:value 1.0 ] ;
-                    ome:x 6.139e+02 ;
-                    ome:y 3.103334e+02 ] ],
-        [ a ome:Roi ;
-            ome:relates_to [ a ome:Line ;
-                    ome:fillColor "#00ffff" ;
-                    ome:strokeColor "#ff00ff" ;
-                    ome:strokeWidth [ a qudt:QuantityValue,
-                                ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
-                            qudt:value 1.0 ] ;
-                    ome:x1 1.528333e+02 ;
-                    ome:x2 6.792333e+02 ;
-                    ome:y1 1.647334e+02 ;
-                    ome:y2 1.768667e+02 ] ],
-        [ a ome:Roi ;
-            ome:relates_to [ a ome:Label ;
-                    rdfs:label "Thomas was here"^^xsd:string ;
-                    ome:fillColor "#ff00ff" ;
-                    ome:strokeColor "#ff00ff" ;
-                    ome:strokeWidth [ a qudt:QuantityValue,
-                                ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
-                            qudt:value 1.0 ] ;
-                    ome:x 2.125667e+02 ;
-                    ome:y 5.912667e+02 ] ],
         [ a ome:Roi ;
             ome:relates_to [ a ome:Polyline ;
                     ome:fillColor "#00ffff" ;
@@ -95,8 +61,42 @@
                     ome:strokeColor "#ff00ff" ;
                     ome:strokeWidth [ a qudt:QuantityValue,
                                 ome:Width ;
-                            qudt:unit "PIXEL"^^xsd:string ;
-                            qudt:value 1.0 ] ] ] ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
+                            qudt:value 1.0 ] ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Polygon ;
+                    ome:fillColor "#00ffff" ;
+                    ome:points "318.68690337387346,453.3316391249641 322.2655049021713,448.47496701526063 327.3777794270703,451.03111597879575 329.9339283906055,460.74444459675533 331.2119911712874,473.5251543111742 330.445148822444,479.91550331784083 320.9874304204037,478.89305075307817 316.6419865432624,473.269544095255 317.92006102503,462.0225190785229"^^xsd:string ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:strokeWidth [ a qudt:QuantityValue,
+                                ome:Width ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
+                            qudt:value 1.0 ] ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Line ;
+                    ome:fillColor "#00ffff" ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:strokeWidth [ a qudt:QuantityValue,
+                                ome:Width ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
+                            qudt:value 1.0 ] ;
+                    ome:x1 1.528333e+02 ;
+                    ome:x2 6.792333e+02 ;
+                    ome:y1 1.647334e+02 ;
+                    ome:y2 1.768667e+02 ] ],
+        [ a ome:Roi ;
+            ome:relates_to [ a ome:Line ;
+                    ome:fillColor "#00ffff" ;
+                    ome:markerEnd "Arrow"^^xsd:string ;
+                    ome:strokeColor "#ff00ff" ;
+                    ome:strokeWidth [ a qudt:QuantityValue,
+                                ome:Width ;
+                            qudt:unit <http://qudt.org/vocab/unit/PT> ;
+                            qudt:value 1.0 ] ;
+                    ome:x1 1.020833e+03 ;
+                    ome:x2 3.964334e+02 ;
+                    ome:y1 3.187334e+02 ;
+                    ome:y2 3.346e+02 ] ] ;
     ome:url "https://omero.matolab.org/api/v0/m/images/2/rois/"^^xsd:anyURI .
 
 <https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> a prov:SoftwareAgent ;

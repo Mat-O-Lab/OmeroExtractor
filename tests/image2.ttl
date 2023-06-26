@@ -8,32 +8,11 @@
 
 <> a ome:Image ;
     rdfs:label "05_FEMBau01_u_100x_BE_EDX.tif"^^xsd:string ;
-    prov:generatedAtTime "2023-06-26T20:54:06.333904"^^xsd:dateTime ;
+    prov:generatedAtTime "2023-06-26T21:08:29.721497"^^xsd:dateTime ;
     prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/image> ;
     ome:datasets "https://omero.matolab.org/api/v0/m/images/2/datasets/"^^xsd:string ;
     ome:download "https://omero.matolab.org/webgateway/archived_files/download/2"^^xsd:anyURI ;
-    ome:relates_to [ a [ a ome:PixelsType ;
-                    rdf:value "uint8"^^xsd:string ],
-                ome:Pixels ;
-            ome:physicalSizeX [ a qudt:QuantityValue,
-                        ome:Width ;
-                    qudt:unit "MICROMETER"^^xsd:string ;
-                    qudt:value 1.123366e+00 ] ;
-            ome:physicalSizeY [ a qudt:QuantityValue,
-                        ome:Width ;
-                    qudt:unit "MICROMETER"^^xsd:string ;
-                    qudt:value 1.123366e+00 ] ;
-            ome:relates_to [ a ome:Channel ;
-                    ome:relates_to [ a ome:PhotometricInterpretation ;
-                            rdf:value "Monochrome"^^xsd:string ] ;
-                    ome:samplesPerPixel 1 ] ;
-            ome:significantBits 8 ;
-            ome:sizeC 1 ;
-            ome:sizeT 1 ;
-            ome:sizeX 1024 ;
-            ome:sizeY 768 ;
-            ome:sizeZ 1 ],
-        [ a ome:OriginalMeta ;
+    ome:relates_to [ a ome:OriginalMeta ;
             ome:notes <GlobalMetadataAa1>,
                 <GlobalMetadataAa2>,
                 <GlobalMetadataAllFrozen>,
@@ -335,7 +314,28 @@
                 <GlobalMetadataWindowing>,
                 <GlobalMetadataXresolution>,
                 <GlobalMetadataYresolution>,
-                <GlobalMetadataZone> ] ;
+                <GlobalMetadataZone> ],
+        [ a [ a ome:PixelsType ;
+                    rdf:value "uint8"^^xsd:string ],
+                ome:Pixels ;
+            ome:physicalSizeX [ a qudt:QuantityValue,
+                        ome:Width ;
+                    qudt:unit "MICROMETER"^^xsd:string ;
+                    qudt:value 1.123366e+00 ] ;
+            ome:physicalSizeY [ a qudt:QuantityValue,
+                        ome:Width ;
+                    qudt:unit "MICROMETER"^^xsd:string ;
+                    qudt:value 1.123366e+00 ] ;
+            ome:relates_to [ a ome:Channel ;
+                    ome:relates_to [ a ome:PhotometricInterpretation ;
+                            rdf:value "Monochrome"^^xsd:string ] ;
+                    ome:samplesPerPixel 1 ] ;
+            ome:significantBits 8 ;
+            ome:sizeC 1 ;
+            ome:sizeT 1 ;
+            ome:sizeX 1024 ;
+            ome:sizeY 768 ;
+            ome:sizeZ 1 ] ;
     ome:rois <https://metadata.omero.matolab.org/api/rois/2> ;
     ome:url "https://omero.matolab.org/api/v0/m/images/2"^^xsd:anyURI .
 

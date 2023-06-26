@@ -266,12 +266,13 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                     if (value or isinstance(value,bool)) and relation:
                         #graph.add((entity, relation, Literal(value)))
                         val_type=get_value_type(value)
-                        graph.add((entity,relation,Literal(value,datatype=val_type[1])))
+                        if relation==QUDT.unit and value=="PIXEL":
+                            graph.add((entity,relation,URIRef("http://qudt.org/vocab/unit/PT")))
+                        else:
+                            graph.add((entity,relation,Literal(value,datatype=val_type[1])))
                         if relation==QUDT.value:
                             graph.add((entity,RDF.type,QUDT.QuantityValue))
-                        # elif relation==QUDT.unit and value=="PIXEL":
-                        #     graph.add((entity,relation,QUDT.QuantityValue))
-
+                        
                     elif not relation:
                         logging.debug('missing relation to Literal: {} {} {}'.format(entity,relation,value))
             
