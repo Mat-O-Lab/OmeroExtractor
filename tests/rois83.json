@@ -1,7 +1,7 @@
 [
     {
         "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#ROI",
-        "@id": 57,
+        "@id": 188,
         "omero:details": {
             "@type": "TBD#Details",
             "owner": {
@@ -73,7 +73,7 @@
         "shapes": [
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1359,
+                "@id": 9743,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -142,8 +142,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -434893569,
-                "StrokeColor": -434893569,
+                "FillColor": -351402241,
+                "StrokeColor": -351402241,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -157,7 +157,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1360,
+                "@id": 9744,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -226,8 +226,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1305067265,
-                "StrokeColor": -1305067265,
+                "FillColor": 30681599,
+                "StrokeColor": 30681599,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -241,7 +241,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1361,
+                "@id": 9745,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -310,8 +310,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 112959487,
-                "StrokeColor": 112959487,
+                "FillColor": 677258239,
+                "StrokeColor": 677258239,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -325,7 +325,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1362,
+                "@id": 9746,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -394,8 +394,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -681788161,
-                "StrokeColor": -681788161,
+                "FillColor": -1117899265,
+                "StrokeColor": -1117899265,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -409,7 +409,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1363,
+                "@id": 9747,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -478,8 +478,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1990199551,
-                "StrokeColor": 1990199551,
+                "FillColor": 1922895103,
+                "StrokeColor": 1922895103,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -493,7 +493,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1364,
+                "@id": 9748,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -562,8 +562,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 599389695,
-                "StrokeColor": 599389695,
+                "FillColor": 668995327,
+                "StrokeColor": 668995327,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -577,7 +577,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1365,
+                "@id": 9749,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -646,8 +646,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -2089878273,
-                "StrokeColor": -2089878273,
+                "FillColor": -726192641,
+                "StrokeColor": -726192641,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -661,7 +661,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1366,
+                "@id": 9750,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -730,8 +730,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 400583423,
-                "StrokeColor": 400583423,
+                "FillColor": 1113434623,
+                "StrokeColor": 1113434623,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -745,7 +745,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1367,
+                "@id": 9751,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -814,8 +814,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1673925889,
-                "StrokeColor": -1673925889,
+                "FillColor": 748205823,
+                "StrokeColor": 748205823,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -829,7 +829,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1368,
+                "@id": 9752,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -898,8 +898,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1552449793,
-                "StrokeColor": -1552449793,
+                "FillColor": 1235465983,
+                "StrokeColor": 1235465983,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -913,7 +913,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1369,
+                "@id": 9753,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -982,8 +982,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1650793983,
-                "StrokeColor": 1650793983,
+                "FillColor": 330030079,
+                "StrokeColor": 330030079,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -997,7 +997,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1370,
+                "@id": 9754,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1066,8 +1066,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 776300799,
-                "StrokeColor": 776300799,
+                "FillColor": 1419691775,
+                "StrokeColor": 1419691775,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1081,7 +1081,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1371,
+                "@id": 9755,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1150,8 +1150,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1993312001,
-                "StrokeColor": -1993312001,
+                "FillColor": -1785068033,
+                "StrokeColor": -1785068033,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1165,7 +1165,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1372,
+                "@id": 9756,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1234,8 +1234,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -348621313,
-                "StrokeColor": -348621313,
+                "FillColor": -579656193,
+                "StrokeColor": -579656193,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1249,7 +1249,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1373,
+                "@id": 9757,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1318,8 +1318,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -660947457,
-                "StrokeColor": -660947457,
+                "FillColor": 903442431,
+                "StrokeColor": 903442431,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1333,7 +1333,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1374,
+                "@id": 9758,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1402,8 +1402,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1765673217,
-                "StrokeColor": -1765673217,
+                "FillColor": -587204865,
+                "StrokeColor": -587204865,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1417,7 +1417,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1375,
+                "@id": 9759,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1486,8 +1486,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 2017533183,
-                "StrokeColor": 2017533183,
+                "FillColor": 1352602367,
+                "StrokeColor": 1352602367,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1501,7 +1501,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1376,
+                "@id": 9760,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1570,8 +1570,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 622583551,
-                "StrokeColor": 622583551,
+                "FillColor": -506118913,
+                "StrokeColor": -506118913,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1585,7 +1585,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1377,
+                "@id": 9761,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1654,8 +1654,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1942088961,
-                "StrokeColor": -1942088961,
+                "FillColor": -725357569,
+                "StrokeColor": -725357569,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1669,7 +1669,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1378,
+                "@id": 9762,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1738,8 +1738,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1465666817,
-                "StrokeColor": -1465666817,
+                "FillColor": -1619441921,
+                "StrokeColor": -1619441921,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1753,7 +1753,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1379,
+                "@id": 9763,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1822,8 +1822,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -725028609,
-                "StrokeColor": -725028609,
+                "FillColor": -846574849,
+                "StrokeColor": -846574849,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1837,7 +1837,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1380,
+                "@id": 9764,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1906,8 +1906,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 288617471,
-                "StrokeColor": 288617471,
+                "FillColor": 1021144831,
+                "StrokeColor": 1021144831,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -1921,7 +1921,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1381,
+                "@id": 9765,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -1990,8 +1990,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1145236991,
-                "StrokeColor": 1145236991,
+                "FillColor": -1571387905,
+                "StrokeColor": -1571387905,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2005,7 +2005,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1382,
+                "@id": 9766,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2074,8 +2074,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1319876609,
-                "StrokeColor": -1319876609,
+                "FillColor": -2045475585,
+                "StrokeColor": -2045475585,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2089,7 +2089,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1383,
+                "@id": 9767,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2158,8 +2158,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1930760703,
-                "StrokeColor": 1930760703,
+                "FillColor": -2023230209,
+                "StrokeColor": -2023230209,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2173,7 +2173,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1384,
+                "@id": 9768,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2242,8 +2242,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 718694399,
-                "StrokeColor": 718694399,
+                "FillColor": -992218113,
+                "StrokeColor": -992218113,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2257,7 +2257,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1385,
+                "@id": 9769,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2326,8 +2326,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1687698433,
-                "StrokeColor": -1687698433,
+                "FillColor": -1865148161,
+                "StrokeColor": -1865148161,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2341,7 +2341,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1386,
+                "@id": 9770,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2410,8 +2410,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -1320742657,
-                "StrokeColor": -1320742657,
+                "FillColor": 335079423,
+                "StrokeColor": 335079423,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2425,7 +2425,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1387,
+                "@id": 9771,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2494,8 +2494,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1663704319,
-                "StrokeColor": 1663704319,
+                "FillColor": 1650561023,
+                "StrokeColor": 1650561023,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2509,7 +2509,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1388,
+                "@id": 9772,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2578,8 +2578,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -431034625,
-                "StrokeColor": -431034625,
+                "FillColor": 1689608191,
+                "StrokeColor": 1689608191,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2593,7 +2593,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1389,
+                "@id": 9773,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2662,8 +2662,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 425549311,
-                "StrokeColor": 425549311,
+                "FillColor": 308513279,
+                "StrokeColor": 308513279,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2677,7 +2677,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1390,
+                "@id": 9774,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2746,8 +2746,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 2124799487,
-                "StrokeColor": 2124799487,
+                "FillColor": 1147778303,
+                "StrokeColor": 1147778303,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2761,7 +2761,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1391,
+                "@id": 9775,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2830,8 +2830,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1967930111,
-                "StrokeColor": 1967930111,
+                "FillColor": -1160076033,
+                "StrokeColor": -1160076033,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2845,7 +2845,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1392,
+                "@id": 9776,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2914,8 +2914,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 1131669759,
-                "StrokeColor": 1131669759,
+                "FillColor": 2146269951,
+                "StrokeColor": 2146269951,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -2929,7 +2929,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1393,
+                "@id": 9777,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -2998,8 +2998,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": -353853697,
-                "StrokeColor": -353853697,
+                "FillColor": -405850369,
+                "StrokeColor": -405850369,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -3013,7 +3013,7 @@
             },
             {
                 "@type": "http://www.openmicroscopy.org/Schemas/OME/2016-06#Polygon",
-                "@id": 1394,
+                "@id": 9778,
                 "omero:details": {
                     "@type": "TBD#Details",
                     "owner": {
@@ -3082,8 +3082,8 @@
                         "isUserRead": true
                     }
                 },
-                "FillColor": 262539263,
-                "StrokeColor": 262539263,
+                "FillColor": -1598579201,
+                "StrokeColor": -1598579201,
                 "StrokeWidth": {
                     "@type": "TBD#LengthI",
                     "Unit": "PIXEL",
@@ -3096,6 +3096,6 @@
                 "Points": "135,0 135,1 129,7 129,12 135,12 142,5 142,4 144,2 144,0"
             }
         ],
-        "url:roi": "https://omero.matolab.org/api/v0/m/rois/57/"
+        "url:roi": "https://omero.matolab.org/api/v0/m/rois/188/"
     }
 ]

@@ -8,7 +8,7 @@
 
 <> a ome:Image ;
     rdfs:label "05_FEMBau01_u_100x_BE_EDX.tif"^^xsd:string ;
-    prov:generatedAtTime "2023-06-26T19:55:58.345718"^^xsd:dateTime ;
+    prov:generatedAtTime "2023-06-26T20:54:06.333904"^^xsd:dateTime ;
     prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/image> ;
     ome:datasets "https://omero.matolab.org/api/v0/m/images/2/datasets/"^^xsd:string ;
     ome:download "https://omero.matolab.org/webgateway/archived_files/download/2"^^xsd:anyURI ;

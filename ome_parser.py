@@ -27,8 +27,15 @@ ome_graph.parse(OME_SOURCE, format='turtle')
 
 
 
-def get_hex_color(value:int):
-    return '#{:06x}'.format(16777216+value)
+def get_hex_color(i:int):
+    R = (i & 0x000000FF)
+    G = (i & 0x0000FF00) >> 8
+    B = (i & 0x00FF0000) >> 16
+    A = (i & 0xFF000000) >> 24
+    hex_code = f"#{R:02x}{G:02x}{B:02x}"
+    return hex_code
+
+
 
 def is_date(string, fuzzy=False)->bool:
     try:
