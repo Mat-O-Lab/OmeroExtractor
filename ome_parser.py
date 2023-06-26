@@ -215,7 +215,7 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
             graph.add((entity, RDF.type, e_class))
             if isinstance(last_entity,(URIRef,BNode)) and relation:
                 #print('create relation: {} {} {}'.format(last_entity,relation,entity))
-                graph.add((last_entity, relation, entity))
+                graph.add((last_entity, relation, entity))    
             else:
                 logging.debug('missing relation: {} {} {} {}'.format(last_entity,e_class,relation,entity))
             for key, value in data.items():
@@ -257,7 +257,14 @@ def iterate_json(data, graph, last_entity=None, relation=None, base_url=None):
                 else:
                     # if its no dict or list test if its kind of object/data/annotation property and set it
                     if (value or isinstance(value,bool)) and relation:
-                        graph.add((entity, relation, Literal(value)))
+                        #graph.add((entity, relation, Literal(value)))
+                        val_type=get_value_type(value)
+                        graph.add((entity,relation,Literal(value,datatype=val_type[1])))
+                        if relation==QUDT.value:
+                            graph.add((entity,RDF.type,QUDT.QuantityValue))
+                        # elif relation==QUDT.unit and value=="PIXEL":
+                        #     graph.add((entity,relation,QUDT.QuantityValue))
+
                     elif not relation:
                         logging.debug('missing relation to Literal: {} {} {}'.format(entity,relation,value))
             
@@ -297,7 +304,8 @@ def create_instance_triple(data: dict, uri= None):
     logging.debug( data.keys())
     if all(prop in data.keys() for prop in ['@type']):
         o_class = get_entity_type(data['@type'])
-        logging.debug(data['@type'],o_class)
+        print(data['@type'],o_class)
+        #logging.debug(data['@type'],o_class)
         if o_class:
             #entity=URIRef(instance_id, TEMP)
             if isinstance(uri,URIRef):

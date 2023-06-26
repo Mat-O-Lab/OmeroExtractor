@@ -9,6 +9,8 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+
 
 
 <https://github.com/Mat-O-Lab/OmeroExtractor/raw/main/ome.xml> rdf:type owl:Ontology ;
@@ -121,9 +123,16 @@
 
 :Point rdf:type owl:Class ;
     rdfs:label "Point" ;
-    rdfs:subClassOf :Shape ;
+    qudt:subClassOf :Shape ;
     :ome_type "http://www.openmicroscopy.org/Schemas/OME/2016-06#Point";
     skos:definition "An Omero Point Shape.".
+
+:Width rdf:type qudt:Quantity ;
+    qudt:quantityKind qudt:Width ;
+    rdfs:label "Width" ;
+    :ome_type "TBD#LengthI";
+    skos:definition "A With of a as one dimentional extend.".
+
 
 :Group a owl:Class ;
     owl:equivalentClass foaf:Group;
@@ -209,6 +218,10 @@ rdfs:label :ome_type "Name" ;
 rdf:type :ome_type "Type".
 rdf:value  :ome_type "value".
 
+qudt:value  :ome_type "Value".
+qudt:unit  :ome_type "Unit".
+
+
 foaf:givenname :ome_type "FirstName".
 foaf:family_name :ome_type "LastName".
 foaf:mbox :ome_type "Email".
@@ -291,6 +304,12 @@ foaf:accountName :ome_type "UserName".
   :ome_type "Width" ;
   :ome_type "RadiusX";
   skos:definition "Width as Lenght an x axis of the bounding box of a Shape".
+
+:strokeWidth a owl:AnnotationProperty ;
+  rdfs:label "Stroke Width"@en ;
+  :ome_type "StrokeWidth" ;
+  skos:definition "Width as Thickness of a Line bounding a Shape".
+
 
 :height a owl:AnnotationProperty ;
   rdfs:label "Height"@en ;
