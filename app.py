@@ -15,7 +15,7 @@ import json
 
 from pydantic import BaseSettings, BaseModel, Field
 
-from fastapi import Request, FastAPI, HTTPException
+from fastapi import Request, FastAPI, HTTPException, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
@@ -32,12 +32,12 @@ settings = Settings()
 class ReturnType(str, Enum):
     jsonld="json-ld"
     n3="n3"
-    nquads="nquads"
+    #nquads="nquads" #only makes sense for context-aware stores
     nt="nt"
     hext="hext"
-    prettyxml="pretty-xml"
+    #prettyxml="pretty-xml" #only makes sense for context-aware stores
     trig="trig"
-    trix="trix"
+    #trix="trix" #only makes sense for context-aware stores
     turtle="turtle"
     longturtle="longturtle"
     xml="xml"
@@ -218,7 +218,7 @@ async def get_image_meta(request: Request, id: int, anonymize: bool = True, form
     if format==ReturnType.jsonld:
         return json.loads(data)
     else:
-        return data
+        return Response(content=data, media_type="application/"+str(format.value))
 
 @app.get("/api/dataset/{id}")
 async def get_dataset_meta(request: Request, id: int, anonymize: bool = True, format: ReturnType=ReturnType.jsonld):
@@ -243,7 +243,7 @@ async def get_dataset_meta(request: Request, id: int, anonymize: bool = True, fo
     if format==ReturnType.jsonld:
         return json.loads(data)
     else:
-        return data
+        return Response(content=data, media_type="application/"+str(format.value))
 
 
 @app.get("/api/rois/{id}")
@@ -269,7 +269,7 @@ async def get_rois_meta(request: Request, id: int, anonymize: bool = True, forma
     if format==ReturnType.jsonld:
         return json.loads(data)
     else:
-        return data
+        return Response(content=data, media_type="application/"+str(format.value))
 
 @app.get("/api/info", response_model=Settings)
 async def info() -> dict:

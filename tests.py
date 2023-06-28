@@ -31,6 +31,18 @@ class TestMain(unittest.TestCase):
         result=converter.to_rdf()
         result.serialize(format='turtle', destination='tests/'+output_file,auto_compact=True,indent=4)
         self.assertTrue(os.path.exists('tests/'+output_file))
+
+    def test_image83(self):
+        input_file='image83.json'
+        output_file=input_file.split('.')[0]+".ttl"
+        with open(os.path.join(__location__, 'tests', input_file)) as f:
+            data = json.load(f)
+        converter=OMEtoRDF(data,dumy_image_url)
+        converter.annotate_prov(dummy_api_url+'image',settings)
+        result=converter.to_rdf()
+        result.serialize(format='turtle', destination='tests/'+output_file,auto_compact=True,indent=4)
+        self.assertTrue(os.path.exists('tests/'+output_file))
+        
     def test_rois2(self):
         input_file='rois2.json'
         output_file=input_file.split('.')[0]+".ttl"

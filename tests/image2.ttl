@@ -8,7 +8,7 @@
 
 <> a ome:Image ;
     rdfs:label "05_FEMBau01_u_100x_BE_EDX.tif"^^xsd:string ;
-    prov:generatedAtTime "2023-06-28T10:21:59.823344"^^xsd:dateTime ;
+    prov:generatedAtTime "2023-06-28T13:51:40.844530"^^xsd:dateTime ;
     prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/image> ;
     ome:datasets "https://omero.matolab.org/api/v0/m/images/2/datasets/"^^xsd:string ;
     ome:download "https://omero.matolab.org/webgateway/archived_files/download/2"^^xsd:anyURI ;
@@ -1596,10 +1596,10 @@
     oa:hasBody [ a qudt:QuantityValue ;
             qudt:value 0 ] .
 
-<https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> a prov:SoftwareAgent ;
-    rdfs:label "OmeroExtractorv0.0.3" ;
+<https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.4> a prov:SoftwareAgent ;
+    rdfs:label "OmeroExtractorv0.0.4" ;
     prov:hadPrimarySource "https://github.com/Mat-O-Lab/OmeroExtractor" .
 
 <https://metadata.omero.matolab.org/api/image> a prov:Activity ;
-    prov:wasAssociatedWith <https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.3> .
+    prov:wasAssociatedWith <https://github.com/Mat-O-Lab/OmeroExtractor/releases/tag/v0.0.4> .
 
