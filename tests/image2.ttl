@@ -8,10 +8,11 @@
 
 <> a ome:Image ;
     rdfs:label "05_FEMBau01_u_100x_BE_EDX.tif"^^xsd:string ;
-    prov:generatedAtTime "2023-06-26T21:08:29.721497"^^xsd:dateTime ;
+    prov:generatedAtTime "2023-06-28T10:21:59.823344"^^xsd:dateTime ;
     prov:wasGeneratedBy <https://metadata.omero.matolab.org/api/image> ;
     ome:datasets "https://omero.matolab.org/api/v0/m/images/2/datasets/"^^xsd:string ;
     ome:download "https://omero.matolab.org/webgateway/archived_files/download/2"^^xsd:anyURI ;
+    ome:rawMeta "https://omero.matolab.org/api/v0/m/images/2"^^xsd:anyURI ;
     ome:relates_to [ a ome:OriginalMeta ;
             ome:notes <GlobalMetadataAa1>,
                 <GlobalMetadataAa2>,
@@ -337,7 +338,7 @@
             ome:sizeY 768 ;
             ome:sizeZ 1 ] ;
     ome:rois <https://metadata.omero.matolab.org/api/rois/2> ;
-    ome:url "https://omero.matolab.org/api/v0/m/images/2"^^xsd:anyURI .
+    ome:url "https://omero.matolab.org/webgateway/render_image/2"^^xsd:anyURI .
 
 <GlobalMetadataAa1> a oa:Annotation ;
     rdfs:label "Global Metadata aa 1" ;
@@ -637,7 +638,7 @@
 <GlobalMetadataFilI> a oa:Annotation ;
     rdfs:label "Global Metadata fil i" ;
     oa:hasBody [ a qudt:QuantityValue ;
-            qudt:value "2023-06-26T02:00:00"^^xsd:dateTime ] .
+            qudt:value "2023-06-28T02:00:00"^^xsd:dateTime ] .
 
 <GlobalMetadataFilamentAge> a oa:Annotation ;
     rdfs:label "Global Metadata filament age" ;
@@ -1462,7 +1463,7 @@
 <GlobalMetadataTime> a oa:Annotation ;
     rdfs:label "Global Metadata time" ;
     oa:hasBody [ a qudt:QuantityValue ;
-            qudt:value "2023-06-26T13:57:26"^^xsd:dateTime ] .
+            qudt:value "2023-06-28T13:57:26"^^xsd:dateTime ] .
 
 <GlobalMetadataTrackZ> a oa:Annotation ;
     rdfs:label "Global Metadata track z" ;

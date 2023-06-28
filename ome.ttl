@@ -233,9 +233,13 @@ foaf:accountName :ome_type "UserName".
 :rois a owl:AnnotationProperty ;
   :ome_type "url:rois".
 
-:url a owl:AnnotationProperty ;
+:rawMeta a owl:AnnotationProperty ;
   rdfs:label "url"@en ;
   skos:definition "Link to the original metadata api endpoint.".
+
+:url a owl:AnnotationProperty ;
+  rdfs:label "url"@en ;
+  skos:definition "Link to the to image render api endpoint.".
 
 :download a owl:AnnotationProperty ;
   rdfs:label "download"@en ;

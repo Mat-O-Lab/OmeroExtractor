@@ -149,10 +149,11 @@ class OMEtoRDF:
         self.root=URIRef("")
         logging.debug(api_endpoint)
         self.graph=Graph()
-        self.graph.add((self.root,OME.url,Literal(self.url,datatype=XSD.anyURI)))
+        self.graph.add((self.root,OME.rawMeta,Literal(self.url,datatype=XSD.anyURI)))
         
         self.image_id=self.url.rsplit('/',1)[-1]
         self.host=self.url.rsplit('/api',1)[0]
+        
         self.graph.bind('ome',OME)
         self.graph.bind('qudt',QUDT)
         self.graph.bind('prov',PROV)
@@ -198,6 +199,10 @@ class OMEtoRDF:
         #add download urls
         for image in self.graph.subjects(RDF.type, OME.Image):
             self.graph.add((image,OME.download,Literal(self.host+"/webgateway/archived_files/download/"+self.image_id,datatype=XSD.anyURI)))
+            # add render url
+            render_url=self.host+"/webgateway/render_image/"+self.image_id
+            self.graph.add((self.root,OME.url,Literal(render_url,datatype=XSD.anyURI)))
+        
         self.fix_data()
         if anonymize:
             [self.graph.remove((subject, None, None)) for subject in self.graph.subjects(RDF.type, OME.User)]
