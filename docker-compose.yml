@@ -14,11 +14,11 @@ services:
     restart: always
     networks:
       - omero
-    # healthcheck:
-    #   test: ["CMD", "curl", "-f", "http://0.0.0.0:5000/api/info"]
-    #   interval: 10s
-    #   timeout: 10s
-    #   retries: 20
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:5000/api/info"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
 
 networks:
   omero:
